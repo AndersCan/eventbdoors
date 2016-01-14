@@ -3,7 +3,7 @@
 \usepackage {bsymb,b2latex}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr,lastpage,color}
-\lhead{\rm An Event-B Specification of DoorMachine}
+\lhead{\rm An Event-B Specification of DoorMachine10}
 \rhead {\rm Page \thepage~of \pageref{LastPage}}
 \lfoot{}\cfoot{}\rfoot{}
 \pagestyle{fancy}
@@ -11,9 +11,10 @@
 \begin{document}
 \thispagestyle{empty}
 \begin{description}
-\BTitle{DoorMachine}{14Jan2016}{01:33:13 PM}
-\MACHINE{DoorMachine}
-\SEES{DoorContext00}
+\BTitle{DoorMachine10}{14Jan2016}{10:19:55 PM}
+\MACHINE{DoorMachine10}
+\REFINES{DoorMachine1}
+\SEES{DoorContext, UserContext}
 \VARIABLES
 	\begin{description}
 		\Item{ doorAngle }
@@ -21,161 +22,180 @@
 	\end{description}
 \INVARIANTS
 	\begin{description}
-		\nItem{ inv1 }{ doorAngle \in  \nat  }
-		\nItem{ inv2 }{ doorAngle \geq  0 \land  doorAngle \leq  180 }
-		\nItem{ inv3 }{ doorStatus \in  DoorStatus }
-		\nItem{ inv4 }{ doorStatus = Closed \limp  doorAngle = 90 }
-		\nItem{ inv5 }{ doorStatus = Opened\_A \limp  doorAngle = 0 }
-		\nItem{ inv6 }{ doorStatus = Opened\_B \limp  doorAngle = 180 }
-		\nItem{ inv7 }{ doorStatus = Opening\_A \limp  doorAngle \geq  0 \land  doorAngle \leq  90  }
-		\nItem{ inv8 }{ doorStatus = Opening\_B \limp  doorAngle \geq  90 \land  doorAngle \leq  180 }
+		\nItem{ {\it inv1} }{ Authed \bunion  UnAuthed = USERS }
 	\end{description}
 \EVENTS
 	\INITIALISATION
+		\\\textit{extended}
 		\begin{description}
 		\BeginAct
 			\begin{description}
-			\nItem{ act1 }{ doorAngle :=  90 }
-			\nItem{ act2 }{ doorStatus :=  Closed }
+			\nItemX{ act1 }{ doorAngle :=  90 }
+			\nItemX{ act2 }{ doorStatus :=  Closed }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {StartOpening\_A}
+	\EXTD {StartOpening\_A}
 		\begin{description}
-		\WhenGrd
+		\AnyPrm
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Closed }
+			\Item{user }
+			\end{description}
+		\WhereGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Closed }
+			\nItem{ grd2 }{ user \subseteq  USERS }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorStatus :=  Opening\_A }
+			\nItemX{ act1 }{ doorStatus :=  Opening\_A }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {StartOpening\_B}
+	\EXTD {StartOpening\_B}
 		\begin{description}
-		\WhenGrd
+		\AnyPrm
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Closed }
+			\Item{user }
+			\end{description}
+		\WhereGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Closed }
+			\nItem{ grd2 }{ user \subseteq  Authed }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorStatus :=  Opening\_B }
+			\nItemX{ act1 }{ doorStatus :=  Opening\_B }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {Opening\_A}
+	\EXTD {Opening\_A}
 		\begin{description}
 		\WhenGrd
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Opening\_A }
-			\nItem{ grd2 }{ doorAngle >  0 }
+			\nItemX{ grd1 }{ doorStatus = Opening\_A }
+			\nItemX{ grd2 }{ doorAngle >  0 }
+			\nItemX{ grd3 }{ doorAngle -  DoorSpeed \geq  0 }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorAngle :=  doorAngle -  1 }
+			\nItemX{ act1 }{ doorAngle :=  doorAngle -  DoorSpeed }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {Opening\_B}
+	\EXTD {Opening\_B}
 		\begin{description}
 		\WhenGrd
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Opening\_B }
-			\nItem{ grd2 }{ doorAngle <  180 }
+			\nItemX{ grd1 }{ doorStatus = Opening\_B }
+			\nItemX{ grd2 }{ doorAngle <  180 }
+			\nItemX{ grd3 }{ doorAngle + DoorSpeed \leq  180 }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorAngle :=  doorAngle + 1 }
+			\nItemX{ act1 }{ doorAngle :=  doorAngle + DoorSpeed }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {Opened\_A}
+	\EXTD {Opened\_A}
 		\begin{description}
 		\WhenGrd
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Opening\_A }
-			\nItem{ grd2 }{ doorAngle = 0 }
+			\nItemX{ grd1 }{ doorStatus = Opening\_A }
+			\nItemX{ grd2 }{ doorAngle = 0 }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorStatus :=  Opened\_A }
+			\nItemX{ act1 }{ doorStatus :=  Opened\_A }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {Opened\_B}
+	\EXTD {Opened\_B}
 		\begin{description}
 		\WhenGrd
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Opening\_B }
-			\nItem{ grd2 }{ doorAngle = 180 }
+			\nItemX{ grd1 }{ doorStatus = Opening\_B }
+			\nItemX{ grd2 }{ doorAngle = 180 }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorStatus :=  Opened\_B }
+			\nItemX{ act1 }{ doorStatus :=  Opened\_B }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {StartClosing\_A}
+	\EXTD {StartClosing\_A}
 		\begin{description}
 		\WhenGrd
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Opened\_A }
+			\nItemX{ grd1 }{ doorStatus = Opened\_A }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorStatus :=  Closing\_A }
+			\nItemX{ act1 }{ doorStatus :=  Closing\_A }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {StartClosing\_B}
+	\EXTD {StartClosing\_B}
 		\begin{description}
 		\WhenGrd
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Opened\_B }
+			\nItemX{ grd1 }{ doorStatus = Opened\_B }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorStatus :=  Closing\_B }
+			\nItemX{ act1 }{ doorStatus :=  Closing\_B }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {Closing\_A}
+	\EXTD {Closing\_A}
 		\begin{description}
 		\WhenGrd
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Closing\_A }
-			\nItem{ grd2 }{ doorAngle <  90 }
+			\nItemX{ grd1 }{ doorStatus = Closing\_A }
+			\nItemX{ grd2 }{ doorAngle <  90 }
+			\nItemX{ grd3 }{ doorAngle + DoorSpeed \leq  90 }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorAngle :=  doorAngle + 1 }
+			\nItemX{ act1 }{ doorAngle :=  doorAngle + DoorSpeed }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {Closing\_B}
+	\EXTD {Closing\_B}
 		\begin{description}
 		\WhenGrd
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Closing\_B }
-			\nItem{ grd2 }{ doorAngle >  90 }
+			\nItemX{ grd1 }{ doorStatus = Closing\_B }
+			\nItemX{ grd2 }{ doorAngle >  90 }
+			\nItemX{ grd3 }{ doorAngle -  DoorSpeed \geq  90 }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorAngle :=  doorAngle -  1 }
+			\nItemX{ act1 }{ doorAngle :=  doorAngle -  DoorSpeed }
 			\end{description}
 		\EndAct
 		\end{description}
 	\EVT {Closed}
+	\EXTD {Closed}
 		\begin{description}
 		\WhenGrd
 			\begin{description}
-			\nItem{ grd1 }{ doorStatus = Closing\_A \lor  doorStatus = Closing\_B }
-			\nItem{ grd2 }{ doorAngle = 90 }
+			\nItemX{ grd1 }{ doorStatus = Closing\_A \lor  doorStatus = Closing\_B }
+			\nItemX{ grd2 }{ doorAngle = 90 }
 			\end{description}
 		\ThenAct
 			\begin{description}
-			\nItem{ act1 }{ doorStatus :=  Closed }
+			\nItemX{ act1 }{ doorStatus :=  Closed }
 			\end{description}
 		\EndAct
 		\end{description}

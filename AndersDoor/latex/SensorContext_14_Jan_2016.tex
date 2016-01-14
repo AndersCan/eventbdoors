@@ -3,7 +3,7 @@
 \usepackage {bsymb,b2latex}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr,lastpage,color}
-\lhead{\rm An Event-B Specification of DoorContext00}
+\lhead{\rm An Event-B Specification of SensorContext}
 \rhead {\rm Page \thepage~of \pageref{LastPage}}
 \lfoot{}\cfoot{}\rfoot{}
 \pagestyle{fancy}
@@ -11,25 +11,20 @@
 \begin{document}
 \thispagestyle{empty}
 \begin{description}
-\BTitle{DoorContext00}{14Jan2016}{01:33:13 PM}
-\CONTEXT{DoorContext00}
+\BTitle{SensorContext}{14Jan2016}{10:19:55 PM}
+\CONTEXT{SensorContext}
 \SETS
 	\begin{description}
-		\Item{ DoorStatus }
+		\Item{ SENSOR }
 	\end{description}
 \CONSTANTS
 	\begin{description}
-		\Item{ Opened\_A }
-		\Item{ Opened\_B }
-		\Item{ Opening\_A }
-		\Item{ Opening\_B }
-		\Item{ Closing\_A }
-		\Item{ Closing\_B }
-		\Item{ Closed }
+		\Item{ On }
+		\Item{ Off }
 	\end{description}
 \AXIOMS
 	\begin{description}
-		\nItem{ axm1 }{ partition(DoorStatus, \{ Opened\_A\} , \{ Opened\_B\} , \{ Opening\_A\} , \{ Opening\_B\} , \{ Closing\_A\} , \{ Closing\_B\} , \{ Closed\} ) }	\end{description}
+		\nItem{ axm1 }{ partition(SENSOR, \{ On\} , \{ Off\} ) }	\end{description}
 \END
 \end{description}
 \end{document}

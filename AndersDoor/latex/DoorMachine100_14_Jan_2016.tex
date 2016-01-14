@@ -1,0 +1,281 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[top=3cm, bottom=2.5cm, left=3cm, right=2.5cm] {geometry}
+\usepackage {bsymb,b2latex}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,lastpage,color}
+\lhead{\rm An Event-B Specification of DoorMachine100}
+\rhead {\rm Page \thepage~of \pageref{LastPage}}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+%---------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+\begin{description}
+\BTitle{DoorMachine100}{14Jan2016}{10:19:55 PM}
+\MACHINE{DoorMachine100}
+\REFINES{DoorMachine10}
+\SEES{DoorContext, UserContext, SensorContext}
+\VARIABLES
+	\begin{description}
+		\Item{ doorAngle }
+		\Item{ doorStatus }
+		\Item{ sensor\_A }
+		\Item{ sensor\_B }
+	\end{description}
+\INVARIANTS
+	\begin{description}
+		\nItem{ inv1 }{ sensor\_A \in  SENSOR }
+		\nItem{ inv2 }{ sensor\_B \in  SENSOR }
+	\end{description}
+\EVENTS
+	\INITIALISATION
+		\\\textit{extended}
+		\begin{description}
+		\BeginAct
+			\begin{description}
+			\nItemX{ act1 }{ doorAngle :=  90 }
+			\nItemX{ act2 }{ doorStatus :=  Closed }
+			\nItem{ act3 }{ sensor\_A :=  Off }
+			\nItem{ act4 }{ sensor\_B :=  Off }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {StartOpening\_A}
+	\EXTD {StartOpening\_A}
+		\begin{description}
+		\AnyPrm
+			\begin{description}
+			\ItemX{user }
+			\end{description}
+		\WhereGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Closed }
+			\nItemX{ grd2 }{ user \subseteq  USERS }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorStatus :=  Opening\_A }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {StartOpening\_B}
+	\EXTD {StartOpening\_B}
+		\begin{description}
+		\AnyPrm
+			\begin{description}
+			\ItemX{user }
+			\end{description}
+		\WhereGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Closed }
+			\nItemX{ grd2 }{ user \subseteq  Authed }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorStatus :=  Opening\_B }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {Opening\_A}
+	\EXTD {Opening\_A}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Opening\_A }
+			\nItemX{ grd2 }{ doorAngle >  0 }
+			\nItemX{ grd3 }{ doorAngle -  DoorSpeed \geq  0 }
+			\nItem{ grd4 }{ sensor\_A = Off }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorAngle :=  doorAngle -  DoorSpeed }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {Opening\_B}
+	\EXTD {Opening\_B}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Opening\_B }
+			\nItemX{ grd2 }{ doorAngle <  180 }
+			\nItemX{ grd3 }{ doorAngle + DoorSpeed \leq  180 }
+			\nItem{ grd4 }{ sensor\_B = Off }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorAngle :=  doorAngle + DoorSpeed }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {Opened\_A}
+	\EXTD {Opened\_A}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Opening\_A }
+			\nItemX{ grd2 }{ doorAngle = 0 }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorStatus :=  Opened\_A }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {Opened\_B}
+	\EXTD {Opened\_B}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Opening\_B }
+			\nItemX{ grd2 }{ doorAngle = 180 }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorStatus :=  Opened\_B }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {StartClosing\_A}
+	\EXTD {StartClosing\_A}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Opened\_A }
+			\nItem{ grd2 }{ sensor\_A = Off }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorStatus :=  Closing\_A }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {StartClosing\_B}
+	\EXTD {StartClosing\_B}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Opened\_B }
+			\nItem{ grd2 }{ sensor\_B = Off }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorStatus :=  Closing\_B }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {Closing\_A}
+	\EXTD {Closing\_A}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Closing\_A }
+			\nItemX{ grd2 }{ doorAngle <  90 }
+			\nItemX{ grd3 }{ doorAngle + DoorSpeed \leq  90 }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorAngle :=  doorAngle + DoorSpeed }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {Closing\_B}
+	\EXTD {Closing\_B}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Closing\_B }
+			\nItemX{ grd2 }{ doorAngle >  90 }
+			\nItemX{ grd3 }{ doorAngle -  DoorSpeed \geq  90 }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorAngle :=  doorAngle -  DoorSpeed }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {Closed}
+	\EXTD {Closed}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ doorStatus = Closing\_A \lor  doorStatus = Closing\_B }
+			\nItemX{ grd2 }{ doorAngle = 90 }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ doorStatus :=  Closed }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {StepOn\_A}
+		\begin{description}
+		\AnyPrm
+			\begin{description}
+			\Item{user }
+			\end{description}
+		\WhereGrd
+			\begin{description}
+			\nItem{ grd1 }{ sensor\_A = Off }
+			\nItem{ grd2 }{ user \in  USERS }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ sensor\_A :=  On }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {StepOn\_B}
+		\begin{description}
+		\AnyPrm
+			\begin{description}
+			\Item{user }
+			\end{description}
+		\WhereGrd
+			\begin{description}
+			\nItem{ grd1 }{ sensor\_B = Off }
+			\nItem{ grd2 }{ user \in  USERS }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ sensor\_B :=  On }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {StepOff\_A}
+		\begin{description}
+		\AnyPrm
+			\begin{description}
+			\Item{user }
+			\end{description}
+		\WhereGrd
+			\begin{description}
+			\nItem{ grd1 }{ sensor\_A = On }
+			\nItem{ grd2 }{ user \in  USERS }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ sensor\_A :=  Off }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {StepOff\_B}
+		\begin{description}
+		\AnyPrm
+			\begin{description}
+			\Item{user }
+			\end{description}
+		\WhereGrd
+			\begin{description}
+			\nItem{ grd1 }{ sensor\_B = On }
+			\nItem{ grd2 }{ user \in  USERS }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ sensor\_B :=  Off }
+			\end{description}
+		\EndAct
+		\end{description}
+\END
+\end{description}
+\end{document}

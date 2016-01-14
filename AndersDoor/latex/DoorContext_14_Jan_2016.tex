@@ -1,0 +1,36 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[top=3cm, bottom=2.5cm, left=3cm, right=2.5cm] {geometry}
+\usepackage {bsymb,b2latex}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,lastpage,color}
+\lhead{\rm An Event-B Specification of DoorContext}
+\rhead {\rm Page \thepage~of \pageref{LastPage}}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+%---------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+\begin{description}
+\BTitle{DoorContext}{14Jan2016}{10:19:55 PM}
+\CONTEXT{DoorContext}
+\SETS
+	\begin{description}
+		\Item{ DoorStatus }
+	\end{description}
+\CONSTANTS
+	\begin{description}
+		\Item{ Opened\_A }
+		\Item{ Opened\_B }
+		\Item{ Opening\_A }
+		\Item{ Opening\_B }
+		\Item{ Closing\_A }
+		\Item{ Closing\_B }
+		\Item{ Closed }
+		\Item{ DoorSpeed }
+	\end{description}
+\AXIOMS
+	\begin{description}
+		\nItem{ axm1 }{ partition(DoorStatus, \{ Opened\_A\} , \{ Opened\_B\} , \{ Opening\_A\} , \{ Opening\_B\} , \{ Closing\_A\} , \{ Closing\_B\} , \{ Closed\} ) }		\nItem{ axm2 }{ DoorSpeed \in  \nat_1  }		\nItem{ axm3 }{ DoorSpeed = 10 }		\nItem{ axm4 }{ (180 /  DoorSpeed) *  DoorSpeed = 180 }	\end{description}
+\END
+\end{description}
+\end{document}

@@ -11,7 +11,7 @@
 \begin{document}
 \thispagestyle{empty}
 \begin{description}
-\BTitle{UserContext}{14Jan2016}{01:33:13 PM}
+\BTitle{UserContext}{14Jan2016}{10:19:55 PM}
 \CONTEXT{UserContext}
 \SETS
 	\begin{description}
@@ -24,7 +24,7 @@
 	\end{description}
 \AXIOMS
 	\begin{description}
-		\nItem{ axm1 }{ finite(USERS) }		\nItem{ axm2 }{ Authed \subseteq  USERS }		\nItem{ axm3 }{ UnAuthed \subseteq  USERS  }		\nItem{ axm4 }{ UnAuthed \nsubseteq  Authed }	\end{description}
+		\nItem{ axm1 }{ finite(USERS) }		\nItem{ axm2 }{ Authed \subseteq  USERS }		\nItem{ axm3 }{ UnAuthed = USERS \setminus  Authed  }		\nItem{ axm4 }{ UnAuthed \nsubseteq  Authed }		\nItem{ axm5 }{ UnAuthed = USERS \setminus  Authed }	\end{description}
 \END
 \end{description}
 \end{document}
