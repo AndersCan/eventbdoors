@@ -17,11 +17,11 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Opening_A">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Opening_A"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd3" org.eventb.core.predicate="sensor_A = Off"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="sensor_A = Off"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Opening_B">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Opening_B"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd3" org.eventb.core.predicate="sensor_B = Off"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="sensor_B = Off"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Opened_A">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Opened_A"/>
@@ -51,4 +51,10 @@
 <org.eventb.core.invariant name="J" org.eventb.core.label="inv1" org.eventb.core.predicate="sensor_A ∈ SENSOR"/>
 <org.eventb.core.variable name="K" org.eventb.core.identifier="sensor_B"/>
 <org.eventb.core.invariant name="L" org.eventb.core.label="inv2" org.eventb.core.predicate="sensor_B ∈ SENSOR"/>
+<org.eventb.core.event name="M" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StepOn_A">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="sensor_A = Off"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="sensor_A ≔ On" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ USERS"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>
