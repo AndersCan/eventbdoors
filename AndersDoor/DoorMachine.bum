@@ -7,10 +7,9 @@
 <org.eventb.core.variable name="(" org.eventb.core.identifier="doorAngle"/>
 <org.eventb.core.invariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="doorAngle ∈ ℕ "/>
 <org.eventb.core.seesContext name="*" org.eventb.core.target="DoorContext00"/>
-<org.eventb.core.invariant name="," org.eventb.core.label="inv2" org.eventb.core.predicate="doorAngle ≥ 0"/>
-<org.eventb.core.invariant name="+" org.eventb.core.label="inv3" org.eventb.core.predicate="doorAngle ≤ 180"/>
+<org.eventb.core.invariant name="," org.eventb.core.label="inv2" org.eventb.core.predicate="doorAngle ≥ 0 ∧ doorAngle ≤ 180"/>
 <org.eventb.core.variable name="-" org.eventb.core.identifier="doorStatus"/>
-<org.eventb.core.invariant name="." org.eventb.core.label="inv4" org.eventb.core.predicate="doorStatus ∈ DoorStatus"/>
+<org.eventb.core.invariant name="." org.eventb.core.label="inv3" org.eventb.core.predicate="doorStatus ∈ DoorStatus"/>
 <org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StartOpening_A">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="doorStatus = Closed"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="doorStatus ≔ Opening_A" org.eventb.core.label="act1"/>
@@ -21,22 +20,22 @@
 </org.eventb.core.event>
 <org.eventb.core.event name="1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Opening_A">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="doorStatus = Opening_A"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="doorAngle ≔ doorAngle + 1" org.eventb.core.label="act1"/>
-<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="doorAngle &lt; 180"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="doorAngle ≔ doorAngle − 1" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="doorAngle &gt; 0"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Opening_B">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="doorStatus = Opening_B"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="doorAngle &gt; 0"/>
-<org.eventb.core.action name=")" org.eventb.core.assignment="doorAngle ≔ doorAngle − 1" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="doorAngle &lt; 180"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="doorAngle ≔ doorAngle + 1" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Opened_A">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="doorStatus = Opening_A"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="doorAngle = 180"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="doorAngle = 0"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="doorStatus ≔ Opened_A" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Opened_B">
 <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="doorStatus = Opening_B"/>
-<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="doorAngle = 0"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="doorAngle = 180"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="doorStatus ≔ Opened_B" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StartClosing_A">
@@ -62,5 +61,9 @@
 <org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="doorAngle = 90"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="doorStatus ≔ Closed" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.invariant name="evt5" org.eventb.core.label="inv5" org.eventb.core.predicate="doorStatus = Closed ⇒ doorAngle = 90"/>
+<org.eventb.core.invariant name="evt5" org.eventb.core.label="inv4" org.eventb.core.predicate="doorStatus = Closed ⇒ doorAngle = 90"/>
+<org.eventb.core.invariant name="evt6" org.eventb.core.label="inv5" org.eventb.core.predicate="doorStatus = Opened_A ⇒ doorAngle = 0"/>
+<org.eventb.core.invariant name="evt7" org.eventb.core.label="inv6" org.eventb.core.predicate="doorStatus = Opened_B ⇒ doorAngle = 180"/>
+<org.eventb.core.invariant name="evt8" org.eventb.core.label="inv7" org.eventb.core.predicate="doorStatus = Opening_A ⇒ doorAngle ≥ 0 ∧ doorAngle ≤ 90 "/>
+<org.eventb.core.invariant name="evt9" org.eventb.core.label="inv8" org.eventb.core.predicate="doorStatus = Opening_B ⇒ doorAngle ≥ 90 ∧ doorAngle ≤ 180"/>
 </org.eventb.core.machineFile>

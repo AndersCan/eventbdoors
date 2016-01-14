@@ -1,0 +1,30 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[top=3cm, bottom=2.5cm, left=3cm, right=2.5cm] {geometry}
+\usepackage {bsymb,b2latex}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,lastpage,color}
+\lhead{\rm An Event-B Specification of UserContext}
+\rhead {\rm Page \thepage~of \pageref{LastPage}}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+%---------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+\begin{description}
+\BTitle{UserContext}{14Jan2016}{01:33:13 PM}
+\CONTEXT{UserContext}
+\SETS
+	\begin{description}
+		\Item{ USERS }
+	\end{description}
+\CONSTANTS
+	\begin{description}
+		\Item{ Authed }
+		\Item{ UnAuthed }
+	\end{description}
+\AXIOMS
+	\begin{description}
+		\nItem{ axm1 }{ finite(USERS) }		\nItem{ axm2 }{ Authed \subseteq  USERS }		\nItem{ axm3 }{ UnAuthed \subseteq  USERS  }		\nItem{ axm4 }{ UnAuthed \nsubseteq  Authed }	\end{description}
+\END
+\end{description}
+\end{document}
