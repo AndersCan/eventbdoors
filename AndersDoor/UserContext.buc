@@ -5,6 +5,7 @@
 <org.eventb.core.constant name=")" org.eventb.core.identifier="Authed"/>
 <org.eventb.core.axiom name="*" org.eventb.core.label="axm2" org.eventb.core.predicate="Authed ⊆ USERS"/>
 <org.eventb.core.constant name="+" org.eventb.core.identifier="UnAuthed"/>
-<org.eventb.core.axiom name="," org.eventb.core.label="axm3" org.eventb.core.predicate="UnAuthed ⊆ USERS "/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm3" org.eventb.core.predicate="UnAuthed = USERS ∖ Authed "/>
 <org.eventb.core.axiom name="-" org.eventb.core.label="axm4" org.eventb.core.predicate="UnAuthed ⊈ Authed"/>
+<org.eventb.core.axiom name="." org.eventb.core.label="axm5" org.eventb.core.predicate="UnAuthed = USERS ∖ Authed"/>
 </org.eventb.core.contextFile>

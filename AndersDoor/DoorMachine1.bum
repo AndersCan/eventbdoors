@@ -6,7 +6,7 @@
 </org.eventb.core.event>
 <org.eventb.core.variable name="(" org.eventb.core.identifier="doorAngle"/>
 <org.eventb.core.invariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="doorAngle ∈ ℕ "/>
-<org.eventb.core.seesContext name="*" org.eventb.core.target="DoorContext00"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="DoorContext"/>
 <org.eventb.core.invariant name="," org.eventb.core.label="inv2" org.eventb.core.predicate="doorAngle ≥ 0 ∧ doorAngle ≤ 180"/>
 <org.eventb.core.variable name="-" org.eventb.core.identifier="doorStatus"/>
 <org.eventb.core.invariant name="." org.eventb.core.label="inv3" org.eventb.core.predicate="doorStatus ∈ DoorStatus"/>

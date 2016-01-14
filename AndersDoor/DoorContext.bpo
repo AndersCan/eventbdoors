@@ -10,7 +10,7 @@
 <org.eventb.core.poIdentifier name="Opening_A" org.eventb.core.type="DoorStatus"/>
 <org.eventb.core.poIdentifier name="Opening_B" org.eventb.core.type="DoorStatus"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/AndersDoor/DoorContext00.bpo|org.eventb.core.poFile#DoorContext00|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
-<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(DoorStatus,{Opened_A},{Opened_B},{Opening_A},{Opening_B},{Closing_A},{Closing_B},{Closed})" org.eventb.core.source="/AndersDoor/DoorContext00.buc|org.eventb.core.contextFile#DoorContext00|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/AndersDoor/DoorContext.bpo|org.eventb.core.poFile#DoorContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(DoorStatus,{Opened_A},{Opened_B},{Opening_A},{Opening_B},{Closing_A},{Closing_B},{Closed})" org.eventb.core.source="/AndersDoor/DoorContext.buc|org.eventb.core.contextFile#DoorContext|org.eventb.core.axiom#-"/>
 </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
