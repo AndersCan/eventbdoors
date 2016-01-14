@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="DoorMachine10"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="DoorContext"/>
+<org.eventb.core.seesContext name=":" org.eventb.core.target="UserContext"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="doorAngle"/>
+<org.eventb.core.variable name="-" org.eventb.core.identifier="doorStatus"/>
+<org.eventb.core.event name=";" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="sensor_A ≔ Off" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="sensor_B ≔ Off" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="StartOpening_A">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartOpening_A"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="StartOpening_B">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartOpening_B"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Opening_A">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Opening_A"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd3" org.eventb.core.predicate="sensor_A = Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Opening_B">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Opening_B"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd3" org.eventb.core.predicate="sensor_B = Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Opened_A">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Opened_A"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Opened_B">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Opened_B"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="StartClosing_A">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartClosing_A"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="sensor_A = Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="D" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="StartClosing_B">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartClosing_B"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="sensor_B = Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="E" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Closing_A">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Closing_A"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="F" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Closing_B">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Closing_B"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="G" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Closed">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Closed"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="H" org.eventb.core.target="SensorContext"/>
+<org.eventb.core.variable name="I" org.eventb.core.identifier="sensor_A"/>
+<org.eventb.core.invariant name="J" org.eventb.core.label="inv1" org.eventb.core.predicate="sensor_A ∈ SENSOR"/>
+<org.eventb.core.variable name="K" org.eventb.core.identifier="sensor_B"/>
+<org.eventb.core.invariant name="L" org.eventb.core.label="inv2" org.eventb.core.predicate="sensor_B ∈ SENSOR"/>
+</org.eventb.core.machineFile>

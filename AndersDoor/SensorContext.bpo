@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="SENSOR" org.eventb.core.type="ℙ(SENSOR)"/>
+<org.eventb.core.poIdentifier name="Off" org.eventb.core.type="SENSOR"/>
+<org.eventb.core.poIdentifier name="On" org.eventb.core.type="SENSOR"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/AndersDoor/SensorContext.bpo|org.eventb.core.poFile#SensorContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(SENSOR,{On},{Off})" org.eventb.core.source="/AndersDoor/SensorContext.buc|org.eventb.core.contextFile#SensorContext|org.eventb.core.axiom#*"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
