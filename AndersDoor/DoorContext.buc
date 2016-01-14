@@ -9,4 +9,8 @@
 <org.eventb.core.constant name="+" org.eventb.core.identifier="Closing_B"/>
 <org.eventb.core.constant name="," org.eventb.core.identifier="Closed"/>
 <org.eventb.core.axiom name="-" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(DoorStatus, {Opened_A}, {Opened_B}, {Opening_A}, {Opening_B}, {Closing_A}, {Closing_B}, {Closed})"/>
+<org.eventb.core.constant name="0" org.eventb.core.identifier="DoorSpeed"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm2" org.eventb.core.predicate="DoorSpeed ∈ ℕ1 "/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm3" org.eventb.core.predicate="DoorSpeed = 10"/>
+<org.eventb.core.axiom name="2" org.eventb.core.label="axm4" org.eventb.core.predicate="(180 ÷ DoorSpeed) ∗ DoorSpeed = 180"/>
 </org.eventb.core.contextFile>
