@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="Corresponds to a minimally controlled door motor" org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="door_angle ≔ 90" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="destination_angle ≔ 90" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="door_angle"/>
+<org.eventb.core.invariant name="+" org.eventb.core.label="inv1" org.eventb.core.predicate="door_angle ∈ DoorAngles"/>
+<org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="MoveDirectionA">
+<org.eventb.core.action name="'" org.eventb.core.assignment="door_angle ≔ door_angle − 1" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="door_angle &gt; destination_angle"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="MoveDirectionB">
+<org.eventb.core.action name="'" org.eventb.core.assignment="door_angle ≔ door_angle + 1" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="door_angle &lt; destination_angle"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="1" org.eventb.core.target="DoorMotorCtx"/>
+<org.eventb.core.variable name="2" org.eventb.core.identifier="destination_angle"/>
+<org.eventb.core.invariant name="3" org.eventb.core.label="inv2" org.eventb.core.predicate="destination_angle ∈ DoorAngles"/>
+<org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SetNewDestination">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="angle"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="destination_angle ≔ angle" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="angle ∈ DoorAngles"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

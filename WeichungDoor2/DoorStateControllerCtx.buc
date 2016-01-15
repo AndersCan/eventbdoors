@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.axiom name="axm1" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(DoorStatuses, {Opened_A}, {Opened_B}, {Closed}, {Moving}, {Error_Stopped})"/>
+<org.eventb.core.constant name="set&gt;" org.eventb.core.identifier="Opened_A"/>
+<org.eventb.core.constant name="cst2" org.eventb.core.identifier="Opened_B"/>
+<org.eventb.core.constant name="cst3" org.eventb.core.identifier="Closed"/>
+<org.eventb.core.carrierSet name="set1" org.eventb.core.identifier="DoorStatuses"/>
+<org.eventb.core.constant name="set8" org.eventb.core.identifier="Moving"/>
+<org.eventb.core.constant name="setD" org.eventb.core.identifier="Error_Stopped"/>
+<org.eventb.core.constant name="set2" org.eventb.core.identifier="AngleToStatus"/>
+<org.eventb.core.axiom name="set;" org.eventb.core.label="axm2" org.eventb.core.predicate="DoorPositions = DoorStatuses ∖ ({Moving} ∪ {Error_Stopped})"/>
+<org.eventb.core.axiom name="set3" org.eventb.core.comment="Bijection which maps specific DoorAngles to a DoorPosition" org.eventb.core.label="axm3" org.eventb.core.predicate="AngleToStatus ∈ {0, 90, 180} ⤖ DoorPositions"/>
+<org.eventb.core.extendsContext name="set4" org.eventb.core.target="DoorMotorCtx"/>
+<org.eventb.core.axiom name="set5" org.eventb.core.comment="MinDoorAngle" org.eventb.core.label="axm5" org.eventb.core.predicate="AngleToStatus(0) = Opened_A"/>
+<org.eventb.core.axiom name="set6" org.eventb.core.comment="Max / Min" org.eventb.core.label="axm6" org.eventb.core.predicate="AngleToStatus(90) = Closed"/>
+<org.eventb.core.axiom name="set7" org.eventb.core.comment="MaxDoorAngle" org.eventb.core.label="axm7" org.eventb.core.predicate="AngleToStatus(180) = Opened_B"/>
+<org.eventb.core.constant name="set=" org.eventb.core.identifier="DoorPositions"/>
+<org.eventb.core.constant name="set@" org.eventb.core.identifier="ValidTransitions"/>
+<org.eventb.core.axiom name="setC" org.eventb.core.comment="Is is a good idea to enumerate all valid transitions here?" org.eventb.core.label="axm10" org.eventb.core.predicate="ValidTransitions ⊂ DoorPositions ↠ DoorPositions"/>
+</org.eventb.core.contextFile>
