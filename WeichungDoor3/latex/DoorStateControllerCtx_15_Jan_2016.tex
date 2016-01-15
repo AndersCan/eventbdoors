@@ -1,0 +1,42 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[top=3cm, bottom=2.5cm, left=3cm, right=2.5cm] {geometry}
+\usepackage {bsymb,b2latex}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,lastpage,color}
+\lhead{\rm An Event-B Specification of DoorStateControllerCtx}
+\rhead {\rm Page \thepage~of \pageref{LastPage}}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+%---------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+\begin{description}
+\BTitle{DoorStateControllerCtx}{15Jan2016}{03:48:48 PM}
+\CONTEXT{DoorStateControllerCtx}
+\EXTENDS{DoorMotorCtx}
+\SETS
+	\begin{description}
+		\Item{ DoorStatuses }
+	\end{description}
+\CONSTANTS
+	\begin{description}
+		\Item{ Opened\_A }
+		\Item{ Opened\_B }
+		\Item{ Closed }
+		\Item{ Moving }
+		\Item{ Error\_Stopped }
+		\Item{ AngleToStatus }
+		\Item{ DoorPositions }
+		\Item{ ValidTransitions }
+	\end{description}
+\AXIOMS
+	\begin{description}
+		\nItem{ axm1 }{ partition(DoorStatuses, \{ Opened\_A\} , \{ Opened\_B\} , \{ Closed\} , \{ Moving\} , \{ Error\_Stopped\} ) }		\nItem{ axm2 }{ DoorPositions = DoorStatuses \setminus  (\{ Moving\}  \bunion  \{ Error\_Stopped\} ) }		\nItem{ axm3 }{ AngleToStatus \in  \{ 0, 90, 180\}  \tbij  DoorPositions }\cmt{		\\\hspace*{1,4 cm}  Bijection which maps specific DoorAngles to a DoorPosition }
+		\nItem{ axm5 }{ AngleToStatus(0) = Opened\_A }\cmt{		\\\hspace*{1,4 cm}  MinDoorAngle }
+		\nItem{ axm6 }{ AngleToStatus(90) = Closed }\cmt{		\\\hspace*{1,4 cm}  Max / Min }
+		\nItem{ axm7 }{ AngleToStatus(180) = Opened\_B }\cmt{		\\\hspace*{1,4 cm}  MaxDoorAngle }
+		\nItem{ axm10 }{ ValidTransitions \subset  DoorPositions \tsur  DoorPositions }\cmt{		\\\hspace*{1,6 cm}  Is is a good idea to enumerate all valid transitions here? }
+	\end{description}
+\END
+\end{description}
+\end{document}

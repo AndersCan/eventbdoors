@@ -1,0 +1,144 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[top=3cm, bottom=2.5cm, left=3cm, right=2.5cm] {geometry}
+\usepackage {bsymb,b2latex}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,lastpage,color}
+\lhead{\rm An Event-B Specification of door1-DoorStateController}
+\rhead {\rm Page \thepage~of \pageref{LastPage}}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+%---------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+\begin{description}
+\BTitle{door1-DoorStateController}{15Jan2016}{03:48:48 PM}
+\MACHINE{door1-DoorStateController}\cmt{		\\\hspace*{5,6 cm}  Door Motor enhanced with controller to control door state and desired door actions }
+\REFINES{door0-DoorMotor}
+\SEES{DoorStateCtx}
+\VARIABLES
+	\begin{description}
+		\Item{ door\_angle }
+		\Item{ destination\_angle }
+		\ItemY{ door\_status }{the current status of the door (note that if the door is currently at A but plans to move soon, then it is Moving and not Opened$\_$A}
+	\end{description}
+\INVARIANTS
+	\begin{description}
+		\nItem{ inv1 }{ door\_angle \in  DoorAngles }
+		\nItem{ inv2 }{ destination\_angle \in  DoorAngles }
+		\nItem{ inv3 }{ destination\_angle \in  \{ 0, 90, 180\}  }
+		\nItemY{ inv4 }{ door\_angle \neq  destination\_angle \limp  door\_status = Moving }{ 		\\\hspace*{1,4 cm}  Note: If I don't add this inv, some Proof Obligations can't be discharged }
+		\nItem{ inv5 }{ door\_status \in  DoorStatuses }
+		\nItem{ inv6 }{ door\_status \neq  Moving \limp  door\_status = AngleToStatus(door\_angle) }
+	\end{description}
+\EVENTS
+	\INITIALISATION
+		\\\textit{extended}
+		\begin{description}
+		\BeginAct
+			\begin{description}
+			\nItemX{ act1 }{ door\_angle :=  90 }
+			\nItemX{ act2 }{ destination\_angle :=  90 }
+			\nItem{ act3 }{ door\_status :=  Closed }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {MoveDirectionA}
+	\REF {MoveDirectionA}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_angle >  destination\_angle }
+			\nItem{ {\it grd2} }{ door\_status = Moving }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ door\_angle :=  door\_angle -  1 }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {MoveDirectionB}
+	\EXTD {MoveDirectionB}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ door\_angle <  destination\_angle }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ door\_angle :=  door\_angle + 1 }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {SetToClose}
+	\REF {SetNewDestination}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_angle \neq  90 }
+			\nItem{ grd2 }{ door\_status \neq  Moving }
+			\end{description}
+		\Witnesses
+			\begin{description}
+			\nItemX{ angle }{ angle = 90 }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ destination\_angle :=  90 }
+			\nItem{ act2 }{ door\_status :=  Moving }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {SetToOpenB}
+	\REF {SetNewDestination}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_angle \neq  180 }
+			\nItem{ grd2 }{ door\_status \neq  Moving }
+			\end{description}
+		\Witnesses
+			\begin{description}
+			\nItemX{ angle }{ angle = 180 }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ destination\_angle :=  180 }
+			\nItem{ act2 }{ door\_status :=  Moving }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {SetToOpenA}
+	\REF {SetNewDestination}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_angle \neq  0 }
+			\nItem{ grd2 }{ door\_status \neq  Moving }
+			\end{description}
+		\Witnesses
+			\begin{description}
+			\nItemX{ angle }{ angle = 0 }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ destination\_angle :=  0 }
+			\nItem{ act2 }{ door\_status :=  Moving }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {UpdateDoorStatus}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_status = Moving }
+			\nItem{ grd2 }{ door\_angle = destination\_angle }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ door\_status :=  AngleToStatus(door\_angle) }
+			\end{description}
+		\EndAct
+		\end{description}
+\END
+\end{description}
+\end{document}

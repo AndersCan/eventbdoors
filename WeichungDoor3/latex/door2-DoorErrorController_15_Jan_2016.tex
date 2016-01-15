@@ -1,0 +1,239 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[top=3cm, bottom=2.5cm, left=3cm, right=2.5cm] {geometry}
+\usepackage {bsymb,b2latex}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,lastpage,color}
+\lhead{\rm An Event-B Specification of door2-DoorErrorController}
+\rhead {\rm Page \thepage~of \pageref{LastPage}}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+%---------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+\begin{description}
+\BTitle{door2-DoorErrorController}{15Jan2016}{03:48:48 PM}
+\MACHINE{door2-DoorErrorController}\cmt{		\\\hspace*{5,6 cm}  Could use some pertinent invariants }
+\REFINES{door1-DoorStateController}
+\SEES{DoorStateControllerCtx, CarpetCtx}
+\VARIABLES
+	\begin{description}
+		\Item{ door\_angle }
+		\Item{ destination\_angle }
+		\Item{ door\_status }
+		\Item{ sensor\_A }
+		\Item{ sensor\_B }
+	\end{description}
+\INVARIANTS
+	\begin{description}
+		\nItem{ inv1 }{ door\_angle \in  DoorAngles }
+		\nItem{ inv2 }{ destination\_angle \in  DoorAngles }
+		\nItem{ inv3 }{ destination\_angle \in  \{ 0, 90, 180\}  }
+		\nItemY{ inv4 }{ door\_angle \neq  destination\_angle \limp  door\_status = Moving }{ 		\\\hspace*{1,4 cm}  Note: If I don't add this inv, some Proof Obligations can't be discharged }
+		\nItem{ inv5 }{ door\_status \in  DoorStatuses }
+		\nItem{ inv6 }{ door\_status \neq  Moving \limp  door\_status = AngleToStatus(door\_angle) }
+		\nItem{ inv7 }{ sensor\_A \in  SENSOR }
+		\nItem{ inv8 }{ sensor\_B \in  SENSOR }
+	\end{description}
+\EVENTS
+	\INITIALISATION
+		\\\textit{extended}
+		\begin{description}
+		\BeginAct
+			\begin{description}
+			\nItemX{ act1 }{ door\_angle :=  90 }
+			\nItemX{ act2 }{ destination\_angle :=  90 }
+			\nItemX{ act3 }{ door\_status :=  Closed }
+			\nItem{ act4 }{ sensor\_A :=  Off }
+			\nItem{ act5 }{ sensor\_B :=  Off }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {MoveDirectionA}
+	\EXTD {MoveDirectionA}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ door\_angle >  destination\_angle }
+			\nItem{ grd2 }{ \lnot (sensor\_A = On \land  door\_angle -  1 \in  44\upto 89) }
+			\nItem{ grd3 }{ \lnot (sensor\_B = On \land  door\_angle -  1 \in  134\upto 179) }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ door\_angle :=  door\_angle -  1 }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {MoveDirectionB}
+	\EXTD {MoveDirectionB}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ door\_angle <  destination\_angle }
+			\nItem{ grd2 }{ \lnot (sensor\_A = On \land  door\_angle + 1 \in  1\upto 46) }
+			\nItem{ grd3 }{ \lnot (sensor\_B = On \land  door\_angle + 1 \in  91\upto 136) }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ door\_angle :=  door\_angle + 1 }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {CantMoveDirectionA}
+	\EXTD {SetErrorStatus}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_angle >  destination\_angle }
+			\nItem{ grd2 }{ (sensor\_A = On \land  door\_angle -  1 \in  44\upto 89) }
+			\nItem{ grd3 }{ (sensor\_B = On \land  door\_angle -  1 \in  134\upto 179) }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ door\_status :=  Error\_Stopped }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {CantMoveDirectionB}
+	\EXTD {SetErrorStatus}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_angle <  destination\_angle }
+			\nItem{ grd2 }{ (sensor\_A = On \land  door\_angle + 1 \in  1\upto 46) }
+			\nItem{ grd3 }{ (sensor\_B = On \land  door\_angle + 1 \in  91\upto 136) }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ door\_status :=  Error\_Stopped }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {SetNewDestination}
+	\EXTD {SetNewDestination}
+		\begin{description}
+		\AnyPrm
+			\begin{description}
+			\ItemX{position }
+			\end{description}
+		\WhereGrd
+			\begin{description}
+			\nItemX{ grd1 }{ position \in  DoorPositions }
+			\nItemX{ grd2 }{ door\_status \neq  position }
+			\nItemX{ grd3 }{ door\_status \neq  Moving }
+			\nItemX{ grd4 }{ position = Opened\_A \limp  \lnot  door\_status = Opened\_B }
+			\nItemX{ grd5 }{ position = Opened\_B \limp  \lnot  door\_status = Opened\_A }
+			\nItem{ grd6 }{ door\_status \neq  Error\_Stopped }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ destination\_angle :=  AngleToStatus^{-1} (position) }
+			\nItemX{ act2 }{ door\_status :=  Moving }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {ErrorReturnToClosed}
+	\REF {SetNewDestination}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_status = Error\_Stopped }
+			\nItem{ grd2 }{ (door\_angle >  destination\_angle \land  (sensor\_A = On \land  door\_angle -  1 \in  44\upto 89))\lor (door\_angle <  destination\_angle \land  (sensor\_B = On \land  door\_angle + 1 \in  91\upto 136)) }
+			\end{description}
+		\Witnesses
+			\begin{description}
+			\nItemX{ position }{ position = Closed }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ destination\_angle :=  AngleToStatus^{-1} (Closed) }
+			\nItem{ act2 }{ door\_status :=  Moving }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {ErrorReturnToA}
+	\REF {SetNewDestination}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_status = Error\_Stopped }
+			\nItem{ grd2 }{ door\_angle <  destination\_angle \land  (sensor\_A = On \land  door\_angle + 1 \in  1\upto 46) }
+			\end{description}
+		\Witnesses
+			\begin{description}
+			\nItemX{ position }{ position = Opened\_A }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ destination\_angle :=  AngleToStatus^{-1} (Opened\_A) }
+			\nItem{ act2 }{ door\_status :=  Moving }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {ErrorReturnToB}
+	\REF {SetNewDestination}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_status = Error\_Stopped }
+			\nItem{ grd2 }{ door\_angle >  destination\_angle \land  (sensor\_B = On \land  door\_angle -  1 \in  134\upto 179) }
+			\end{description}
+		\Witnesses
+			\begin{description}
+			\nItemX{ position }{ position = Opened\_B }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ destination\_angle :=  AngleToStatus^{-1} (Opened\_B) }
+			\nItem{ act2 }{ door\_status :=  Moving }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {UpdateDoorStatus}
+	\EXTD {UpdateDoorStatus}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItemX{ grd1 }{ door\_status = Moving }
+			\nItemX{ grd2 }{ door\_angle = destination\_angle }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItemX{ act1 }{ door\_status :=  AngleToStatus(door\_angle) }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {SensorA\_On}
+		\begin{description}
+		\BeginAct
+			\begin{description}
+			\nItem{ act1 }{ sensor\_A :=  On }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {SensorA\_Off}
+		\begin{description}
+		\BeginAct
+			\begin{description}
+			\nItem{ act1 }{ sensor\_A :=  Off }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {SensorB\_On}
+		\begin{description}
+		\BeginAct
+			\begin{description}
+			\nItem{ act1 }{ sensor\_B :=  On }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {SensorB\_Off}
+		\begin{description}
+		\BeginAct
+			\begin{description}
+			\nItem{ act1 }{ sensor\_B :=  Off }
+			\end{description}
+		\EndAct
+		\end{description}
+\END
+\end{description}
+\end{document}

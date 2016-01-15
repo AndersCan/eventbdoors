@@ -1,0 +1,79 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[top=3cm, bottom=2.5cm, left=3cm, right=2.5cm] {geometry}
+\usepackage {bsymb,b2latex}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,lastpage,color}
+\lhead{\rm An Event-B Specification of door0-DoorMotor}
+\rhead {\rm Page \thepage~of \pageref{LastPage}}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+%---------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+\begin{description}
+\BTitle{door0-DoorMotor}{15Jan2016}{03:48:48 PM}
+\MACHINE{door0-DoorMotor}\cmt{		\\\hspace*{3,6 cm}  Corresponds to a minimally controlled door motor }
+\SEES{DoorMotorCtx}
+\VARIABLES
+	\begin{description}
+		\Item{ door\_angle }
+		\Item{ destination\_angle }
+	\end{description}
+\INVARIANTS
+	\begin{description}
+		\nItem{ inv1 }{ door\_angle \in  DoorAngles }
+		\nItem{ inv2 }{ destination\_angle \in  DoorAngles }
+	\end{description}
+\EVENTS
+	\INITIALISATION
+		\begin{description}
+		\BeginAct
+			\begin{description}
+			\nItem{ act1 }{ door\_angle :=  90 }
+			\nItem{ act2 }{ destination\_angle :=  90 }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {MoveDirectionA}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_angle >  destination\_angle }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ door\_angle :=  door\_angle -  1 }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {MoveDirectionB}
+		\begin{description}
+		\WhenGrd
+			\begin{description}
+			\nItem{ grd1 }{ door\_angle <  destination\_angle }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ door\_angle :=  door\_angle + 1 }
+			\end{description}
+		\EndAct
+		\end{description}
+	\EVT {SetNewDestination}
+		\begin{description}
+		\AnyPrm
+			\begin{description}
+			\Item{angle }
+			\end{description}
+		\WhereGrd
+			\begin{description}
+			\nItem{ grd1 }{ angle \in  DoorAngles }
+			\end{description}
+		\ThenAct
+			\begin{description}
+			\nItem{ act1 }{ destination\_angle :=  angle }
+			\end{description}
+		\EndAct
+		\end{description}
+\END
+\end{description}
+\end{document}

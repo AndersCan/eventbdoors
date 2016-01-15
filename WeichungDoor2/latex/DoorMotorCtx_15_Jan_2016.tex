@@ -1,0 +1,27 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[top=3cm, bottom=2.5cm, left=3cm, right=2.5cm] {geometry}
+\usepackage {bsymb,b2latex}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,lastpage,color}
+\lhead{\rm An Event-B Specification of DoorMotorCtx}
+\rhead {\rm Page \thepage~of \pageref{LastPage}}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+%---------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+\begin{description}
+\BTitle{DoorMotorCtx}{15Jan2016}{03:48:48 PM}
+\CONTEXT{DoorMotorCtx}
+\CONSTANTS
+	\begin{description}
+		\Item{ MaxDoorAngle }
+		\Item{ MinDoorAngle }
+		\ItemY{ DoorAngles }{possible door angles}
+	\end{description}
+\AXIOMS
+	\begin{description}
+		\nItem{ axm1 }{ MaxDoorAngle = 180 }		\nItem{ axm2 }{ MinDoorAngle = 0 }		\nItem{ axm3 }{ DoorAngles = \{ x |  x \in  MinDoorAngle \upto  MaxDoorAngle\}  }	\end{description}
+\END
+\end{description}
+\end{document}

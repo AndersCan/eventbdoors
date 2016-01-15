@@ -1,0 +1,30 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[top=3cm, bottom=2.5cm, left=3cm, right=2.5cm] {geometry}
+\usepackage {bsymb,b2latex}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,lastpage,color}
+\lhead{\rm An Event-B Specification of UserAccessCtx}
+\rhead {\rm Page \thepage~of \pageref{LastPage}}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+%---------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+\begin{description}
+\BTitle{UserAccessCtx}{15Jan2016}{03:48:48 PM}
+\CONTEXT{UserAccessCtx}
+\SETS
+	\begin{description}
+		\Item{ PEOPLE }
+	\end{description}
+\CONSTANTS
+	\begin{description}
+		\Item{ USERS }
+		\Item{ AUTHED }
+	\end{description}
+\AXIOMS
+	\begin{description}
+		\nItem{ axm2 }{ finite(PEOPLE) }		\nItem{ axm1 }{ USERS \subseteq  PEOPLE }		\nItem{ axm3 }{ AUTHED \subseteq  USERS }	\end{description}
+\END
+\end{description}
+\end{document}

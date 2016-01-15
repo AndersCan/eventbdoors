@@ -1,0 +1,35 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[top=3cm, bottom=2.5cm, left=3cm, right=2.5cm] {geometry}
+\usepackage {bsymb,b2latex}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,lastpage,color}
+\lhead{\rm An Event-B Specification of DoorStateCtx}
+\rhead {\rm Page \thepage~of \pageref{LastPage}}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+%---------------------------------------------------------
+\begin{document}
+\thispagestyle{empty}
+\begin{description}
+\BTitle{DoorStateCtx}{15Jan2016}{03:48:48 PM}
+\CONTEXT{DoorStateCtx}
+\EXTENDS{DoorMotorCtx}
+\SETS
+	\begin{description}
+		\Item{ DoorStatuses }
+	\end{description}
+\CONSTANTS
+	\begin{description}
+		\Item{ Opened\_A }
+		\Item{ Opened\_B }
+		\Item{ Closed }
+		\Item{ Moving }
+		\Item{ AngleToStatus }
+	\end{description}
+\AXIOMS
+	\begin{description}
+		\nItem{ axm1 }{ partition(DoorStatuses, \{ Opened\_A\} , \{ Opened\_B\} , \{ Closed\} , \{ Moving\} ) }		\nItem{ axm2 }{ AngleToStatus \in  DoorAngles \tsur  DoorStatuses }\cmt{		\\\hspace*{1,4 cm}  Total surjection which maps a Door Angle to a Door State }
+		\nItem{ axm3 }{ AngleToStatus(0) = Opened\_A }		\nItem{ axm4 }{ AngleToStatus(90) = Closed }		\nItem{ axm5 }{ AngleToStatus(180) = Opened\_B }		\nItem{ axm6 }{ \forall  i \qdot  i \in  DoorAngles \land  i \neq  0 \land  i \neq  90 \land  i \neq  180 \limp  AngleToStatus(i) = Moving }	\end{description}
+\END
+\end{description}
+\end{document}
