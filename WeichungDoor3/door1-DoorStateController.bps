@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="MoveDirectionA/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="MoveDirectionA/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="MoveDirectionB/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="MoveDirectionB/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="SetNewDestination/angle/WWD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="SetNewDestination/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="SetNewDestination/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="SetNewDestination/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="SetNewDestination/grd1/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="SetNewDestination/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="SetNewDestination/act1/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="UpdateDoorStatus/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="UpdateDoorStatus/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="SetErrorStatus/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="121" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

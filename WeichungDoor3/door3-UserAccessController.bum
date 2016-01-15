@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="pplOnCarpetA ≔ ∅" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="pplOnCarpetB ≔ ∅" org.eventb.core.label="act7"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="inv1" org.eventb.core.label="inv1" org.eventb.core.predicate="door_angle ∈ DoorAngles"/>
+<org.eventb.core.invariant name="inv2" org.eventb.core.label="inv2" org.eventb.core.predicate="destination_angle ∈ DoorAngles"/>
+<org.eventb.core.invariant name="inv3" org.eventb.core.label="inv3" org.eventb.core.predicate="destination_angle ∈ {0, 90, 180}"/>
+<org.eventb.core.invariant name="inv4" org.eventb.core.comment="Note: If I don't add this inv, some Proof Obligations can't be discharged" org.eventb.core.label="inv4" org.eventb.core.predicate="door_angle ≠ destination_angle ⇒ door_status = Moving"/>
+<org.eventb.core.invariant name="inv5" org.eventb.core.label="inv5" org.eventb.core.predicate="door_status ∈ DoorStatuses"/>
+<org.eventb.core.invariant name="inv6" org.eventb.core.label="inv6" org.eventb.core.predicate="door_status ≠ Moving ⇒ door_status = AngleToStatus(door_angle)"/>
+<org.eventb.core.invariant name="inv7" org.eventb.core.label="inv7" org.eventb.core.predicate="sensor_A ∈ SENSOR"/>
+<org.eventb.core.invariant name="inv8" org.eventb.core.label="inv8" org.eventb.core.predicate="sensor_B ∈ SENSOR"/>
+<org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="MoveDirectionA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="MoveDirectionA"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="MoveDirectionB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="MoveDirectionB"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CantMoveDirectionA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CantMoveDirectionA"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CantMoveDirectionB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CantMoveDirectionB"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SetNewDestinationWithoutAuthentication">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SetNewDestination"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd7" org.eventb.core.predicate="position ≠ Opened_A"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt16" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="OpenAWithAuthentication">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SetNewDestination"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="destination_angle ≔ AngleToStatus∼(Opened_A)" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="door_status ≔ Moving" org.eventb.core.label="act2"/>
+<org.eventb.core.witness name="internal2" org.eventb.core.label="position" org.eventb.core.predicate="position = Opened_A"/>
+<org.eventb.core.guard name="internal3" org.eventb.core.label="grd1" org.eventb.core.predicate="door_status = Closed"/>
+<org.eventb.core.parameter name="internal4" org.eventb.core.identifier="user"/>
+<org.eventb.core.guard name="internal5" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ AUTHED"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ErrorReturnToClosed">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorReturnToClosed"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt15" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ErrorReturnToA">
+<org.eventb.core.refinesEvent name="1" org.eventb.core.target="ErrorReturnToA"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ErrorReturnToB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorReturnToB"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt10" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="UpdateDoorStatus">
+<org.eventb.core.refinesEvent name="*" org.eventb.core.target="UpdateDoorStatus"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt17" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SensorA_On">
+<org.eventb.core.refinesEvent name=")" org.eventb.core.target="SensorA_On"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt18" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SensorA_Off">
+<org.eventb.core.refinesEvent name="+" org.eventb.core.target="SensorA_Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt19" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SensorB_On">
+<org.eventb.core.refinesEvent name="+" org.eventb.core.target="SensorB_On"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt20" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SensorB_Off">
+<org.eventb.core.refinesEvent name="+" org.eventb.core.target="SensorB_Off"/>
+</org.eventb.core.event>
+<org.eventb.core.refinesMachine name="(" org.eventb.core.target="door2-DoorErrorController"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="DoorStateControllerCtx"/>
+<org.eventb.core.variable name="var1" org.eventb.core.identifier="door_angle"/>
+<org.eventb.core.variable name="var2" org.eventb.core.identifier="destination_angle"/>
+<org.eventb.core.variable name="var3" org.eventb.core.identifier="door_status"/>
+<org.eventb.core.variable name="var4" org.eventb.core.identifier="sensor_A"/>
+<org.eventb.core.variable name="var5" org.eventb.core.identifier="sensor_B"/>
+<org.eventb.core.seesContext name="*" org.eventb.core.target="CarpetCtx"/>
+<org.eventb.core.seesContext name="+" org.eventb.core.target="UserAccessCtx"/>
+<org.eventb.core.variable name="evt17" org.eventb.core.identifier="pplOnCarpetA"/>
+<org.eventb.core.variable name="evt18" org.eventb.core.identifier="pplOnCarpetB"/>
+<org.eventb.core.invariant name="evt19" org.eventb.core.comment="not using for now" org.eventb.core.label="inv9" org.eventb.core.predicate="pplOnCarpetA ⊆ PEOPLE"/>
+<org.eventb.core.invariant name="evt1:" org.eventb.core.comment="not using for now" org.eventb.core.label="inv10" org.eventb.core.predicate="pplOnCarpetB ⊆ PEOPLE"/>
+<org.eventb.core.invariant name="evt1;" org.eventb.core.comment="not using for now" org.eventb.core.label="inv11" org.eventb.core.predicate="pplOnCarpetA ∩ pplOnCarpetB = ∅"/>
+</org.eventb.core.machineFile>
