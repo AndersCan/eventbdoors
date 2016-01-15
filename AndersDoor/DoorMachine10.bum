@@ -8,12 +8,12 @@
 <org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="StartOpening_A">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartOpening_A"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="user"/>
-<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="user ⊆ USERS"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ USERS"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="StartOpening_B">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartOpening_B"/>
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="user"/>
-<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="user ⊆ Authed"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="user ∈ Authed"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Opening_A">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Opening_A"/>
