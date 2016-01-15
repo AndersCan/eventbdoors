@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="26">
+<org.eventb.core.poFile org.eventb.core.poStamp="27">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="13">
 <org.eventb.core.poIdentifier name="DoorStatus" org.eventb.core.type="ℙ(DoorStatus)"/>
 <org.eventb.core.poIdentifier name="Closed" org.eventb.core.type="DoorStatus"/>
@@ -49,21 +49,21 @@
 <org.eventb.core.poIdentifier name="doorAngle'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPSensorContexw" org.eventb.core.parentSet="/AndersDoor/DoorMachine100.bpo|org.eventb.core.poFile#DoorMachine100|org.eventb.core.poPredicateSet#EVTIDENTSensorContexw" org.eventb.core.poStamp="13"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTSensorContexx" org.eventb.core.parentSet="/AndersDoor/DoorMachine100.bpo|org.eventb.core.poFile#DoorMachine100|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="13">
+<org.eventb.core.poPredicateSet name="EVTIDENTSensorContexx" org.eventb.core.parentSet="/AndersDoor/DoorMachine100.bpo|org.eventb.core.poFile#DoorMachine100|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="27">
 <org.eventb.core.poIdentifier name="doorStatus'" org.eventb.core.type="DoorStatus"/>
-<org.eventb.core.poIdentifier name="user" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.poIdentifier name="user" org.eventb.core.type="USERS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPSensorContexx" org.eventb.core.parentSet="/AndersDoor/DoorMachine100.bpo|org.eventb.core.poFile#DoorMachine100|org.eventb.core.poPredicateSet#EVTIDENTSensorContexx" org.eventb.core.poStamp="13">
+<org.eventb.core.poPredicateSet name="EVTALLHYPSensorContexx" org.eventb.core.parentSet="/AndersDoor/DoorMachine100.bpo|org.eventb.core.poFile#DoorMachine100|org.eventb.core.poPredicateSet#EVTIDENTSensorContexx" org.eventb.core.poStamp="27">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="doorStatus=Closed" org.eventb.core.source="/AndersDoor/DoorMachine1.bum|org.eventb.core.machineFile#DoorMachine1|org.eventb.core.event#\/|org.eventb.core.guard#'"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user⊆USERS" org.eventb.core.source="/AndersDoor/DoorMachine10.bum|org.eventb.core.machineFile#DoorMachine10|org.eventb.core.event#\/|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈USERS" org.eventb.core.source="/AndersDoor/DoorMachine10.bum|org.eventb.core.machineFile#DoorMachine10|org.eventb.core.event#\/|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTSensorContexy" org.eventb.core.parentSet="/AndersDoor/DoorMachine100.bpo|org.eventb.core.poFile#DoorMachine100|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="13">
+<org.eventb.core.poPredicateSet name="EVTIDENTSensorContexy" org.eventb.core.parentSet="/AndersDoor/DoorMachine100.bpo|org.eventb.core.poFile#DoorMachine100|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="27">
 <org.eventb.core.poIdentifier name="doorStatus'" org.eventb.core.type="DoorStatus"/>
-<org.eventb.core.poIdentifier name="user" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.poIdentifier name="user" org.eventb.core.type="USERS"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPSensorContexy" org.eventb.core.parentSet="/AndersDoor/DoorMachine100.bpo|org.eventb.core.poFile#DoorMachine100|org.eventb.core.poPredicateSet#EVTIDENTSensorContexy" org.eventb.core.poStamp="13">
+<org.eventb.core.poPredicateSet name="EVTALLHYPSensorContexy" org.eventb.core.parentSet="/AndersDoor/DoorMachine100.bpo|org.eventb.core.poFile#DoorMachine100|org.eventb.core.poPredicateSet#EVTIDENTSensorContexy" org.eventb.core.poStamp="27">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="doorStatus=Closed" org.eventb.core.source="/AndersDoor/DoorMachine1.bum|org.eventb.core.machineFile#DoorMachine1|org.eventb.core.event#0|org.eventb.core.guard#'"/>
-<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user⊆Authed" org.eventb.core.source="/AndersDoor/DoorMachine10.bum|org.eventb.core.machineFile#DoorMachine10|org.eventb.core.event#0|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="user∈Authed" org.eventb.core.source="/AndersDoor/DoorMachine10.bum|org.eventb.core.machineFile#DoorMachine10|org.eventb.core.event#0|org.eventb.core.guard#)"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTIDENTSensorContexz" org.eventb.core.parentSet="/AndersDoor/DoorMachine100.bpo|org.eventb.core.poFile#DoorMachine100|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="13">
 <org.eventb.core.poIdentifier name="doorAngle'" org.eventb.core.type="ℤ"/>
