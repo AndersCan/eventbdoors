@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="MaxDoorAngle=180" org.eventb.core.source="/WeichungDoor2/DoorMotorCtx.buc|org.eventb.core.contextFile#DoorMotorCtx|org.eventb.core.axiom#0" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="MinDoorAngle=0" org.eventb.core.source="/WeichungDoor2/DoorMotorCtx.buc|org.eventb.core.contextFile#DoorMotorCtx|org.eventb.core.axiom#2" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="DoorAngles={x⦂ℤ·x∈MinDoorAngle ‥ MaxDoorAngle ∣ x}" org.eventb.core.source="/WeichungDoor2/DoorMotorCtx.buc|org.eventb.core.contextFile#DoorMotorCtx|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scConstant name="DoorAngles" org.eventb.core.source="/WeichungDoor2/DoorMotorCtx.buc|org.eventb.core.contextFile#DoorMotorCtx|org.eventb.core.constant#4" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.scConstant name="MaxDoorAngle" org.eventb.core.source="/WeichungDoor2/DoorMotorCtx.buc|org.eventb.core.contextFile#DoorMotorCtx|org.eventb.core.constant#'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scConstant name="MinDoorAngle" org.eventb.core.source="/WeichungDoor2/DoorMotorCtx.buc|org.eventb.core.contextFile#DoorMotorCtx|org.eventb.core.constant#(" org.eventb.core.type="ℤ"/>
+</org.eventb.core.scContextFile>

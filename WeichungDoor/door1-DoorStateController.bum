@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.comment="Door Motor enhanced with controller to control door state and desired door actions" org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="door_status ≔ Closed" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="inv1" org.eventb.core.label="inv1" org.eventb.core.predicate="door_angle ∈ DoorAngles"/>
+<org.eventb.core.invariant name="inv2" org.eventb.core.label="inv2" org.eventb.core.predicate="destination_angle ∈ DoorAngles"/>
+<org.eventb.core.refinesMachine name="(" org.eventb.core.target="door0-DoorMotor"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="door_angle"/>
+<org.eventb.core.variable name="var1" org.eventb.core.identifier="destination_angle"/>
+<org.eventb.core.seesContext name="inv4" org.eventb.core.target="DoorStateCtx"/>
+<org.eventb.core.event name="inv5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="MoveDirectionA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="MoveDirectionA"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="door_angle ≔ door_angle − 1" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="internal1" org.eventb.core.label="grd1" org.eventb.core.predicate="door_angle &gt; destination_angle"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="door_status = Moving" org.eventb.core.theorem="true"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="MoveDirectionB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="MoveDirectionB"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv7" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SetToClose">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SetNewDestination"/>
+<org.eventb.core.witness name=")" org.eventb.core.label="angle" org.eventb.core.predicate="angle = 90"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="destination_angle ≔ 90" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="door_status ≔ Moving" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd1" org.eventb.core.predicate="door_angle ≠ 90"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd2" org.eventb.core.predicate="door_status ≠ Moving"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SetToOpenB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SetNewDestination"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd1" org.eventb.core.predicate="door_angle ≠ 180"/>
+<org.eventb.core.witness name="(" org.eventb.core.label="angle" org.eventb.core.predicate="angle = 180"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="destination_angle ≔ 180" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="door_status ≔ Moving" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd2" org.eventb.core.predicate="door_status ≠ Moving"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="inv9" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SetToOpenA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SetNewDestination"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd1" org.eventb.core.predicate="door_angle ≠ 0"/>
+<org.eventb.core.witness name="wit1" org.eventb.core.label="angle" org.eventb.core.predicate="angle = 0"/>
+<org.eventb.core.action name="act1" org.eventb.core.assignment="destination_angle ≔ 0" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="act2" org.eventb.core.assignment="door_status ≔ Moving" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="wit2" org.eventb.core.label="grd2" org.eventb.core.predicate="door_status ≠ Moving"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="var2" org.eventb.core.comment="the current status of the door (note that if the door is currently at A but plans to move soon, then it is Moving and not Opened_A" org.eventb.core.identifier="door_status"/>
+<org.eventb.core.invariant name="var7" org.eventb.core.label="inv3" org.eventb.core.predicate="destination_angle ∈ {0, 90, 180}"/>
+<org.eventb.core.invariant name="var8" org.eventb.core.comment="Note: If I don't add this inv, some Proof Obligations can't be discharged" org.eventb.core.label="inv4" org.eventb.core.predicate="door_angle ≠ destination_angle ⇒ door_status = Moving"/>
+<org.eventb.core.invariant name="var3" org.eventb.core.label="inv5" org.eventb.core.predicate="door_status ∈ DoorStatuses"/>
+<org.eventb.core.invariant name="var4" org.eventb.core.label="inv6" org.eventb.core.predicate="door_status ≠ Moving ⇒ door_status = AngleToStatus(door_angle)"/>
+<org.eventb.core.event name="var6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="UpdateDoorStatus">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="door_status = Moving"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="door_angle = destination_angle"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="door_status ≔ AngleToStatus(door_angle)" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>
