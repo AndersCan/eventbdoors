@@ -70,4 +70,8 @@
 <org.eventb.core.invariant name="evt7" org.eventb.core.label="inv6" org.eventb.core.predicate="doorStatus = Opened_B ⇒ doorAngle = 180"/>
 <org.eventb.core.invariant name="evt8" org.eventb.core.label="inv7" org.eventb.core.predicate="doorStatus = Opening_A ⇒ doorAngle ≥ 0 ∧ doorAngle ≤ 90 "/>
 <org.eventb.core.invariant name="evt9" org.eventb.core.label="inv8" org.eventb.core.predicate="doorStatus = Opening_B ⇒ doorAngle ≥ 90 ∧ doorAngle ≤ 180"/>
+<org.eventb.core.invariant name="evt:" org.eventb.core.label="inv9" org.eventb.core.predicate="∀a· a ∈ ℕ1 ∧ a &gt; 90 ∧ a &lt; 180 ∧ a = doorAngle ⇒ doorStatus = Opening_B ∨ doorStatus = Closing_B"/>
+<org.eventb.core.invariant name="evt&gt;" org.eventb.core.label="inv10" org.eventb.core.predicate="∀a· a ∈ ℕ1 ∧ a &gt; 0 ∧ a &lt; 90 ∧ a = doorAngle ⇒ doorStatus = Opening_A ∨ doorStatus = Closing_A"/>
+<org.eventb.core.invariant name="evt=" org.eventb.core.label="inv11" org.eventb.core.predicate="doorAngle &gt; 0 ∧ doorAngle &lt; 90 ⇒ (doorStatus = Opening_A) ∨ (doorStatus = Closing_A)" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="evt;" org.eventb.core.label="inv12" org.eventb.core.predicate="doorAngle &gt; 90 ∧ doorAngle &lt; 180 ⇒ (doorStatus = Opening_B) ∨ (doorStatus = Closing_B)" org.eventb.core.theorem="true"/>
 </org.eventb.core.machineFile>
