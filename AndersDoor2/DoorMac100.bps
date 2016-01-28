@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="CloseFromA/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="CloseFromA/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="CloseFromB/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="CloseFromB/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="OpenToA/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="OpenToA/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="OpenToB/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="OpenToB/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Opened/grd4/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="Opened/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="Opened/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="Opened/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Stopped/grd4/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="Stopped/grd5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Stopped/grd5/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="59" org.eventb.core.psManual="true"/>
+</org.eventb.core.psFile>

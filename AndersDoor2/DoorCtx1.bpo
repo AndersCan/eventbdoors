@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="DoorStatus" org.eventb.core.type="ℙ(DoorStatus)"/>
+<org.eventb.core.poIdentifier name="Moving" org.eventb.core.type="DoorStatus"/>
+<org.eventb.core.poIdentifier name="Stopped" org.eventb.core.type="DoorStatus"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/AndersDoor2/DoorCtx1.bpo|org.eventb.core.poFile#DoorCtx1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(DoorStatus,{Stopped},{Moving})" org.eventb.core.source="/AndersDoor2/DoorCtx1.buc|org.eventb.core.contextFile#DoorCtx1|org.eventb.core.axiom#*"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
