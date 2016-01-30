@@ -32,8 +32,8 @@
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="doorAngle &gt; 0"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="doorDirection = Decreasing"/>
 </org.eventb.core.event>
-<org.eventb.core.invariant name="4" org.eventb.core.label="inv2" org.eventb.core.predicate="doorAngle ≤ 180"/>
-<org.eventb.core.invariant name="5" org.eventb.core.label="inv3" org.eventb.core.predicate="doorAngle ≥ 0"/>
+<org.eventb.core.invariant name="4" org.eventb.core.label="inv2" org.eventb.core.predicate="doorAngle ≤ 180" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="5" org.eventb.core.label="inv3" org.eventb.core.predicate="doorAngle ≥ 0" org.eventb.core.theorem="true"/>
 <org.eventb.core.variable name="6" org.eventb.core.identifier="doorDirection"/>
 <org.eventb.core.invariant name="7" org.eventb.core.label="inv4" org.eventb.core.predicate="doorDirection ∈ DoorDirection"/>
 <org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="EndPointReached">
@@ -42,4 +42,6 @@
 <org.eventb.core.action name=")" org.eventb.core.assignment="doorDirection ≔ Reverse(doorDirection)" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="doorDirection ≠ StandingStill"/>
 </org.eventb.core.event>
+<org.eventb.core.invariant name="9" org.eventb.core.label="inv5" org.eventb.core.predicate="doorAngle ≠ 90 ∧ doorDirection ≠ StandingStill ⇒ doorStatus = Moving"/>
+<org.eventb.core.invariant name=":" org.eventb.core.label="inv6" org.eventb.core.predicate="doorDirection = StandingStill ⇒ doorStatus = Stopped"/>
 </org.eventb.core.machineFile>

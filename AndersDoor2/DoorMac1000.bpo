@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="36">
+<org.eventb.core.poFile org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="1">
 <org.eventb.core.poIdentifier name="DoorStatus" org.eventb.core.type="ℙ(DoorStatus)"/>
 <org.eventb.core.poIdentifier name="Moving" org.eventb.core.type="DoorStatus"/>
@@ -39,7 +39,7 @@
 <org.eventb.core.poPredicate name="DoorDestinatioy" org.eventb.core.predicate="Authed⊈UnAuthed" org.eventb.core.source="/AndersDoor2/PeopleCtx1.buc|org.eventb.core.contextFile#PeopleCtx1|org.eventb.core.axiom#-"/>
 <org.eventb.core.poPredicate name="DoorDestinatioz" org.eventb.core.predicate="∀a⦂PEOPLE·a∈Authed⇒a∉UnAuthed" org.eventb.core.source="/AndersDoor2/PeopleCtx1.buc|org.eventb.core.contextFile#PeopleCtx1|org.eventb.core.axiom#."/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="46">
 <org.eventb.core.poIdentifier name="doorAngle" org.eventb.core.type="ℤ"/>
 <org.eventb.core.poIdentifier name="doorDestination" org.eventb.core.type="DoorDestination"/>
 <org.eventb.core.poIdentifier name="doorDirection" org.eventb.core.type="DoorDirection"/>
@@ -51,11 +51,18 @@
 <org.eventb.core.poPredicate name="doorDestinatior" org.eventb.core.predicate="doorAngle≤180" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.invariant#4"/>
 <org.eventb.core.poPredicate name="doorDestinatios" org.eventb.core.predicate="doorAngle≥0" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.invariant#5"/>
 <org.eventb.core.poPredicate name="doorDestinatiot" org.eventb.core.predicate="doorDirection∈DoorDirection" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.invariant#7"/>
-<org.eventb.core.poPredicate name="doorDestinatiou" org.eventb.core.predicate="doorDestination∈DoorDestination" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#7"/>
-<org.eventb.core.poPredicate name="doorDestinatiov" org.eventb.core.predicate="doorPosition∈DoorDestination" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#:"/>
-<org.eventb.core.poPredicate name="doorDestinatiow" org.eventb.core.predicate="doorPosition=Opened_A⇒doorAngle∈0 ‥ 90" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#?"/>
-<org.eventb.core.poPredicate name="doorDestinatiox" org.eventb.core.predicate="doorPosition=Opened_B⇒doorAngle∈90 ‥ 180" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#@"/>
-<org.eventb.core.poPredicate name="doorDestinatioy" org.eventb.core.predicate="doorStatus=Stopped∧doorPosition=Closed⇒doorDirection=StandingStill" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#B"/>
+<org.eventb.core.poPredicate name="doorDestinatiou" org.eventb.core.predicate="doorAngle≠90∧doorDirection≠StandingStill⇒doorStatus=Moving" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.invariant#9"/>
+<org.eventb.core.poPredicate name="doorDestinatiov" org.eventb.core.predicate="doorDirection=StandingStill⇒doorStatus=Stopped" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.invariant#:"/>
+<org.eventb.core.poPredicate name="doorDestinatiow" org.eventb.core.predicate="doorDestination∈DoorDestination" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#7"/>
+<org.eventb.core.poPredicate name="doorDestinatiox" org.eventb.core.predicate="doorPosition∈DoorDestination" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#:"/>
+<org.eventb.core.poPredicate name="doorDestinatioy" org.eventb.core.predicate="doorPosition=Opened_A⇒doorAngle∈0 ‥ 90" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#?"/>
+<org.eventb.core.poPredicate name="doorDestinatioz" org.eventb.core.predicate="doorPosition=Opened_B⇒doorAngle∈90 ‥ 180" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#@"/>
+<org.eventb.core.poPredicate name="doorDestinatio{" org.eventb.core.predicate="doorStatus=Stopped∧doorPosition=Closed⇒doorDirection=StandingStill" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#B"/>
+<org.eventb.core.poPredicate name="doorDestinatio|" org.eventb.core.predicate="doorAngle=90∧doorStatus=Stopped⇒doorDirection=StandingStill" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#C"/>
+<org.eventb.core.poPredicate name="doorDestinatio}" org.eventb.core.predicate="doorStatus=Stopped⇒doorAngle=90" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#D"/>
+<org.eventb.core.poPredicate name="doorDestinatio~" org.eventb.core.predicate="doorPosition=Opened_A∧doorDestination=Opened_A⇒doorAngle∈0 ‥ 90" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#E"/>
+<org.eventb.core.poPredicate name="doorDestinatip'" org.eventb.core.predicate="doorPosition=Opened_B∧doorDestination=Opened_B⇒doorAngle∈90 ‥ 180" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#F"/>
+<org.eventb.core.poPredicate name="doorDestinatip(" org.eventb.core.predicate="doorDirection=StandingStill⇒doorStatus=Stopped" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.invariant#G"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatioo" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="1">
 <org.eventb.core.poIdentifier name="doorDestination'" org.eventb.core.type="DoorDestination"/>
@@ -65,7 +72,7 @@
 <org.eventb.core.poIdentifier name="doorAngle'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
 <org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatioo" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatioo" org.eventb.core.poStamp="1"/>
-<org.eventb.core.poSequent name="StartOpenA/grd2/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="36">
+<org.eventb.core.poSequent name="StartOpenA/grd2/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTALLHYPdoorDestinatiop"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Decreasing∈DoorDirection ∖ {StandingStill}" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#.|org.eventb.core.guard#)"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2"/>
@@ -73,7 +80,7 @@
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#C"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poSequent#StartOpenA\/grd2\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="StartOpenA/grd6/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="36">
+<org.eventb.core.poSequent name="StartOpenA/grd6/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTALLHYPdoorDestinatiop"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Decreasing=Decreasing∧Opened_A=Opened_A)∨(Decreasing=Increasing∧Opened_A=Opened_B)" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2|org.eventb.core.guard#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2"/>
@@ -81,7 +88,7 @@
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#C"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poSequent#StartOpenA\/grd6\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="StartOpenA/act2/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="36">
+<org.eventb.core.poSequent name="StartOpenA/act2/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTALLHYPdoorDestinatiop"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Decreasing=Decreasing" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#.|org.eventb.core.action#*"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2"/>
@@ -89,7 +96,7 @@
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#C"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poSequent#StartOpenA\/act2\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="StartOpenA/act3/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="36">
+<org.eventb.core.poSequent name="StartOpenA/act3/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTALLHYPdoorDestinatiop"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Opened_A=Opened_A" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2|org.eventb.core.action#,"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2"/>
@@ -97,7 +104,7 @@
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#C"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poSequent#StartOpenA\/act3\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatiop" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="36">
+<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatiop" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="46">
 <org.eventb.core.poIdentifier name="doorDestination'" org.eventb.core.type="DoorDestination"/>
 <org.eventb.core.poIdentifier name="doorStatus'" org.eventb.core.type="DoorStatus"/>
 <org.eventb.core.poIdentifier name="doorDirection'" org.eventb.core.type="DoorDirection"/>
@@ -105,13 +112,13 @@
 <org.eventb.core.poIdentifier name="ddir" org.eventb.core.type="DoorDirection"/>
 <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PEOPLE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatiop" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatiop" org.eventb.core.poStamp="36">
+<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatiop" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatiop" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="doorStatus=Stopped" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#C|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="doorDirection=StandingStill" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#C|org.eventb.core.guard#+"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="doorPosition=Closed" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#C|org.eventb.core.guard#-"/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈PEOPLE" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#C|org.eventb.core.guard#internal5"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poSequent name="StartOpenB/grd2/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="32">
+<org.eventb.core.poSequent name="StartOpenB/grd2/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTALLHYPdoorDestinatioq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Increasing∈DoorDirection ∖ {StandingStill}" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#.|org.eventb.core.guard#)"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2"/>
@@ -119,7 +126,7 @@
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#evt1"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poSequent#StartOpenB\/grd2\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="StartOpenB/grd6/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="32">
+<org.eventb.core.poSequent name="StartOpenB/grd6/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTALLHYPdoorDestinatioq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Increasing=Decreasing∧Opened_B=Opened_A)∨(Increasing=Increasing∧Opened_B=Opened_B)" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2|org.eventb.core.guard#+"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2"/>
@@ -127,7 +134,7 @@
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#evt1"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poSequent#StartOpenB\/grd6\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="StartOpenB/act2/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="32">
+<org.eventb.core.poSequent name="StartOpenB/act2/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTALLHYPdoorDestinatioq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Increasing=Increasing" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#.|org.eventb.core.action#*"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2"/>
@@ -135,7 +142,7 @@
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#evt1"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poSequent#StartOpenB\/act2\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poSequent name="StartOpenB/act3/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="32">
+<org.eventb.core.poSequent name="StartOpenB/act3/SIM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Action simulation" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTALLHYPdoorDestinatioq"/>
 <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Opened_B=Opened_B" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2|org.eventb.core.action#,"/>
 <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#2"/>
@@ -143,7 +150,7 @@
 <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#evt1"/>
 <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poSequent#StartOpenB\/act3\/SIM|org.eventb.core.poPredicateSet#SEQHYP"/>
 </org.eventb.core.poSequent>
-<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatioq" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatioq" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="46">
 <org.eventb.core.poIdentifier name="doorDestination'" org.eventb.core.type="DoorDestination"/>
 <org.eventb.core.poIdentifier name="doorStatus'" org.eventb.core.type="DoorStatus"/>
 <org.eventb.core.poIdentifier name="doorDirection'" org.eventb.core.type="DoorDirection"/>
@@ -151,18 +158,18 @@
 <org.eventb.core.poIdentifier name="ddir" org.eventb.core.type="DoorDirection"/>
 <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PEOPLE"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatioq" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatioq" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatioq" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatioq" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="doorStatus=Stopped" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#evt1|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="doorPosition=Closed" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#evt1|org.eventb.core.guard#internal5"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="doorDirection=StandingStill" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#evt1|org.eventb.core.guard#internal3"/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈Authed" org.eventb.core.source="/AndersDoor2/DoorMac1000.bum|org.eventb.core.machineFile#DoorMac1000|org.eventb.core.event#evt1|org.eventb.core.guard#internal7"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatior" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatior" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="46">
 <org.eventb.core.poIdentifier name="doorStatus'" org.eventb.core.type="DoorStatus"/>
 <org.eventb.core.poIdentifier name="doorDirection'" org.eventb.core.type="DoorDirection"/>
 <org.eventb.core.poIdentifier name="doorPosition'" org.eventb.core.type="DoorDestination"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatior" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatior" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatior" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatior" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="doorStatus=Moving" org.eventb.core.source="/AndersDoor2/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.event#+|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="doorDirection≠StandingStill" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#&gt;|org.eventb.core.guard#,"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="doorDestination=Closed" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#&gt;|org.eventb.core.guard#("/>
@@ -170,28 +177,28 @@
 <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="{doorAngle}∩dom(Position)={90}" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#&gt;|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="Position(doorAngle)=Closed" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#&gt;|org.eventb.core.guard#+"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatios" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatios" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="46">
 <org.eventb.core.poIdentifier name="doorAngle'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatios" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatios" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatios" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatios" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="doorStatus=Moving" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#2|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="doorAngle&lt;180" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#2|org.eventb.core.guard#)"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="doorDirection=Increasing" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#2|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="doorDestination=Closed∧doorAngle&lt;90" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#4|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatiot" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatiot" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="46">
 <org.eventb.core.poIdentifier name="doorAngle'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatiot" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatiot" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatiot" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatiot" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="doorStatus=Moving" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#3|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="doorAngle&gt;0" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#3|org.eventb.core.guard#)"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="doorDirection=Decreasing" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#3|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="doorDestination=Closed∧doorAngle&gt;90" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#5|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatiou" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatiou" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="46">
 <org.eventb.core.poIdentifier name="doorAngle'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatiou" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatiou" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatiou" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatiou" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="doorStatus=Moving" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#3|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="doorAngle&gt;0" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#3|org.eventb.core.guard#)"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="doorDirection=Decreasing" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#3|org.eventb.core.guard#*"/>
@@ -199,10 +206,10 @@
 <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="doorDestination=Opened_A" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#8|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="doorPosition=Closed" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#8|org.eventb.core.guard#*"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatiov" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatiov" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="46">
 <org.eventb.core.poIdentifier name="doorAngle'" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatiov" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatiov" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatiov" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatiov" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="doorStatus=Moving" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#2|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="doorAngle&lt;180" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#2|org.eventb.core.guard#)"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="doorDirection=Increasing" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#2|org.eventb.core.guard#*"/>
@@ -210,12 +217,12 @@
 <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="doorDestination=Opened_B" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#;|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="doorPosition=Closed" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#;|org.eventb.core.guard#*"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatiow" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTIDENTdoorDestinatiow" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="46">
 <org.eventb.core.poIdentifier name="doorDestination'" org.eventb.core.type="DoorDestination"/>
 <org.eventb.core.poIdentifier name="doorDirection'" org.eventb.core.type="DoorDirection"/>
 <org.eventb.core.poIdentifier name="doorPosition'" org.eventb.core.type="DoorDestination"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatiow" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatiow" org.eventb.core.poStamp="25">
+<org.eventb.core.poPredicateSet name="EVTALLHYPdoorDestinatiow" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#EVTIDENTdoorDestinatiow" org.eventb.core.poStamp="46">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="doorStatus=Moving" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#8|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="doorAngle=0∨doorAngle=180" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#8|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="doorDirection≠StandingStill" org.eventb.core.source="/AndersDoor2/DoorMac10.bum|org.eventb.core.machineFile#DoorMac10|org.eventb.core.event#8|org.eventb.core.guard#*"/>
@@ -223,5 +230,5 @@
 <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="{doorAngle}∩dom(Position)≠(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#=|org.eventb.core.guard#)"/>
 <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="Position(doorAngle)=Opened_A∨Position(doorAngle)=Opened_B" org.eventb.core.source="/AndersDoor2/DoorMac100.bum|org.eventb.core.machineFile#DoorMac100|org.eventb.core.event#=|org.eventb.core.guard#-"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="25"/>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/AndersDoor2/DoorMac1000.bpo|org.eventb.core.poFile#DoorMac1000|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="46"/>
 </org.eventb.core.poFile>
