@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="DoorMac1000"/>
+<org.eventb.core.seesContext name="," org.eventb.core.target="DoorCtx100"/>
+<org.eventb.core.seesContext name="J" org.eventb.core.target="PeopleCtx1"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="doorStatus"/>
+<org.eventb.core.variable name="0" org.eventb.core.identifier="doorAngle"/>
+<org.eventb.core.variable name="A" org.eventb.core.identifier="doorDirection"/>
+<org.eventb.core.variable name="6" org.eventb.core.identifier="doorDestination"/>
+<org.eventb.core.variable name="9" org.eventb.core.identifier="doorPosition"/>
+<org.eventb.core.event name="K" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="Sensor_A ≔ Off" org.eventb.core.label="act6"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="Sensor_B ≔ Off" org.eventb.core.label="act7"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="L" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="StartOpenA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartOpenA"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="M" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="StartOpenB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartOpenB"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="N" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Stop">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Stop"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="O" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CloseFromA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CloseFromA"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="Sensor_A = Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="P" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CloseFromB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CloseFromB"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="Sensor_B = Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="Q" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="OpeningToA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="OpeningToA"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd7" org.eventb.core.predicate="Sensor_A = Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="R" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="OpeningToB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="OpeningToB"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd7" org.eventb.core.predicate="Sensor_B = Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="S" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Opened">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Opened"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="T" org.eventb.core.target="SensorCtx"/>
+<org.eventb.core.variable name="U" org.eventb.core.identifier="Sensor_A"/>
+<org.eventb.core.invariant name="V" org.eventb.core.label="inv1" org.eventb.core.predicate="Sensor_A ∈ Sensor"/>
+<org.eventb.core.variable name="W" org.eventb.core.identifier="Sensor_B"/>
+<org.eventb.core.invariant name="X" org.eventb.core.label="inv2" org.eventb.core.predicate="Sensor_B ∈ Sensor"/>
+<org.eventb.core.event name="Z" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StepOnA">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEOPLE"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="Sensor_A ≔ On" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="Sensor_A = Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="[" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StepOnB">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEOPLE"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="Sensor_B ≔ On" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd2" org.eventb.core.predicate="Sensor_B = Off"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="\" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StepOffA">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEOPLE"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="Sensor_A ≔ Off" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="Sensor_A = On"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StepOffB">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEOPLE"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="Sensor_B = On"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="Sensor_B ≔ Off" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

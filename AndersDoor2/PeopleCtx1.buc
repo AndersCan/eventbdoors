@@ -7,4 +7,5 @@
 <org.eventb.core.axiom name="+" org.eventb.core.label="axm2" org.eventb.core.predicate="UnAuthed ⊆ PEOPLE"/>
 <org.eventb.core.axiom name="," org.eventb.core.label="axm3" org.eventb.core.predicate="Authed ∩ UnAuthed = ∅"/>
 <org.eventb.core.axiom name="-" org.eventb.core.label="axm4" org.eventb.core.predicate="Authed ⊈ UnAuthed"/>
+<org.eventb.core.axiom name="." org.eventb.core.label="axm5" org.eventb.core.predicate="∀a · a ∈ Authed ⇒ a ∉ UnAuthed" org.eventb.core.theorem="true"/>
 </org.eventb.core.contextFile>

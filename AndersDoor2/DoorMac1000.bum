@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="DoorMac100"/>
+<org.eventb.core.seesContext name="," org.eventb.core.target="DoorCtx100"/>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="doorStatus"/>
+<org.eventb.core.variable name="0" org.eventb.core.identifier="doorAngle"/>
+<org.eventb.core.variable name="A" org.eventb.core.identifier="doorDirection"/>
+<org.eventb.core.variable name="6" org.eventb.core.identifier="doorDestination"/>
+<org.eventb.core.variable name="9" org.eventb.core.identifier="doorPosition"/>
+<org.eventb.core.event name="B" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StartOpenA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartMoving"/>
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="doorStatus = Stopped"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="doorStatus ≔ Moving" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="doorDirection = StandingStill"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="doorDirection ≔ Decreasing" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd3" org.eventb.core.predicate="doorPosition = Closed"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="doorDestination ≔ Opened_A" org.eventb.core.label="act3"/>
+<org.eventb.core.witness name="internal2" org.eventb.core.label="ddir" org.eventb.core.predicate="ddir = Decreasing"/>
+<org.eventb.core.witness name="internal3" org.eventb.core.label="dest" org.eventb.core.predicate="dest = Opened_A"/>
+<org.eventb.core.parameter name="internal4" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="internal5" org.eventb.core.label="grd4" org.eventb.core.predicate="p ∈ PEOPLE"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StartOpenB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartMoving"/>
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="doorStatus = Stopped"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="doorStatus ≔ Moving" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="internal4" org.eventb.core.assignment="doorDirection ≔ Increasing" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="doorDestination ≔ Opened_B" org.eventb.core.label="act3"/>
+<org.eventb.core.witness name="(" org.eventb.core.label="ddir" org.eventb.core.predicate="ddir = Increasing"/>
+<org.eventb.core.witness name="internal2" org.eventb.core.label="dest" org.eventb.core.predicate="dest = Opened_B"/>
+<org.eventb.core.guard name="internal5" org.eventb.core.label="grd2" org.eventb.core.predicate="doorPosition = Closed"/>
+<org.eventb.core.guard name="internal3" org.eventb.core.label="grd3" org.eventb.core.predicate="doorDirection = StandingStill"/>
+<org.eventb.core.parameter name="internal6" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="internal7" org.eventb.core.label="grd4" org.eventb.core.predicate="p ∈ Authed"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="D" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Stop">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Stop"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="E" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CloseFromA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CloseFromA"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="F" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="CloseFromB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="CloseFromB"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="G" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="OpeningToA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="OpeningToA"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="H" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="OpeningToB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="OpeningToB"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="I" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Opened">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Opened"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="J" org.eventb.core.target="PeopleCtx1"/>
+</org.eventb.core.machineFile>
