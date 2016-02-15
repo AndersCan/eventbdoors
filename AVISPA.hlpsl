@@ -27,7 +27,7 @@ played_by S def=
         State':=1 /\ SND({ID.P}_PKx) /\ secret(ID,secret_id,{S,P,X}) 
 
     2.  State=1 /\ RCV({ID.X.P}_PKs) =|> 
-        State':=2 /\ N':=new() /\ SND({N'}_PKx) /\ secret (N,N',{P,X,S})
+        State':=2 /\ N':=new() /\ SND({N'}_PKx) /\ secret(N',secret_N,{P,X,S})
         
     4.  State=2 /\ RCV({N.X.P}_PKs) =|> 
         State':=3 /\ SND({ID}_PKp)
@@ -111,7 +111,7 @@ role environment() def=
           pks, pkp, pkx, pki: public_key,
           kxp: symmetric_key,
           id:text,        
-          secret_id: protocol_id
+          secret_id, secret_N: protocol_id
           
 
     intruder_knowledge = {s, p, x, pks, pkp, pkx, pki, inv(pki)}
@@ -131,7 +131,7 @@ end role
 
 goal
   secrecy_of secret_id
-    secrecy_of N
+  secrecy_of secret_N
 %  secrecy_of nb
 %  authentication_on alice_bob_na
 %  authentication_on alice_bob_nb
