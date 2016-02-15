@@ -1,0 +1,21 @@
+role user (S,X: agent,             
+            PKx, PKs: public_key,
+            Kxp : symetric_key,
+            SND, RCV: channel(dy)) 
+played_by X def=
+
+  local State: nat, 
+id, n: text
+P : agent
+
+  init State:=0
+
+  transition  
+   
+    0.  State=0 /\ RCV({id'.P'}_PKx) =|> 
+	State':=1 /\ SND({id',X}_Pxp) 
+
+    2.  State=1 /\ RCV({N'}_PKx) =|> 
+	State':=2 /\ SND({n'.X}_Kxp)
+
+end role
