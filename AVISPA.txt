@@ -37,41 +37,69 @@ end role
 %%NOTE: the ' in Na' means: "assign to Na this value"
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% role bob à écrire
+%% role user
 
 role user (S,X: agent,             
-            PKx, PKs: public_key,
-            Kxp : symetric_key,
+            PKs, PKx: public_key,
+            Kxp : symmetric_key,
             SND, RCV: channel(dy)) 
             
 played_by X def=
 
   local State: nat, 
-id, n: text
-P : agent
+  id, n: text
+  P : agent
 
   init State:=0
 
   transition  
    
     0.  State=0 /\ RCV({id'.P'}_PKx) =|> 
-	State':=1 /\ SND({id',X}_Kxp) 
+	    State':=1 /\ SND({id',X}_Kxp) 
 
     2.  State=1 /\ RCV({N'}_PKx) =|> 
-	State':=2 /\ SND({n'.X}_Kxp)
+	    State':=2 /\ SND({n'.X}_Kxp)
 
 end role
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% définition du rôle caractérisant une session
-role session(A, B: agent, PKa, PKb: public_key) def=
+%% role post office
 
-  local SA, RA, SB, RB: channel(dy)
+role officer (S,P: agent,             
+            PKs PKp: public_key,
+            Kxp : symetric_key,
+            SND, RCV: channel(dy)) 
+played_by P def=
+
+  local State: nat, 
+  id, N: text
+  X : agent
+
+  init State:=0
+
+  transition  
+   
+    0.  State=0 /\ RCV({id'.X'}_Kxp) =|> 
+	    State':=1 /\ SND({id'.X'.P}_PKs) 
+
+    2.  State=1 /\ RCV({N'.X}_Kxp) =|> 
+	    State':=2 /\ SND({N'.X.P}_PKs)
+
+    3.  State=2 /\ RCV({id}_PKp) =|>
+        State=3
+    
+end role
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% définition du rôle caractérisant une session
+role session(S, P, X: agent, PKs, PKp, PKx: public_key, Kxp: symmetric_key, id:text) def=
+
+  local SA, RA, SB, RB, SC, RC: channel(dy)
 
   composition 
 
-	alice(A,B,PKa,PKb,SA,RA)
-     /\ bob(A,B,PKa,PKb,SB,RB)
+	server(S,P,X,PKs,PKp,PKx,SA,RA)
+     /\ user(S,X,PKs,PKx,Kxp,SB,RB)
+     /\ officer(S,P,PKs,PKp,Kxp,SC,RC)
 
 end role
 
@@ -79,12 +107,16 @@ end role
 %% définition du rôle caractérisant le scenario à exécuter
 role environment() def=
 
-    const a, b: agent,
-          pka, pkb, pki: public_key,
-          na, nb, alice_bob_na, alice_bob_nb: protocol_id
+    const s, p, x: agent,
+          pks, pkp, pkx, pki: public_key,
+          kxp: symmetric_key,
+          id:text
+
+          
+%%na, nb, alice_bob_na, alice_bob_nb: protocol_id
           
 
-    intruder_knowledge = {a, b, pka, pkb, pki, inv(pki)}
+    intruder_knowledge = {s, p, x, pks, pkp, pkx, pki, inv(pki)}
 
     composition
 
@@ -98,12 +130,12 @@ end role
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% pour l'instant, pas de section goal ici (donc pas de propriété à vérifier)
 
-goal
-  secrecy_of na
-  secrecy_of nb
-  authentication_on alice_bob_na
-  authentication_on alice_bob_nb
-end goal
+%goal
+%  secrecy_of na
+%  secrecy_of nb
+%  authentication_on alice_bob_na
+%  authentication_on alice_bob_nb
+%end goal
 %the option --split for hlps12if.exe outputs multiple IF files, one for each security property to check
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
