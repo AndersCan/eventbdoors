@@ -24,10 +24,10 @@ played_by S def=
   transition  
    
     0.  State=0 /\ RCV(start) =|> 
-        State':=1 /\ SND({ID.P}_PKx) /\ secret(ID,secret_id,{S,P,X})
+        State':=1 /\ SND({ID.P}_PKx) /\ secret(ID,secret_id,{S,P,X}) 
 
     2.  State=1 /\ RCV({ID.X.P}_PKs) =|> 
-        State':=2 /\ N':=new() /\ SND({N'}_PKx)
+        State':=2 /\ N':=new() /\ SND({N'}_PKx) /\ secret (N,N',{P,X,S})
         
     4.  State=2 /\ RCV({N.X.P}_PKs) =|> 
         State':=3 /\ SND({ID}_PKp)
@@ -131,6 +131,7 @@ end role
 
 goal
   secrecy_of secret_id
+    secrecy_of N
 %  secrecy_of nb
 %  authentication_on alice_bob_na
 %  authentication_on alice_bob_nb
