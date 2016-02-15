@@ -19,3 +19,28 @@ P : agent
 	State':=2 /\ SND({n'.X}_Kxp)
 
 end role
+
+
+role officer (S,P: agent,             
+PKp PKs: public_key,
+            Kxp : symetric_key,
+            SND, RCV: channel(dy)) 
+played_by P def=
+
+  local State: nat, 
+id, n: text
+X : agent
+
+  init State:=0
+
+  transition  
+   
+    0.  State=0 /\ RCV({id’.X’}_Kxp) =|> 
+	State':=1 /\ SND({id’.X.P}_PKs) 
+
+    2.  State=1 /\ RCV({N’.X}_Kxp) =|> 
+	State':=2 /\ SND({n’.X.P}_PKs)
+
+3. State=2 /\ rcv({id}_PKp)=|>
+State=3
+end role
