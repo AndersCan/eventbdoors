@@ -6,11 +6,11 @@
 %% 4. s -> x : n
 %% 5. x -> p : (n,X)
 %% 6. p -> s : (n,x,p)
-%% 7. s -> p : *(id)
+%% 7. s -> p : (id)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% définition du rôle S, initiant le protocole
 role server (S, P, X: agent,             
-            PKx: public_key,
+            PKs, PKp, PKx: public_key,
             id: text,      
             SND, RCV: channel(dy)) 
 
@@ -30,7 +30,7 @@ played_by S def=
         State':=2 /\ N'=new() /\ SND({N'}_PKx)
         
     4.  State=2 /\ RCV({N.X.P}_PKs) =|> 
-        State':=3 /\ SND({id}_PKx)
+        State':=3 /\ SND({id}_PKp)
 
 end role
 
@@ -43,6 +43,7 @@ role user (S,X: agent,
             PKx, PKs: public_key,
             Kxp : symetric_key,
             SND, RCV: channel(dy)) 
+            
 played_by X def=
 
   local State: nat, 
@@ -54,7 +55,7 @@ P : agent
   transition  
    
     0.  State=0 /\ RCV({id'.P'}_PKx) =|> 
-	State':=1 /\ SND({id',X}_Pxp) 
+	State':=1 /\ SND({id',X}_Kxp) 
 
     2.  State=1 /\ RCV({N'}_PKx) =|> 
 	State':=2 /\ SND({n'.X}_Kxp)
