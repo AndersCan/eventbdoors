@@ -6,47 +6,58 @@
 %% 4. s -> x : n
 %% 5. x -> p : (n,X)
 %% 6. p -> s : (n,x,p)
-%% 7. s -> p : OK/wrong
+%% 7. s -> p : *(id)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% définition du rôle S, initiant le protocole
-role alice (X: agent,             
-            PKx: public_key,      
+role server (S, P, X: agent,             
+            PKx: public_key,
+            id: text,      
             SND, RCV: channel(dy)) 
-played_by A def=
 
-  local State: nat, 
-        Na, Nb: text
+played_by S def=
+
+   local State: nat, 
+             N: text
 
   init State:=0
 
   transition  
    
     0.  State=0 /\ RCV(start) =|> 
-        State':=1 /\ Na':=new() /\ SND({Na'.A}_PKb) /\ secret(Na',na,{A,B}) /\ witness(A,B,alice_bob_na,Na')
+        State':=1 /\ SND({id.P}_PKx) 
 
-    2.  State=1 /\ RCV({Na.Nb'}_PKa) =|> 
-        State':=2 /\ SND({Nb'}_PKb) /\ request(A,B,alice_bob_nb,Nb')
+    2.  State=1 /\ RCV({id.X.P}_PKs) =|> 
+        State':=2 /\ N'=new() /\ SND({N'}_PKx)
+        
+    4.  State=2 /\ RCV({N.X.P}_PKs) =|> 
+        State':=3 /\ SND({id}_PKx)
 
 end role
 
-%NOTE: the ' in Na' means: "assign to Na this value"
+%%NOTE: the ' in Na' means: "assign to Na this value"
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% role bob à écrire
 
-role bob (A, B: agent,             
-          PKa, PKb: public_key,      
-          SND, RCV: channel(dy)) 
-%Note: secret(information, id/name, agents that is allowed to know Nb'), so this means that the nb secret denotes the Nb' variables in roles A and B
-          
-played_by B def=
+role user (S,X: agent,             
+            PKx, PKs: public_key,
+            Kxp : symetric_key,
+            SND, RCV: channel(dy)) 
+played_by X def=
 
-  local Na, Nb: text
+  local State: nat, 
+id, n: text
+P : agent
+
+  init State:=0
 
   transition  
    
-    1.  RCV({Na'.A}_PKb) =|> 
-	    Nb':=new() /\ SND({Na'.Nb'}_PKa) /\ secret(Nb',nb,{A,B}) /\ witness(B,A,alice_bob_nb,Nb') /\ request(B,A,alice_bob_na,Na')
+    0.  State=0 /\ RCV({id'.P'}_PKx) =|> 
+	State':=1 /\ SND({id',X}_Pxp) 
+
+    2.  State=1 /\ RCV({N'}_PKx) =|> 
+	State':=2 /\ SND({n'.X}_Kxp)
 
 end role
 
@@ -78,6 +89,7 @@ role environment() def=
 
     session(a,b,pka,pkb)
     /\session(a,i,pka,pki)
+
 %i denotes the intruder
 
 end role
