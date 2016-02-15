@@ -11,7 +11,7 @@
 %% définition du rôle S, initiant le protocole
 role server (S, P, X: agent,             
             PKs, PKp, PKx: public_key,
-            id: text,      
+            ID: text,      
             SND, RCV: channel(dy)) 
 
 played_by S def=
@@ -24,13 +24,13 @@ played_by S def=
   transition  
    
     0.  State=0 /\ RCV(start) =|> 
-        State':=1 /\ SND({id.P}_PKx) 
+        State':=1 /\ SND({ID.P}_PKx) 
 
-    2.  State=1 /\ RCV({id.X.P}_PKs) =|> 
-        State':=2 /\ N'=new() /\ SND({N'}_PKx)
+    2.  State=1 /\ RCV({ID.X.P}_PKs) =|> 
+        State':=2 /\ N':=new() /\ SND({N'}_PKx)
         
     4.  State=2 /\ RCV({N.X.P}_PKs) =|> 
-        State':=3 /\ SND({id}_PKp)
+        State':=3 /\ SND({ID}_PKp)
 
 end role
 
@@ -47,18 +47,18 @@ role user (S,X: agent,
 played_by X def=
 
   local State: nat, 
-  id, n: text
+  ID, N: text,
   P : agent
 
   init State:=0
 
   transition  
    
-    0.  State=0 /\ RCV({id'.P'}_PKx) =|> 
-	    State':=1 /\ SND({id',X}_Kxp) 
+    0.  State=0 /\ RCV({ID'.P'}_PKx) =|> 
+	    State':=1 /\ SND({ID'.X}_Kxp) 
 
     2.  State=1 /\ RCV({N'}_PKx) =|> 
-	    State':=2 /\ SND({n'.X}_Kxp)
+	    State':=2 /\ SND({N'.X}_Kxp)
 
 end role
 
@@ -66,38 +66,38 @@ end role
 %% role post office
 
 role officer (S,P: agent,             
-            PKs PKp: public_key,
-            Kxp : symetric_key,
+            PKs, PKp: public_key,
+            Kxp : symmetric_key,
             SND, RCV: channel(dy)) 
 played_by P def=
 
   local State: nat, 
-  id, N: text
+  ID, N: text,
   X : agent
 
   init State:=0
 
   transition  
    
-    0.  State=0 /\ RCV({id'.X'}_Kxp) =|> 
-	    State':=1 /\ SND({id'.X'.P}_PKs) 
+    0.  State=0 /\ RCV({ID'.X'}_Kxp) =|> 
+	    State':=1 /\ SND({ID'.X'.P}_PKs) 
 
     2.  State=1 /\ RCV({N'.X}_Kxp) =|> 
 	    State':=2 /\ SND({N'.X.P}_PKs)
 
-    3.  State=2 /\ RCV({id}_PKp) =|>
-        State=3
+    3.  State=2 /\ RCV({ID}_PKp) =|>
+        State':=3
     
 end role
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% définition du rôle caractérisant une session
-role session(S, P, X: agent, PKs, PKp, PKx: public_key, Kxp: symmetric_key, id:text) def=
+role session(S, P, X: agent, PKs, PKp, PKx: public_key, Kxp: symmetric_key, ID: text) def=
 
   local SA, RA, SB, RB, SC, RC: channel(dy)
 
   composition 
 
-	server(S,P,X,PKs,PKp,PKx,SA,RA)
+	server(S,P,X,PKs,PKp,PKx,ID,SA,RA)
      /\ user(S,X,PKs,PKx,Kxp,SB,RB)
      /\ officer(S,P,PKs,PKp,Kxp,SC,RC)
 
@@ -120,8 +120,9 @@ role environment() def=
 
     composition
 
-    session(a,b,pka,pkb)
-    /\session(a,i,pka,pki)
+    session(s, p, x, pks, pkp, pkx, kxp, id)
+
+    %%    /\session(s, , x, pks, pkp, pkx, kxp, id)
 
 %i denotes the intruder
 
