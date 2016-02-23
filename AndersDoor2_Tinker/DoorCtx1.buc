@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="DoorStatus"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="Stopped"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="Moving"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(DoorStatus, {Stopped}, {Moving})"/>
+</org.eventb.core.contextFile>

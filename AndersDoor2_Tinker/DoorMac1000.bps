@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="StartOpenA/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="90" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenA/grd6/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="90" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenA/grd7/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="90" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenA/act3/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="90" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenB/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="90" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenB/grd6/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="90" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenB/grd7/GRD" org.eventb.core.confidence="0" org.eventb.core.poStamp="90" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenB/act3/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="90" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

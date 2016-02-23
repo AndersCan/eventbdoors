@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="INITIALISATION/gluing1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/gluing2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/gluing3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartMoving/ddir/WFIS" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartMoving/gluing1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartMoving/gluing2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartMoving/gluing3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartMoving/grd3/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartMoving/grd2/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Stop/gluing1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Stop/gluing2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Stop/gluing3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Stop/grd2/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="200" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="MoveBackAfterOpened/grd8/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="202" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="MoveBackAfterOpened/gluing1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="202" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="MoveBackAfterOpened/gluing2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="202" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="MoveBackAfterOpened/gluing3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="202" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="MoveBackAfterOpened/grd3/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="202" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ReverseAfterError/gluing1/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="203" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ReverseAfterError/gluing2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="203" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ReverseAfterError/gluing3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="203" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="ReverseAfterError/grd3/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="203" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

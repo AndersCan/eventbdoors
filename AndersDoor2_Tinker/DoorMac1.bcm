@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/AndersDoor2_Tinker/DoorCtx1.bcc" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.seesContext#,"/>
+<org.eventb.core.scInternalContext name="DoorCtx1">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(DoorStatus,{Stopped},{Moving})" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx1.buc|org.eventb.core.contextFile#DoorCtx1|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scCarrierSet name="DoorStatus" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx1.buc|org.eventb.core.contextFile#DoorCtx1|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(DoorStatus)"/>
+<org.eventb.core.scConstant name="Moving" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx1.buc|org.eventb.core.contextFile#DoorCtx1|org.eventb.core.constant#)" org.eventb.core.type="DoorStatus"/>
+<org.eventb.core.scConstant name="Stopped" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx1.buc|org.eventb.core.contextFile#DoorCtx1|org.eventb.core.constant#(" org.eventb.core.type="DoorStatus"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInvariant name="DoorCtx2" org.eventb.core.label="inv1" org.eventb.core.predicate="doorStatus∈DoorStatus" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.invariant#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scInvariant name="DoorCtx3" org.eventb.core.label="inv2" org.eventb.core.predicate="doorStatus=Moving∨doorStatus=Stopped" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.invariant#-" org.eventb.core.theorem="true"/>
+<org.eventb.core.scVariable name="doorStatus" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.variable#(" org.eventb.core.type="DoorStatus"/>
+<org.eventb.core.scEvent name="doorStatut" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.event#'">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="doorStatus ≔ Stopped" org.eventb.core.label="act1" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.event#'|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="doorStatuu" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Move" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.event#*">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="doorStatus=Stopped" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.event#*|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="doorStatus ≔ Moving" org.eventb.core.label="act1" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.event#*|org.eventb.core.action#("/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="doorStatuv" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Stop" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.event#+">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="doorStatus=Moving" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.event#+|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="doorStatus ≔ Stopped" org.eventb.core.label="act1" org.eventb.core.source="/AndersDoor2_Tinker/DoorMac1.bum|org.eventb.core.machineFile#DoorMac1|org.eventb.core.event#+|org.eventb.core.action#("/>
+</org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

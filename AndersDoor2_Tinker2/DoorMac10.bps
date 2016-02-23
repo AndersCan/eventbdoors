@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="inv2/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="inv3/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="INITIALISATION/gluing1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/gluing2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartMoving/gluing1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="77" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartMoving/gluing2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="77" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartMoving/grd1/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="77" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Stop/gluing1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="76" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Stop/gluing2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="76" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="Stop/grd1/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="76" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="IncreaseDoorAngle/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="DecreaseDoorAngle/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="74" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="EndPointReached/gluing1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="79" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="EndPointReached/gluing2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="79" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="EndPointReached/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="79" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

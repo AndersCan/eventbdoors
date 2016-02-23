@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="DoorMac10"/>
+<org.eventb.core.seesContext name="," org.eventb.core.target="DoorCtx100"/>
+<org.eventb.core.event name="1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="doorDestination ≔ Closed" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="doorLastPosition ≔ Closed" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StartMoving">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartMoving"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="dest"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd5" org.eventb.core.predicate="dest ∈ DoorPosition ∖ {Closed}"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="doorDestination ≔ dest" org.eventb.core.label="act3"/>
+<org.eventb.core.witness name="-" org.eventb.core.label="ddir" org.eventb.core.predicate="(ddir = Increasing ⇔ dest = Opened_B) ∧ (ddir = Decreasing ⇔ dest = Opened_A)"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="doorLastPosition = Closed"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd7" org.eventb.core.predicate="doorDestination = Closed"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Stop">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Stop"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="doorLastPosition ≔ Closed" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd3" org.eventb.core.predicate="doorDestination = Closed"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd4" org.eventb.core.predicate="doorLastPosition ≠ Closed"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="6" org.eventb.core.identifier="doorDestination"/>
+<org.eventb.core.invariant name="7" org.eventb.core.label="inv1" org.eventb.core.predicate="doorDestination ∈ DoorPosition"/>
+<org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="MoveBackAfterOpened">
+<org.eventb.core.guard name="1" org.eventb.core.label="grd6" org.eventb.core.predicate="position ∈ DoorPosition ∖ {Closed}"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="position = doorDestination"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="doorDestination ≔ Closed" org.eventb.core.label="act3"/>
+<org.eventb.core.refinesEvent name="." org.eventb.core.target="Reverse"/>
+<org.eventb.core.guard name="/" org.eventb.core.label="grd5" org.eventb.core.predicate="doorLastPosition = Closed"/>
+<org.eventb.core.parameter name="0" org.eventb.core.identifier="position"/>
+<org.eventb.core.action name="3" org.eventb.core.assignment="doorLastPosition ≔ position" org.eventb.core.label="act4"/>
+<org.eventb.core.guard name="4" org.eventb.core.label="grd8" org.eventb.core.predicate="doorDestination = Opened_A ∨ doorDestination = Opened_B" org.eventb.core.theorem="true"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="D" org.eventb.core.label="inv2" org.eventb.core.predicate="doorLastPosition ∈ DoorPosition"/>
+<org.eventb.core.invariant name="?" org.eventb.core.label="gluing1" org.eventb.core.predicate="(doorLastPosition = Closed ∧ doorDestination = Closed) ⇔ doorDirection = StandingStill "/>
+<org.eventb.core.invariant name="@" org.eventb.core.label="gluing2" org.eventb.core.predicate="(doorLastPosition = Opened_A ∧ doorDestination = Closed) ∨ (doorLastPosition = Closed ∧ doorDestination = Opened_B) ⇔ doorDirection = Increasing"/>
+<org.eventb.core.invariant name="A" org.eventb.core.label="gluing3" org.eventb.core.predicate="(doorLastPosition = Opened_B ∧ doorDestination = Closed) ∨ (doorLastPosition = Closed ∧ doorDestination = Opened_A) ⇔ doorDirection = Decreasing"/>
+<org.eventb.core.variable name="B" org.eventb.core.identifier="doorLastPosition"/>
+<org.eventb.core.event name="E" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ReverseAfterError">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Reverse"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="doorLastPosition ≠ doorDestination"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

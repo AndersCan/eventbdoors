@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="29">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="28">
+<org.eventb.core.poIdentifier name="DoorStatus" org.eventb.core.type="ℙ(DoorStatus)"/>
+<org.eventb.core.poIdentifier name="Moving" org.eventb.core.type="DoorStatus"/>
+<org.eventb.core.poIdentifier name="Stopped" org.eventb.core.type="DoorStatus"/>
+<org.eventb.core.poPredicate name="DoorStatut" org.eventb.core.predicate="partition(DoorStatus,{Stopped},{Moving})" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx1.buc|org.eventb.core.contextFile#DoorCtx1|org.eventb.core.axiom#*"/>
+<org.eventb.core.poIdentifier name="DoorDirection" org.eventb.core.type="ℙ(DoorDirection)"/>
+<org.eventb.core.poIdentifier name="Decreasing" org.eventb.core.type="DoorDirection"/>
+<org.eventb.core.poIdentifier name="DoorAngles" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="Increasing" org.eventb.core.type="DoorDirection"/>
+<org.eventb.core.poIdentifier name="Reverse" org.eventb.core.type="ℙ(DoorDirection×DoorDirection)"/>
+<org.eventb.core.poIdentifier name="StandingStill" org.eventb.core.type="DoorDirection"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="28">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx4"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Increasing∈dom(Reverse)∧Reverse∈DoorDirection ⇸ DoorDirection" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#2"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#2"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="28">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx5"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Decreasing∈dom(Reverse)∧Reverse∈DoorDirection ⇸ DoorDirection" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#3"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#3"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="28">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx6"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="StandingStill∈dom(Reverse)∧Reverse∈DoorDirection ⇸ DoorDirection" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#4"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#4"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="29">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx7"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧a≠StandingStill⇒a∈dom(Reverse)∧Reverse∈DoorDirection ⇸ DoorDirection" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#6"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm7/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="29">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx8"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="dom(Reverse) ∖ DoorDirection=(∅ ⦂ ℙ(DoorDirection))" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#5"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#5"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYPDoorCtx4" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="28">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="DoorAngles={x⦂ℤ·x∈0 ‥ 180 ∣ x}" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(DoorDirection,{Increasing},{Decreasing},{StandingStill})" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#."/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Reverse∈DoorDirection → DoorDirection" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#1"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPDoorCtx5" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx4" org.eventb.core.poStamp="28">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="Reverse(Increasing)=Decreasing" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#2"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPDoorCtx6" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx5" org.eventb.core.poStamp="28">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="Reverse(Decreasing)=Increasing" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#3"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPDoorCtx7" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx6" org.eventb.core.poStamp="28">
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="Reverse(StandingStill)=StandingStill" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#4"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPDoorCtx8" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx7" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧a≠StandingStill⇒Reverse(a)≠StandingStill" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#6"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/AndersDoor2_Tinker/DoorCtx10.bpo|org.eventb.core.poFile#DoorCtx10|org.eventb.core.poPredicateSet#HYPDoorCtx8" org.eventb.core.poStamp="29">
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="dom(Reverse) ∖ DoorDirection=(∅ ⦂ ℙ(DoorDirection))" org.eventb.core.source="/AndersDoor2_Tinker/DoorCtx10.buc|org.eventb.core.contextFile#DoorCtx10|org.eventb.core.axiom#5"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

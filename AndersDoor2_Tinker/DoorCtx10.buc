@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="DoorCtx1"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="DoorAngles"/>
+<org.eventb.core.axiom name=")" org.eventb.core.label="axm1" org.eventb.core.predicate="DoorAngles = {x ∣ x ∈ 0 ‥ 180}"/>
+<org.eventb.core.carrierSet name="+" org.eventb.core.identifier="DoorDirection"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="Increasing"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="Decreasing"/>
+<org.eventb.core.axiom name="." org.eventb.core.label="axm2" org.eventb.core.predicate="partition(DoorDirection, {Increasing}, {Decreasing}, {StandingStill})"/>
+<org.eventb.core.constant name="/" org.eventb.core.identifier="StandingStill"/>
+<org.eventb.core.constant name="0" org.eventb.core.identifier="Reverse"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm3" org.eventb.core.predicate="Reverse ∈ DoorDirection → DoorDirection"/>
+<org.eventb.core.axiom name="2" org.eventb.core.label="axm4" org.eventb.core.predicate="Reverse(Increasing) = Decreasing"/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm5" org.eventb.core.predicate="Reverse(Decreasing) = Increasing"/>
+<org.eventb.core.axiom name="4" org.eventb.core.label="axm6" org.eventb.core.predicate="Reverse(StandingStill) = StandingStill"/>
+<org.eventb.core.axiom name="6" org.eventb.core.label="axm8" org.eventb.core.predicate="∀a· a ∈ DoorDirection ∧ a ≠ StandingStill ⇒ Reverse(a) ≠ StandingStill"/>
+<org.eventb.core.axiom name="5" org.eventb.core.label="axm7" org.eventb.core.predicate="dom(Reverse) ∖ DoorDirection = ∅" org.eventb.core.theorem="true"/>
+</org.eventb.core.contextFile>

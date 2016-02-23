@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="DoorCtx10"/>
+<org.eventb.core.carrierSet name="(" org.eventb.core.identifier="DoorPosition"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="Opened_A"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="Opened_B"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="Closed"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm1" org.eventb.core.predicate="partition(DoorPosition, {Opened_A}, {Opened_B}, {Closed})"/>
+<org.eventb.core.constant name="-" org.eventb.core.identifier="Position"/>
+<org.eventb.core.axiom name="." org.eventb.core.label="axm2" org.eventb.core.predicate="Position ∈ DoorAngles ⇸ DoorPosition"/>
+<org.eventb.core.axiom name="/" org.eventb.core.label="axm3" org.eventb.core.predicate="0 ↦ Opened_A ∈ Position"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm4" org.eventb.core.predicate="180 ↦ Opened_B ∈ Position"/>
+<org.eventb.core.axiom name="0" org.eventb.core.label="axm5" org.eventb.core.predicate="90 ↦ Closed ∈ Position"/>
+<org.eventb.core.axiom name="2" org.eventb.core.label="axm6" org.eventb.core.predicate="dom(Position) = {0,90,180}"/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm7" org.eventb.core.predicate="ran(Position) = {Opened_A, Opened_B, Closed}" org.eventb.core.theorem="true"/>
+</org.eventb.core.contextFile>
