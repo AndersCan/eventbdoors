@@ -28,7 +28,7 @@ played_by S def=
         State':=1 /\ ID':=new() /\ SND({ID'.P}_PKx) /\ secret(ID',secret_id,{S,P,X}) /\ witness(S,X,server_user_id,ID')
 
     2.  State=1 /\ RCV({ID.X.P}_PKs) =|> 
-        State':=2 /\ N':=new() /\ SND({N'}_PKx) /\ secret(N',secret_N,{P,X,S})
+        State':=2 /\ N':=new() /\ SND({N'}_PKx) /\ secret(N',secret_N,{P,X,S}) /\ witness(S,X,server_user_n,N')
         
     4.  State=2 /\ RCV({N.X.P}_PKs) =|> 
         State':=3 /\ SND({ID}_PKp)
@@ -60,6 +60,9 @@ played_by X def=
 
     2.  State=1 /\ RCV({N'}_PKx) =|> 
 	    State':=2 /\ SND({N'.X}_Kxp)
+        
+    4.  State=2 /\ RCV(ID) =|>
+        State':=3 /\ request(S,X,server_user_n,N)
 
 end role
 
@@ -87,7 +90,7 @@ played_by P def=
 	    State':=2 /\ SND({N'.X.P}_PKs)
 
     3.  State=2 /\ RCV({ID}_PKp) =|>
-        State':=3
+        State':=3 /\ SND({ID}_Kxp)
     
 end role
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -118,7 +121,7 @@ role environment() def=
           pks, pkp, pkx, pki: public_key,
           kxp, kip, kxi: symmetric_key,
           idx, idi:text,        
-          secret_id, secret_N, server_user_id: protocol_id
+          secret_id, secret_N, server_user_id, server_user_n: protocol_id
     
     init KeyMapApprovedPostOffices:={p.pkp, i.pki}     
 
@@ -140,7 +143,8 @@ end role
 goal
   secrecy_of secret_id
   secrecy_of secret_N
-  authentication_on server_user_id
+  authentication_on server_user_n
+%  authentication_on server_user_id
 %  secrecy_of nb
 %  authentication_on alice_bob_na
 %  authentication_on alice_bob_nb
