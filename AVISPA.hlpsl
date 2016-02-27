@@ -10,21 +10,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% définition du rôle S, initiant le protocole
 role server (S, P, X: agent,             
-            PKs, PKp, PKx: public_key,
-            ID: text,      
-            SND, RCV: channel(dy)) 
+             PKs, PKx: public_key,
+             KeyMapApprovedPostOffices: (agent.public_key) set,      
+             SND, RCV: channel(dy)) 
 
 played_by S def=
 
    local State: nat, 
-             N: text
+         N, ID: text,
+           PKp: public_key
 
   init State:=0
 
   transition  
    
-    0.  State=0 /\ RCV(start) =|> 
-        State':=1 /\ SND({ID.P}_PKx) /\ secret(ID,secret_id,{S,P,X}) 
+    0.  State=0 /\ RCV(start) /\ in(P.PKp', KeyMapApprovedPostOffices) =|> 
+        State':=1 /\ ID':=new() /\ SND({ID'.P}_PKx) /\ secret(ID',secret_id,{S,P,X}) /\ witness(S,X,server_user_id,ID')
 
     2.  State=1 /\ RCV({ID.X.P}_PKs) =|> 
         State':=2 /\ N':=new() /\ SND({N'}_PKx) /\ secret(N',secret_N,{P,X,S})
@@ -55,7 +56,7 @@ played_by X def=
   transition  
    
     0.  State=0 /\ RCV({ID'.P'}_PKx) =|> 
-	    State':=1 /\ SND({ID'.X}_Kxp) 
+	    State':=1 /\ SND({ID'.X}_Kxp) /\ request(S,X,server_user_id,ID')
 
     2.  State=1 /\ RCV({N'}_PKx) =|> 
 	    State':=2 /\ SND({N'.X}_Kxp)
@@ -91,15 +92,19 @@ played_by P def=
 end role
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% définition du rôle caractérisant une session
-role session(S, P, X: agent, PKs, PKp, PKx: public_key, Kxp: symmetric_key, ID: text) def=
+role session(S, P, X: agent,
+             PKs, PKp, PKx: public_key,
+             Kxp: symmetric_key,
+             KeyMapApprovedPostOffices: (agent.public_key) set
+            ) def=
 
-  local SA, RA, SB, RB, SC, RC: channel(dy)
+  local SND, RCV: channel(dy)
 
   composition 
 
-	server(S,P,X,PKs,PKp,PKx,ID,SA,RA)
-     /\ user(S,X,PKs,PKx,Kxp,SB,RB)
-     /\ officer(S,P,PKs,PKp,Kxp,SC,RC)
+	server(S,P,X,PKs,PKx,KeyMapApprovedPostOffices,SND,RCV)
+     /\ user(S,X,PKs,PKx,Kxp,SND,RCV)
+     /\ officer(S,P,PKs,PKp,Kxp,SND,RCV)
 
 end role
 
@@ -107,20 +112,23 @@ end role
 %% définition du rôle caractérisant le scenario à exécuter
 role environment() def=
 
-    const s, p, x: agent,
+    local KeyMapApprovedPostOffices: (agent.public_key) set
+
+    const s, p, x, i: agent,
           pks, pkp, pkx, pki: public_key,
-          kxp: symmetric_key,
-          id:text,        
-          secret_id, secret_N: protocol_id
-          
+          kxp, kip, kxi: symmetric_key,
+          idx, idi:text,        
+          secret_id, secret_N, server_user_id: protocol_id
+    
+    init KeyMapApprovedPostOffices:={p.pkp, i.pki}     
 
     intruder_knowledge = {s, p, x, pks, pkp, pkx, pki, inv(pki)}
 
-    composition
+    composition    
 
-    session(s, p, x, pks, pkp, pkx, kxp, id)
-
-    %%    /\session(s, , x, pks, pkp, pkx, kxp, id)
+      session(s, p, x, pks, pkp, pkx, kxp, KeyMapApprovedPostOffices)
+    /\session(s, p, i, pks, pkp, pki, kip, KeyMapApprovedPostOffices)
+    /\session(s, i, x, pks, pki, pkx, kxi, KeyMapApprovedPostOffices)
 
 %i denotes the intruder
 
@@ -132,6 +140,7 @@ end role
 goal
   secrecy_of secret_id
   secrecy_of secret_N
+  authentication_on server_user_id
 %  secrecy_of nb
 %  authentication_on alice_bob_na
 %  authentication_on alice_bob_nb
