@@ -17,21 +17,24 @@ role server (S, P, X: agent,
 played_by S def=
 
    local State: nat, 
-         N,  ID, NP: text,
-           PKp: public_key
+         N,  ID, NP, NS: text,
+         PKp : public_key
 
   init State:=0
 
   transition  
    
     0.  State=0 /\ RCV(start) /\ in(P.PKp', KeyMapApprovedPostOffices) =|> 
-        State':=1 /\ ID':=new() /\ NP' := new() /\ SND({ID'.P}_PKx) /\SND({X.NP'}_PKp)/\ secret(ID',secret_id,{S,P,X}) /\ secret(NP',secret_np,{S,P}) /\ witness(S,X,server_user_id,ID')
-
-    2.  State=1 /\ RCV({{ID.X.P.NP}_inv(PKp)}_PKs) =|> 
-        State':=2 /\ N':=new() /\ SND({N'}_PKx) /\ secret(N',secret_N,{P,X,S}) /\ witness(S,X,server_user_n,N') /\ request(S,P,server_officer_n,NP)
+        State':=1 /\ ID':=new() /\ NP' := new() /\ SND({ID'.P}_PKx) /\SND({X.NP'}_PKp')/\ secret(ID',secret_id,{S,P,X}) /\ secret(NP',secret_np,{S,P}) /\ witness(S,X,server_user_id,ID')
         
-    4.  State=2 /\ RCV({{N.X.P.NP}_inv(PKp)}_PKs) =|> 
-        State':=3 /\ SND({ID}_PKp) /\ request(S,P,server_officer_n,NP)
+    1.  State=1 /\ RCV({NS'.NP}_PKs) =|> 
+    State' := 2
+
+    2.  State=2 /\ RCV({ID.X.P.NP}_PKs) =|> 
+        State':=3 /\ N':=new() /\ SND({N'}_PKx) /\ secret(N',secret_N,{P,X,S}) /\ witness(S,X,server_user_n,N') /\ request(S,P,server_officer_n,NP)
+        
+    4.  State=3 /\ RCV({{N.X.P.NP}_inv(PKp)}_PKs) =|> 
+        State':=4 /\ SND({ID.NS}_PKp) /\ request(S,P,server_officer_n,NP) /\ witness(S,P,officer_server_n,NS)
 
 end role
 
@@ -76,7 +79,7 @@ role officer (S,P: agent,
 played_by P def=
 
   local State: nat, 
-  ID, N, NP: text,
+  ID, N, NP, NS: text,
   X : agent
 
   init State:=0
@@ -84,7 +87,7 @@ played_by P def=
   transition  
   
       0.  State=0 /\ RCV({X'.NP'}_PKp) =|> 
-	    State':=1
+	    State':=1 /\ NS' :=new() /\ SND({NS'.NP}_PKs)
    
     1.  State=1 /\ RCV({ID'.X}_Kxp) =|> 
 	    State':=2 /\  SND({ID'.X.P.NP}_PKs) /\ witness(S,P,server_officer_n,NP)
@@ -92,8 +95,8 @@ played_by P def=
     2.  State=2 /\ RCV({N'.X}_Kxp) =|> 
 	    State':=3 /\ SND({N'.X.P.NP}_PKs) /\ witness(S,P,server_officer_n,N'.X.P)
 
-    4.  State=3 /\ RCV({ID}_PKp) =|>
-        State':=4 /\ SND({ID}_Kxp)
+    4.  State=3 /\ RCV({ID.NS}_PKp) =|>
+        State':=4 /\ SND({ID}_Kxp) /\ request(S,P,officer_server_n,NS)
     
 end role
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,9 +127,9 @@ role environment() def=
           pks, pkp, pkx, pki: public_key,
           kxp, kip, kxi: symmetric_key,
           idx, idi:text,        
-          secret_id, secret_N, secret_np, server_user_id, server_user_n,server_officer_n: protocol_id
+          secret_id, secret_N, secret_np, server_user_id, server_user_n,server_officer_n,officer_server_n: protocol_id
     
-    init KeyMapApprovedPostOffices:={p.pkp, i.pki}     
+    init KeyMapApprovedPostOffices:={p.pkp}     
 
     intruder_knowledge = {s, p, x, pks, pkp, pkx, pki, inv(pki)}
 
@@ -149,6 +152,7 @@ goal
   secrecy_of secret_np
   authentication_on server_user_n
               authentication_on server_officer_n
+                            authentication_on officer_server_n
 %  authentication_on server_user_id
 %  secrecy_of nb
 %  authentication_on alice_bob_na
