@@ -6,8 +6,8 @@
 %% N: nonce code sent to the user to verify he is the recipient of the package
 %% Np and Ns are two other nonces used for authentication between P and S
 %% 0. s -> x : {ID,P}PKx
-%% 0. s -> p : {X, Np}PKp
-%% 1. p -> s : {Ns, Np}PKs
+%% 0. s -> p : {X,Np}PKp
+%% 1. p -> s : {Ns,Np}PKs
 %% 2. x -> p : {ID,X}Kxp
 %% 3. p -> s : {ID,X,P,Np}PKs
 %% 4. s -> x : {N}PKx
@@ -33,7 +33,7 @@ played_by S def=
   transition  
    
     0.  State=0 /\ RCV(start) /\ in(P.PKp', KeyMapApprovedPostOffices) =|> 
-        State':=1 /\ ID':=new() /\ NP' := new() /\ SND({ID'.P}_PKx) /\SND({X.NP'}_PKp')/\ secret(ID',secret_id,{S,P,X}) /\ secret(NP',secret_np,{S,P}) /\ witness(S,X,server_user_id,ID')
+        State':=1 /\ ID':=new() /\ NP' := new() /\ SND({ID'.P}_PKx) /\SND({X.NP'}_PKp')/\ secret(ID',secret_id,{S,P,X}) /\ secret(NP',secret_np,{S,P}) /\ witness(S,X,server_user_id,ID') /\ witness(S,P,server_officer_n,NP')
         
     1.  State=1 /\ RCV({NS'.NP}_PKs) =|> 
         State':= 2
@@ -42,7 +42,7 @@ played_by S def=
         State':=3 /\ N':=new() /\ SND({N'}_PKx) /\ secret(N',secret_N,{P,X,S}) /\ witness(S,X,server_user_n,N') /\ request(S,P,server_officer_n,NP)
         
     7.  State=3 /\ RCV({{N.X.P.NP}_inv(PKp)}_PKs) =|> 
-        State':=4 /\ SND({ID.NS}_PKp) /\ request(S,P,server_officer_n,NP) /\ witness(S,P,officer_server_n,NS)
+        State':=4 /\ SND({ID.NS}_PKp) /\ request(S,P,server_officer_n,NS)
 
 end role
 
@@ -95,16 +95,16 @@ played_by P def=
   transition  
   
     1.  State=0 /\ RCV({X'.NP'}_PKp) =|> 
-	    State':=1 /\ NS':=new() /\ SND({NS'.NP}_PKs)
+	    State':=1 /\ NS':=new() /\ SND({NS'.NP}_PKs) /\ witness(S,P,officer_server_n,NS')
    
     3.  State=1 /\ RCV({ID'.X}_Kxp) =|> 
-	    State':=2 /\  SND({ID'.X.P.NP}_PKs) /\ witness(S,P,server_officer_n,NP)
+	    State':=2 /\  SND({ID'.X.P.NP}_PKs)
 
     6.  State=2 /\ RCV({N'.X}_Kxp) =|> 
 	    State':=3 /\ SND({N'.X.P.NP}_PKs) /\ witness(S,P,server_officer_n,N'.X.P)
 
     8.  State=3 /\ RCV({ID.NS}_PKp) =|>
-        State':=4 /\ SND({ID}_Kxp) /\ request(S,P,officer_server_n,NS)
+        State':=4 /\ SND({ID}_Kxp) /\ request(S,P,officer_server_n,NP)
     
 end role
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
