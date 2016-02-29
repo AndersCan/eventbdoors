@@ -1,12 +1,20 @@
 %% PROTOCOL: Project Postoffice Package
-%% ALICE_BOB:
-%% 1. s -> x : ({id,P)}PKX
-%% 2. x -> p : (id,X)
-%% 3. p -> s : (id,X,P)
-%% 4. s -> x : n
-%% 5. x -> p : (n,X)
-%% 6. p -> s : (n,x,p)
-%% 7. s -> p : (id)
+%% S: Post Office Central Server
+%% P: Post Office
+%% X: User/Smartphone
+%% ID: id number of the package
+%% N: nonce code sent to the user to verify he is the recipient of the package
+%% Np and Ns are two other nonces used for authentication between P and S
+%% 0. s -> x : {ID,P}PKx
+%% 0. s -> p : {X, Np}PKp
+%% 1. p -> s : {Ns, Np}PKs
+%% 2. x -> p : {ID,X}Kxp
+%% 3. p -> s : {ID,X,P,Np}PKs
+%% 4. s -> x : {N}PKx
+%% 5. x -> p : {N,X}Kxp
+%% 6. p -> s : {N,X,P,Np}PKs
+%% 7. s -> p : {ID,Ns}PKp
+%% 8. p -> x : {ID}Kxp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% définition du rôle S, initiant le protocole
 role server (S, P, X: agent,             
@@ -28,12 +36,12 @@ played_by S def=
         State':=1 /\ ID':=new() /\ NP' := new() /\ SND({ID'.P}_PKx) /\SND({X.NP'}_PKp')/\ secret(ID',secret_id,{S,P,X}) /\ secret(NP',secret_np,{S,P}) /\ witness(S,X,server_user_id,ID')
         
     1.  State=1 /\ RCV({NS'.NP}_PKs) =|> 
-    State' := 2
+        State':= 2
 
-    2.  State=2 /\ RCV({ID.X.P.NP}_PKs) =|> 
+    4.  State=2 /\ RCV({ID.X.P.NP}_PKs) =|> 
         State':=3 /\ N':=new() /\ SND({N'}_PKx) /\ secret(N',secret_N,{P,X,S}) /\ witness(S,X,server_user_n,N') /\ request(S,P,server_officer_n,NP)
         
-    4.  State=3 /\ RCV({{N.X.P.NP}_inv(PKp)}_PKs) =|> 
+    7.  State=3 /\ RCV({{N.X.P.NP}_inv(PKp)}_PKs) =|> 
         State':=4 /\ SND({ID.NS}_PKp) /\ request(S,P,server_officer_n,NP) /\ witness(S,P,officer_server_n,NS)
 
 end role
@@ -58,14 +66,14 @@ played_by X def=
 
   transition  
    
-    0.  State=0 /\ RCV({ID'.P'}_PKx) =|> 
-	    State':=1 /\ SND({ID'.X}_Kxp) /\ request(S,X,server_user_id,ID')
+    2.  State=0 /\ RCV({ID'.P'}_PKx) =|> 
+	    State':=1 /\ SND({ID'.X}_Kxp)
 
-    2.  State=1 /\ RCV({N'}_PKx) =|> 
+    5.  State=1 /\ RCV({N'}_PKx) =|> 
 	    State':=2 /\ SND({N'.X}_Kxp)
         
-    4.  State=2 /\ RCV(ID) =|>
-        State':=3 /\ request(S,X,server_user_n,N)
+    8.  State=2 /\ RCV({ID}_Kxp) =|>
+        State':=3 /\ request(S,X,server_user_n,N) /\ request(S,X,server_user_id,ID)
 
 end role
 
@@ -86,16 +94,16 @@ played_by P def=
 
   transition  
   
-      0.  State=0 /\ RCV({X'.NP'}_PKp) =|> 
-	    State':=1 /\ NS' :=new() /\ SND({NS'.NP}_PKs)
+    1.  State=0 /\ RCV({X'.NP'}_PKp) =|> 
+	    State':=1 /\ NS':=new() /\ SND({NS'.NP}_PKs)
    
-    1.  State=1 /\ RCV({ID'.X}_Kxp) =|> 
+    3.  State=1 /\ RCV({ID'.X}_Kxp) =|> 
 	    State':=2 /\  SND({ID'.X.P.NP}_PKs) /\ witness(S,P,server_officer_n,NP)
 
-    2.  State=2 /\ RCV({N'.X}_Kxp) =|> 
+    6.  State=2 /\ RCV({N'.X}_Kxp) =|> 
 	    State':=3 /\ SND({N'.X.P.NP}_PKs) /\ witness(S,P,server_officer_n,N'.X.P)
 
-    4.  State=3 /\ RCV({ID.NS}_PKp) =|>
+    8.  State=3 /\ RCV({ID.NS}_PKp) =|>
         State':=4 /\ SND({ID}_Kxp) /\ request(S,P,officer_server_n,NS)
     
 end role
@@ -151,12 +159,9 @@ goal
   secrecy_of secret_N
   secrecy_of secret_np
   authentication_on server_user_n
-              authentication_on server_officer_n
-                            authentication_on officer_server_n
-%  authentication_on server_user_id
-%  secrecy_of nb
-%  authentication_on alice_bob_na
-%  authentication_on alice_bob_nb
+  authentication_on server_user_id
+  authentication_on server_officer_n
+  authentication_on officer_server_n
 end goal
 %the option --split for hlps12if.exe outputs multiple IF files, one for each security property to check
 
