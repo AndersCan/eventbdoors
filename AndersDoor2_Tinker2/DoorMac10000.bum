@@ -6,7 +6,11 @@
 <org.eventb.core.variable name="0" org.eventb.core.identifier="doorAngle"/>
 <org.eventb.core.variable name="6" org.eventb.core.identifier="doorDestination"/>
 <org.eventb.core.variable name="9" org.eventb.core.identifier="doorPosition"/>
-<org.eventb.core.event name="K" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.event name="K" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="internal1" org.eventb.core.assignment="doorAngle ≔ 90" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="internal2" org.eventb.core.assignment="doorDestination ≔ Closed" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="internal3" org.eventb.core.assignment="doorPosition ≔ Closed" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="internal5" org.eventb.core.assignment="peopleInB ≔ ∅" org.eventb.core.label="act6"/>
 <org.eventb.core.action name="'" org.eventb.core.assignment="Sensor_A ≔ Off" org.eventb.core.label="act8"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="Sensor_B ≔ Off" org.eventb.core.label="act7"/>
 </org.eventb.core.event>
@@ -48,26 +52,75 @@
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEOPLE"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="Sensor_A ≔ On" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="Sensor_A = Off"/>
+<org.eventb.core.refinesEvent name="," org.eventb.core.target="SetErrorFlag"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="[" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StepOnB">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEOPLE"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="Sensor_B ≔ On" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="-" org.eventb.core.label="grd2" org.eventb.core.predicate="Sensor_B = Off"/>
+<org.eventb.core.refinesEvent name="." org.eventb.core.target="SetErrorFlag"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="\" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StepOffA">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEOPLE"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="Sensor_A ≔ Off" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="Sensor_A = On"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="Sensor_B = On"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="]" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StepOffB">
 <org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PEOPLE"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="Sensor_A = On"/>
 <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="Sensor_B = On"/>
 <org.eventb.core.action name="*" org.eventb.core.assignment="Sensor_B ≔ Off" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="^" org.eventb.core.identifier="peopleInB"/>
-<org.eventb.core.invariant name="_" org.eventb.core.label="inv3" org.eventb.core.predicate="Sensor_A = On ⇒ doorAngle ≥ 90"/>
-<org.eventb.core.invariant name="`" org.eventb.core.label="inv4" org.eventb.core.predicate="Sensor_B = On ⇒ doorAngle ≤ 90"/>
+<org.eventb.core.invariant name="a" org.eventb.core.label="gluing1" org.eventb.core.predicate="errorFlag = TRUE ⇔ (Sensor_A = On) ∨ (Sensor_B = On)"/>
+<org.eventb.core.event name="g" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StepOffA_ClearError">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="Sensor_A = On"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="Sensor_B = Off"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="Sensor_A ≔ Off" org.eventb.core.label="act1"/>
+<org.eventb.core.refinesEvent name="*" org.eventb.core.target="ClearErrorFlag"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="b" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StepOffB_ClearError">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="Sensor_A = Off"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="Sensor_B = On"/>
+<org.eventb.core.refinesEvent name=")" org.eventb.core.target="ClearErrorFlag"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="Sensor_B ≔ Off" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="c" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ErrorRetractBackToCloseFromA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorRetractBackToCloseFromA"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="Sensor_A = On"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="(doorDestination = Opened_A ∧ doorAngle ≥ 45 ∧ doorAngle ≤ 90)"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="doorDestination ≔ Closed" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="doorPosition ≔ Opened_A" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="doorPosition ≠ Opened_A"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="d" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ErrorRetractBackToCloseFromB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorRetractBackToCloseFromB"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd1" org.eventb.core.predicate="Sensor_B = On"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd2" org.eventb.core.predicate="(doorDestination = Opened_B ∧ doorAngle ≤ 135 ∧ doorAngle ≥ 90)"/>
+<org.eventb.core.action name="grd3" org.eventb.core.assignment="doorDestination ≔ Closed" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="grd4" org.eventb.core.assignment="doorPosition ≔ Opened_B" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd3" org.eventb.core.predicate="doorPosition ≠ Opened_B"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="e" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ErrorRetractBackToOpenA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorRetractBackToOpenA"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd1" org.eventb.core.predicate="Sensor_A = On"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd2" org.eventb.core.predicate="doorDestination = Closed"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd3" org.eventb.core.predicate="doorAngle ≤ 45"/>
+<org.eventb.core.action name="grd4" org.eventb.core.assignment="doorDestination ≔ Opened_A" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="grd6" org.eventb.core.assignment="doorPosition ≔ Closed" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd4" org.eventb.core.predicate="doorPosition = Opened_A"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="f" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ErrorRetractBackToOpenB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorRetractBackToOpenB"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="Sensor_B = On"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="doorDestination = Closed"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="doorAngle ≥ 135"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="doorDestination ≔ Opened_B" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="doorPosition = Opened_B"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="doorPosition ≔ Closed" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>

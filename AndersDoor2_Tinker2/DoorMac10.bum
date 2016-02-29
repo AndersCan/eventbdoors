@@ -5,6 +5,7 @@
 <org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="doorAngle ≔ 90" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="doorDirection ≔ StandingStill" org.eventb.core.label="act3"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="errorFlag ≔ FALSE" org.eventb.core.label="act4"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StartMoving">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Move"/>
@@ -41,6 +42,19 @@
 <org.eventb.core.action name=")" org.eventb.core.assignment="doorDirection ≔ Reverse(doorDirection)" org.eventb.core.label="act1"/>
 <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="doorDirection ≠ StandingStill"/>
 </org.eventb.core.event>
+<org.eventb.core.invariant name="&gt;" org.eventb.core.label="inv5" org.eventb.core.predicate="errorFlag ∈ BOOL"/>
 <org.eventb.core.invariant name=":" org.eventb.core.label="gluing1" org.eventb.core.predicate="doorDirection = StandingStill ⇔ doorStatus = Stopped"/>
 <org.eventb.core.invariant name=";" org.eventb.core.label="gluing2" org.eventb.core.predicate="doorDirection ≠ StandingStill ⇔ doorStatus = Moving"/>
+<org.eventb.core.variable name="=" org.eventb.core.identifier="errorFlag"/>
+<org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SetErrorFlag">
+<org.eventb.core.action name="(" org.eventb.core.assignment="errorFlag ≔ TRUE" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ClearErrorFlag">
+<org.eventb.core.action name="(" org.eventb.core.assignment="errorFlag ≔ FALSE" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ErrorReverse">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="errorFlag = TRUE"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="doorDirection ≔ Reverse(doorDirection)" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="doorDirection ≠ StandingStill"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>

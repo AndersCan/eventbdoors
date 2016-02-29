@@ -617,75 +617,77 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="StartOpenB/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41" org.eventb.core.prSets="DoorDirection,DoorPosition,DoorStatus,PEOPLE">
+<org.eventb.core.prProof name="StartOpenB/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41,p42" org.eventb.core.prSets="DoorDirection,DoorPosition,DoorStatus,PEOPLE">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(DoorStatus,{Stopped},{Moving}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p42,p43"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p42,p43"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p43,p44"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p43,p44"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(DoorDirection,{Increasing},{Decreasing},{StandingStill}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p37" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p44,p45,p46,p47"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p44,p45,p46,p47"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p38" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p45,p46,p47,p48"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p45,p46,p47,p48"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(DoorPosition,{Opened_A},{Opened_B},{Closed}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p48,p49,p50,p51"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p48,p49,p50,p51"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p49,p50,p51,p52"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p49,p50,p51,p52"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p38" org.eventb.core.prHyps="p2,p19" org.eventb.core.prInfHyps="p52"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p23" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p53"/>
-<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p54"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p39" org.eventb.core.prHyps="p2,p19" org.eventb.core.prInfHyps="p53"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p23" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p54"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p55"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p55"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p41" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p56"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p57"/>
-<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p31" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p58"/>
-<org.eventb.core.prHypAction name="REWRITE4" org.eventb.core.prHidden="p28" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p59"/>
-<org.eventb.core.prHypAction name="REWRITE5" org.eventb.core.prHidden="p29" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p60"/>
-<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p52" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p61"/>
-<org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p53" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p62"/>
-<org.eventb.core.prHypAction name="REWRITE8" org.eventb.core.prHidden="p54" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p63"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p56"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p42" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p57"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p58"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p32" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p59"/>
+<org.eventb.core.prHypAction name="REWRITE4" org.eventb.core.prHidden="p29" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p60"/>
+<org.eventb.core.prHypAction name="REWRITE5" org.eventb.core.prHidden="p30" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p61"/>
+<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p53" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p62"/>
+<org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p54" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p63"/>
+<org.eventb.core.prHypAction name="REWRITE8" org.eventb.core.prHidden="p55" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p64"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p27" org.eventb.core.prHyps="p61" org.eventb.core.prInfHyps="p64"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p58" org.eventb.core.prHyps="p61" org.eventb.core.prInfHyps="p65"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p27" org.eventb.core.prHyps="p62" org.eventb.core.prInfHyps="p65"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p59" org.eventb.core.prHyps="p62" org.eventb.core.prInfHyps="p66"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p64" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p66"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p65" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p67"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p65" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p67"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p66" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p68"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p68" org.eventb.core.prHyps="p67,p66" org.eventb.core.prInfHyps="p69"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p69" org.eventb.core.prHyps="p68,p67" org.eventb.core.prInfHyps="p70"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p69"/>
-<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p70"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p71"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p72"/>
-<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p73"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p74"/>
-<org.eventb.core.prHypAction name="REWRITE5" org.eventb.core.prHidden="p56" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p75"/>
+<org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p71"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p72"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p73"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p74"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p75"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p76"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p77"/>
+<org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p57" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p78"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p75" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p76"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p78" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p79"/>
 <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with doorPosition=Closed" org.eventb.core.prHyps="p19">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p62" org.eventb.core.prInfHyps="p77"/>
-<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p63" org.eventb.core.prInfHyps="p78"/>
-<org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p62,p63"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p63" org.eventb.core.prInfHyps="p80"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p64" org.eventb.core.prInfHyps="p81"/>
+<org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p63,p64"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p77" org.eventb.core.prHyps="p50" org.eventb.core.prInfHyps="p79"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p78" org.eventb.core.prHyps="p51" org.eventb.core.prInfHyps="p80"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p80" org.eventb.core.prHyps="p51" org.eventb.core.prInfHyps="p82"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p81" org.eventb.core.prHyps="p52" org.eventb.core.prInfHyps="p83"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p79"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p80"/>
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p20,p3,p24,p12,p4,p13,p35,p9,p10,p17,p16,p39,p30,p11,p25,p18,p5,p21,p14,p22,p32,p26,p36,p1,p33,p34,p19,p2,p40,p42,p43,p44,p45,p46,p47,p48,p49,p50,p51,p55,p59,p60,p61,p62,p63,p66,p67,p76">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p82"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p83"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p20,p3,p24,p12,p4,p13,p36,p10,p11,p17,p16,p41,p31,p9,p25,p18,p5,p21,p14,p22,p33,p26,p37,p1,p34,p28,p35,p19,p2,p40,p43,p44,p45,p46,p47,p48,p49,p50,p51,p52,p56,p60,p61,p62,p63,p64,p67,p68,p79">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -737,93 +739,99 @@
 <org.eventb.core.prIdent name="doorPosition" org.eventb.core.type="DoorPosition"/>
 <org.eventb.core.prIdent name="doorStatus" org.eventb.core.type="DoorStatus"/>
 <org.eventb.core.prIdent name="p" org.eventb.core.type="PEOPLE"/>
-<org.eventb.core.prPred name="p51" org.eventb.core.predicate="¬Opened_B=Closed"/>
+<org.eventb.core.prIdent name="peopleInB" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prPred name="p52" org.eventb.core.predicate="¬Opened_B=Closed"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="doorDestination=Closed"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="Reverse(Increasing)=Decreasing"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Opened_B⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p56" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
-<org.eventb.core.prPred name="p71" org.eventb.core.predicate="doorStatus∈DoorStatus"/>
-<org.eventb.core.prPred name="p79" org.eventb.core.predicate="⊥⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p57" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
+<org.eventb.core.prPred name="p72" org.eventb.core.predicate="doorStatus∈DoorStatus"/>
+<org.eventb.core.prPred name="p82" org.eventb.core.predicate="⊥⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="partition(DoorPosition,{Opened_A},{Opened_B},{Closed})"/>
-<org.eventb.core.prPred name="p76" org.eventb.core.predicate="∀a⦂DoorDirection·¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="180∈dom(Position)"/>
+<org.eventb.core.prPred name="p79" org.eventb.core.predicate="∀a⦂DoorDirection·¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="180∈dom(Position)"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="Reverse∈DoorDirection ⇸ DoorDirection"/>
-<org.eventb.core.prPred name="p61" org.eventb.core.predicate="doorDirection=StandingStill"/>
+<org.eventb.core.prPred name="p62" org.eventb.core.predicate="doorDirection=StandingStill"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="Decreasing∈dom(Reverse)"/>
 <org.eventb.core.prPred name="p14" org.eventb.core.predicate="doorAngle∈DoorAngles"/>
-<org.eventb.core.prPred name="p80" org.eventb.core.predicate="⊥⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p83" org.eventb.core.predicate="⊥⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p15" org.eventb.core.predicate="DoorAngles={x⦂ℤ·x∈0 ‥ 180 ∣ x}"/>
 <org.eventb.core.prPred name="p16" org.eventb.core.predicate="0∈dom(Position)"/>
-<org.eventb.core.prPred name="p72" org.eventb.core.predicate="doorDirection∈DoorDirection"/>
+<org.eventb.core.prPred name="p73" org.eventb.core.predicate="doorDirection∈DoorDirection"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="Reverse∈DoorDirection → DoorDirection"/>
-<org.eventb.core.prPred name="p48" org.eventb.core.predicate="DoorPosition={Opened_A,Opened_B,Closed}"/>
-<org.eventb.core.prPred name="p42" org.eventb.core.predicate="DoorStatus={Stopped,Moving}"/>
+<org.eventb.core.prPred name="p49" org.eventb.core.predicate="DoorPosition={Opened_A,Opened_B,Closed}"/>
+<org.eventb.core.prPred name="p43" org.eventb.core.predicate="DoorStatus={Stopped,Moving}"/>
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="Increasing∈dom(Reverse)"/>
-<org.eventb.core.prPred name="p59" org.eventb.core.predicate="doorDestination=Opened_B∧¬doorPosition=Opened_B⇒doorDirection=Increasing"/>
-<org.eventb.core.prPred name="p69" org.eventb.core.predicate="⊥∨⊤"/>
-<org.eventb.core.prPred name="p64" org.eventb.core.predicate="⊤⇔doorStatus=Stopped"/>
-<org.eventb.core.prPred name="p29" org.eventb.core.predicate="doorDestination=Opened_A∧doorPosition≠Opened_A⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p30" org.eventb.core.predicate="Position(180)=Opened_B"/>
-<org.eventb.core.prPred name="p52" org.eventb.core.predicate="⊤∧⊤⇔doorDirection=StandingStill"/>
-<org.eventb.core.prPred name="p46" org.eventb.core.predicate="¬Increasing=StandingStill"/>
-<org.eventb.core.prPred name="p54" org.eventb.core.predicate="⊤∧doorPosition=Opened_B⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p57" org.eventb.core.predicate="dom(Reverse) ∖ DoorDirection=(∅ ⦂ ℙ(DoorDirection))"/>
+<org.eventb.core.prPred name="p60" org.eventb.core.predicate="doorDestination=Opened_B∧¬doorPosition=Opened_B⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p70" org.eventb.core.predicate="⊥∨⊤"/>
+<org.eventb.core.prPred name="p65" org.eventb.core.predicate="⊤⇔doorStatus=Stopped"/>
+<org.eventb.core.prPred name="p30" org.eventb.core.predicate="doorDestination=Opened_A∧doorPosition≠Opened_A⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="Position(180)=Opened_B"/>
+<org.eventb.core.prPred name="p53" org.eventb.core.predicate="⊤∧⊤⇔doorDirection=StandingStill"/>
+<org.eventb.core.prPred name="p47" org.eventb.core.predicate="¬Increasing=StandingStill"/>
+<org.eventb.core.prPred name="p55" org.eventb.core.predicate="⊤∧doorPosition=Opened_B⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p58" org.eventb.core.predicate="dom(Reverse) ∖ DoorDirection=(∅ ⦂ ℙ(DoorDirection))"/>
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="p∈Authed"/>
-<org.eventb.core.prPred name="p77" org.eventb.core.predicate="Closed=Opened_A⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p80" org.eventb.core.predicate="Closed=Opened_A⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="doorPosition=Opened_A∧doorDestination=Opened_A⇒doorAngle∈0 ‥ 90"/>
-<org.eventb.core.prPred name="p50" org.eventb.core.predicate="¬Opened_A=Closed"/>
+<org.eventb.core.prPred name="p51" org.eventb.core.predicate="¬Opened_A=Closed"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="Reverse(Decreasing)=Increasing"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="dom(Position)={0,90,180}"/>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="partition(DoorStatus,{Stopped},{Moving})"/>
-<org.eventb.core.prPred name="p62" org.eventb.core.predicate="doorPosition=Opened_A⇒doorDirection=Increasing"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="StandingStill∈dom(Reverse)"/>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="Position∈{0,90,180} ⤖ DoorPosition"/>
-<org.eventb.core.prPred name="p78" org.eventb.core.predicate="Closed=Opened_B⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p68" org.eventb.core.predicate="doorStatus=Moving∨doorStatus=Stopped"/>
+<org.eventb.core.prPred name="p63" org.eventb.core.predicate="doorPosition=Opened_A⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="StandingStill∈dom(Reverse)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="Position∈{0,90,180} ⤖ DoorPosition"/>
+<org.eventb.core.prPred name="p77" org.eventb.core.predicate="peopleInB⊆PEOPLE"/>
+<org.eventb.core.prPred name="p81" org.eventb.core.predicate="Closed=Opened_B⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p69" org.eventb.core.predicate="doorStatus=Moving∨doorStatus=Stopped"/>
 <org.eventb.core.prPred name="p17" org.eventb.core.predicate="Position(0)=Opened_A"/>
-<org.eventb.core.prPred name="p74" org.eventb.core.predicate="doorPosition∈DoorPosition"/>
+<org.eventb.core.prPred name="p76" org.eventb.core.predicate="doorPosition∈DoorPosition"/>
 <org.eventb.core.prPred name="p18" org.eventb.core.predicate="90∈dom(Position)"/>
 <org.eventb.core.prPred name="p19" org.eventb.core.predicate="doorPosition=Closed"/>
-<org.eventb.core.prPred name="p58" org.eventb.core.predicate="¬doorDirection=StandingStill⇔doorStatus=Moving"/>
+<org.eventb.core.prPred name="p59" org.eventb.core.predicate="¬doorDirection=StandingStill⇔doorStatus=Moving"/>
 <org.eventb.core.prPred name="p21" org.eventb.core.predicate="ran(Position)={Opened_A,Opened_B,Closed}"/>
 <org.eventb.core.prPred name="p22" org.eventb.core.predicate="doorAngle≤180"/>
-<org.eventb.core.prPred name="p65" org.eventb.core.predicate="¬⊤⇔doorStatus=Moving"/>
+<org.eventb.core.prPred name="p66" org.eventb.core.predicate="¬⊤⇔doorStatus=Moving"/>
 <org.eventb.core.prPred name="p23" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Opened_A⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p25" org.eventb.core.predicate="Position(90)=Closed"/>
 <org.eventb.core.prPred name="p26" org.eventb.core.predicate="doorPosition=Opened_A⇒doorAngle∈0 ‥ 90"/>
-<org.eventb.core.prPred name="p43" org.eventb.core.predicate="¬Stopped=Moving"/>
+<org.eventb.core.prPred name="p44" org.eventb.core.predicate="¬Stopped=Moving"/>
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="doorDirection=StandingStill⇔doorStatus=Stopped"/>
-<org.eventb.core.prPred name="p55" org.eventb.core.predicate="DoorAngles=0 ‥ 180"/>
-<org.eventb.core.prPred name="p75" org.eventb.core.predicate="∀a⦂DoorDirection·⊤∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
-<org.eventb.core.prPred name="p28" org.eventb.core.predicate="doorDestination=Opened_B∧doorPosition≠Opened_B⇒doorDirection=Increasing"/>
-<org.eventb.core.prPred name="p70" org.eventb.core.predicate="Authed⊆PEOPLE"/>
-<org.eventb.core.prPred name="p73" org.eventb.core.predicate="doorDestination∈DoorPosition"/>
-<org.eventb.core.prPred name="p63" org.eventb.core.predicate="doorPosition=Opened_B⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p66" org.eventb.core.predicate="doorStatus=Stopped"/>
-<org.eventb.core.prPred name="p67" org.eventb.core.predicate="¬doorStatus=Moving"/>
-<org.eventb.core.prPred name="p47" org.eventb.core.predicate="¬Decreasing=StandingStill"/>
-<org.eventb.core.prPred name="p53" org.eventb.core.predicate="⊤∧doorPosition=Opened_A⇒doorDirection=Increasing"/>
-<org.eventb.core.prPred name="p31" org.eventb.core.predicate="doorDirection≠StandingStill⇔doorStatus=Moving"/>
-<org.eventb.core.prPred name="p32" org.eventb.core.predicate="doorAngle≥0"/>
-<org.eventb.core.prPred name="p33" org.eventb.core.predicate="doorPosition=Opened_B∧doorDestination=Opened_B⇒doorAngle∈90 ‥ 180"/>
-<org.eventb.core.prPred name="p34" org.eventb.core.predicate="doorAngle=90"/>
-<org.eventb.core.prPred name="p35" org.eventb.core.predicate="Reverse(StandingStill)=StandingStill"/>
-<org.eventb.core.prPred name="p36" org.eventb.core.predicate="doorPosition=Opened_B⇒doorAngle∈90 ‥ 180"/>
+<org.eventb.core.prPred name="p56" org.eventb.core.predicate="DoorAngles=0 ‥ 180"/>
+<org.eventb.core.prPred name="p78" org.eventb.core.predicate="∀a⦂DoorDirection·⊤∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="∀a⦂PEOPLE·a∈peopleInB⇒a∈Authed"/>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="doorDestination=Opened_B∧doorPosition≠Opened_B⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p71" org.eventb.core.predicate="Authed⊆PEOPLE"/>
+<org.eventb.core.prPred name="p74" org.eventb.core.predicate="errorFlag∈BOOL">
+<org.eventb.core.prIdent name="errorFlag" org.eventb.core.type="BOOL"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p75" org.eventb.core.predicate="doorDestination∈DoorPosition"/>
+<org.eventb.core.prPred name="p64" org.eventb.core.predicate="doorPosition=Opened_B⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p67" org.eventb.core.predicate="doorStatus=Stopped"/>
+<org.eventb.core.prPred name="p68" org.eventb.core.predicate="¬doorStatus=Moving"/>
+<org.eventb.core.prPred name="p48" org.eventb.core.predicate="¬Decreasing=StandingStill"/>
+<org.eventb.core.prPred name="p54" org.eventb.core.predicate="⊤∧doorPosition=Opened_A⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="doorDirection≠StandingStill⇔doorStatus=Moving"/>
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="doorAngle≥0"/>
+<org.eventb.core.prPred name="p34" org.eventb.core.predicate="doorPosition=Opened_B∧doorDestination=Opened_B⇒doorAngle∈90 ‥ 180"/>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="doorAngle=90"/>
+<org.eventb.core.prPred name="p36" org.eventb.core.predicate="Reverse(StandingStill)=StandingStill"/>
+<org.eventb.core.prPred name="p37" org.eventb.core.predicate="doorPosition=Opened_B⇒doorAngle∈90 ‥ 180"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="Opened_B∈DoorPosition ∖ {Closed}"/>
-<org.eventb.core.prPred name="p37" org.eventb.core.predicate="partition(DoorDirection,{Increasing},{Decreasing},{StandingStill})"/>
-<org.eventb.core.prPred name="p44" org.eventb.core.predicate="DoorDirection={Increasing,Decreasing,StandingStill}"/>
-<org.eventb.core.prPred name="p60" org.eventb.core.predicate="doorDestination=Opened_A∧¬doorPosition=Opened_A⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p38" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Closed⇔doorDirection=StandingStill"/>
-<org.eventb.core.prPred name="p45" org.eventb.core.predicate="¬Increasing=Decreasing"/>
-<org.eventb.core.prPred name="p49" org.eventb.core.predicate="¬Opened_A=Opened_B"/>
-<org.eventb.core.prPred name="p39" org.eventb.core.predicate="Position∈ℤ ⇸ DoorPosition"/>
-<org.eventb.core.prPred name="p41" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧a≠StandingStill⇒Reverse(a)≠StandingStill"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prPred name="p38" org.eventb.core.predicate="partition(DoorDirection,{Increasing},{Decreasing},{StandingStill})"/>
+<org.eventb.core.prPred name="p45" org.eventb.core.predicate="DoorDirection={Increasing,Decreasing,StandingStill}"/>
+<org.eventb.core.prPred name="p61" org.eventb.core.predicate="doorDestination=Opened_A∧¬doorPosition=Opened_A⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p39" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Closed⇔doorDirection=StandingStill"/>
+<org.eventb.core.prPred name="p46" org.eventb.core.predicate="¬Increasing=Decreasing"/>
+<org.eventb.core.prPred name="p50" org.eventb.core.predicate="¬Opened_A=Opened_B"/>
+<org.eventb.core.prPred name="p41" org.eventb.core.predicate="Position∈ℤ ⇸ DoorPosition"/>
+<org.eventb.core.prPred name="p42" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧a≠StandingStill⇒Reverse(a)≠StandingStill"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="StartOpenB/grd6/GRD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="DoorDirection,DoorPosition">
 <org.eventb.core.lang name="L"/>
@@ -3138,76 +3146,77 @@
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="StartOpenA/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40" org.eventb.core.prSets="DoorDirection,DoorPosition,DoorStatus">
+<org.eventb.core.prProof name="StartOpenA/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36,p37,p38,p39,p40,p41,p42" org.eventb.core.prSets="DoorDirection,DoorPosition,DoorStatus,PEOPLE">
 <org.eventb.core.lang name="L"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(DoorStatus,{Stopped},{Moving}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p41,p42"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p41,p42"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p43,p44"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p43,p44"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(DoorDirection,{Increasing},{Decreasing},{StandingStill}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p37" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p43,p44,p45,p46"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p43,p44,p45,p46"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p39" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p45,p46,p47,p48"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p45,p46,p47,p48"/>
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(DoorPosition,{Opened_A},{Opened_B},{Closed}))" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p47,p48,p49,p50"/>
-<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p47,p48,p49,p50"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p49,p50,p51,p52"/>
+<org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p49,p50,p51,p52"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p38" org.eventb.core.prHyps="p2,p19" org.eventb.core.prInfHyps="p51"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p23" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p52"/>
-<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p53"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p40" org.eventb.core.prHyps="p2,p19" org.eventb.core.prInfHyps="p53"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p24" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p54"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p55"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p54"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p40" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p55"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p56"/>
-<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p31" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p57"/>
-<org.eventb.core.prHypAction name="REWRITE4" org.eventb.core.prHidden="p28" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p58"/>
-<org.eventb.core.prHypAction name="REWRITE5" org.eventb.core.prHidden="p29" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p59"/>
-<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p51" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p60"/>
-<org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p52" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p61"/>
-<org.eventb.core.prHypAction name="REWRITE8" org.eventb.core.prHidden="p53" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p62"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p56"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p42" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p57"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p58"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p33" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p59"/>
+<org.eventb.core.prHypAction name="REWRITE4" org.eventb.core.prHidden="p30" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p60"/>
+<org.eventb.core.prHypAction name="REWRITE5" org.eventb.core.prHidden="p31" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p61"/>
+<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p53" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p62"/>
+<org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p54" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p63"/>
+<org.eventb.core.prHypAction name="REWRITE8" org.eventb.core.prHidden="p55" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p64"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p27" org.eventb.core.prHyps="p60" org.eventb.core.prInfHyps="p63"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p57" org.eventb.core.prHyps="p60" org.eventb.core.prInfHyps="p64"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p28" org.eventb.core.prHyps="p62" org.eventb.core.prInfHyps="p65"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p59" org.eventb.core.prHyps="p62" org.eventb.core.prInfHyps="p66"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p63" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p65"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p64" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p66"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p65" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p67"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p66" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p68"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p67" org.eventb.core.prHyps="p66,p65" org.eventb.core.prInfHyps="p68"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p69" org.eventb.core.prHyps="p68,p67" org.eventb.core.prInfHyps="p70"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p68"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p70"/>
 <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p69"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p70"/>
-<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p71"/>
-<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p72"/>
-<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p73"/>
-<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p74"/>
-<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p55" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p75"/>
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p71"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p72"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p73"/>
+<org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p74"/>
+<org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p75"/>
+<org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p76"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p77"/>
+<org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p57" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p78"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p75" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p76"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p78" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p79"/>
 <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with doorPosition=Closed" org.eventb.core.prHyps="p19">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p61" org.eventb.core.prInfHyps="p77"/>
-<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p62" org.eventb.core.prInfHyps="p78"/>
-<org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p61,p62"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p63" org.eventb.core.prInfHyps="p80"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p64" org.eventb.core.prInfHyps="p81"/>
+<org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p63,p64"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p77" org.eventb.core.prHyps="p49" org.eventb.core.prInfHyps="p79"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p78" org.eventb.core.prHyps="p50" org.eventb.core.prInfHyps="p80"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p80" org.eventb.core.prHyps="p51" org.eventb.core.prInfHyps="p82"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p81" org.eventb.core.prHyps="p52" org.eventb.core.prInfHyps="p83"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p79"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p80"/>
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p20,p3,p24,p12,p4,p13,p35,p9,p10,p17,p16,p39,p30,p11,p25,p18,p5,p21,p14,p22,p32,p26,p36,p1,p33,p34,p19,p2,p41,p42,p43,p44,p45,p46,p47,p48,p49,p50,p54,p58,p59,p60,p61,p62,p65,p66,p76">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p82"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p83"/>
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p20,p3,p25,p12,p4,p13,p37,p10,p11,p17,p16,p41,p32,p9,p26,p18,p5,p21,p14,p22,p34,p27,p38,p1,p35,p29,p36,p19,p2,p23,p43,p44,p45,p46,p47,p48,p49,p50,p51,p52,p56,p60,p61,p62,p63,p64,p67,p68,p79">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -3241,6 +3250,7 @@
 </org.eventb.core.prAnte>
 <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
 </org.eventb.core.prRule>
+<org.eventb.core.prIdent name="Authed" org.eventb.core.type="ℙ(PEOPLE)"/>
 <org.eventb.core.prIdent name="Closed" org.eventb.core.type="DoorPosition"/>
 <org.eventb.core.prIdent name="Decreasing" org.eventb.core.type="DoorDirection"/>
 <org.eventb.core.prIdent name="DoorAngles" org.eventb.core.type="ℙ(ℤ)"/>
@@ -3257,99 +3267,100 @@
 <org.eventb.core.prIdent name="doorDirection" org.eventb.core.type="DoorDirection"/>
 <org.eventb.core.prIdent name="doorPosition" org.eventb.core.type="DoorPosition"/>
 <org.eventb.core.prIdent name="doorStatus" org.eventb.core.type="DoorStatus"/>
-<org.eventb.core.prPred name="p50" org.eventb.core.predicate="¬Opened_B=Closed"/>
+<org.eventb.core.prIdent name="p" org.eventb.core.type="PEOPLE"/>
+<org.eventb.core.prIdent name="peopleInB" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prPred name="p52" org.eventb.core.predicate="¬Opened_B=Closed"/>
 <org.eventb.core.prPred name="p2" org.eventb.core.predicate="doorDestination=Closed"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="Reverse(Increasing)=Decreasing"/>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Opened_B⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p55" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
-<org.eventb.core.prPred name="p70" org.eventb.core.predicate="doorStatus∈DoorStatus"/>
-<org.eventb.core.prPred name="p79" org.eventb.core.predicate="⊥⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p57" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
+<org.eventb.core.prPred name="p72" org.eventb.core.predicate="doorStatus∈DoorStatus"/>
+<org.eventb.core.prPred name="p82" org.eventb.core.predicate="⊥⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="partition(DoorPosition,{Opened_A},{Opened_B},{Closed})"/>
-<org.eventb.core.prPred name="p76" org.eventb.core.predicate="∀a⦂DoorDirection·¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
-<org.eventb.core.prPred name="p11" org.eventb.core.predicate="180∈dom(Position)"/>
+<org.eventb.core.prPred name="p79" org.eventb.core.predicate="∀a⦂DoorDirection·¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="180∈dom(Position)"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="Reverse∈DoorDirection ⇸ DoorDirection"/>
-<org.eventb.core.prPred name="p60" org.eventb.core.predicate="doorDirection=StandingStill"/>
+<org.eventb.core.prPred name="p62" org.eventb.core.predicate="doorDirection=StandingStill"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="Decreasing∈dom(Reverse)"/>
 <org.eventb.core.prPred name="p14" org.eventb.core.predicate="doorAngle∈DoorAngles"/>
-<org.eventb.core.prPred name="p80" org.eventb.core.predicate="⊥⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p83" org.eventb.core.predicate="⊥⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p15" org.eventb.core.predicate="DoorAngles={x⦂ℤ·x∈0 ‥ 180 ∣ x}"/>
 <org.eventb.core.prPred name="p16" org.eventb.core.predicate="0∈dom(Position)"/>
-<org.eventb.core.prPred name="p71" org.eventb.core.predicate="doorDirection∈DoorDirection"/>
+<org.eventb.core.prPred name="p73" org.eventb.core.predicate="doorDirection∈DoorDirection"/>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="Reverse∈DoorDirection → DoorDirection"/>
-<org.eventb.core.prPred name="p47" org.eventb.core.predicate="DoorPosition={Opened_A,Opened_B,Closed}"/>
-<org.eventb.core.prPred name="p41" org.eventb.core.predicate="DoorStatus={Stopped,Moving}"/>
-<org.eventb.core.prPred name="p24" org.eventb.core.predicate="Increasing∈dom(Reverse)"/>
-<org.eventb.core.prPred name="p58" org.eventb.core.predicate="doorDestination=Opened_B∧¬doorPosition=Opened_B⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p23" org.eventb.core.predicate="p∈peopleInB"/>
+<org.eventb.core.prPred name="p49" org.eventb.core.predicate="DoorPosition={Opened_A,Opened_B,Closed}"/>
+<org.eventb.core.prPred name="p43" org.eventb.core.predicate="DoorStatus={Stopped,Moving}"/>
+<org.eventb.core.prPred name="p25" org.eventb.core.predicate="Increasing∈dom(Reverse)"/>
+<org.eventb.core.prPred name="p60" org.eventb.core.predicate="doorDestination=Opened_B∧¬doorPosition=Opened_B⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="Opened_A∈DoorPosition ∖ {Closed}"/>
-<org.eventb.core.prPred name="p68" org.eventb.core.predicate="⊥∨⊤"/>
-<org.eventb.core.prPred name="p63" org.eventb.core.predicate="⊤⇔doorStatus=Stopped"/>
-<org.eventb.core.prPred name="p29" org.eventb.core.predicate="doorDestination=Opened_A∧doorPosition≠Opened_A⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p30" org.eventb.core.predicate="Position(180)=Opened_B"/>
-<org.eventb.core.prPred name="p51" org.eventb.core.predicate="⊤∧⊤⇔doorDirection=StandingStill"/>
-<org.eventb.core.prPred name="p45" org.eventb.core.predicate="¬Increasing=StandingStill"/>
-<org.eventb.core.prPred name="p53" org.eventb.core.predicate="⊤∧doorPosition=Opened_B⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p56" org.eventb.core.predicate="dom(Reverse) ∖ DoorDirection=(∅ ⦂ ℙ(DoorDirection))"/>
-<org.eventb.core.prPred name="p74" org.eventb.core.predicate="p∈PEOPLE">
-<org.eventb.core.prIdent name="PEOPLE" org.eventb.core.type="ℙ(PEOPLE)"/>
-<org.eventb.core.prIdent name="p" org.eventb.core.type="PEOPLE"/>
-</org.eventb.core.prPred>
-<org.eventb.core.prPred name="p77" org.eventb.core.predicate="Closed=Opened_A⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p70" org.eventb.core.predicate="⊥∨⊤"/>
+<org.eventb.core.prPred name="p65" org.eventb.core.predicate="⊤⇔doorStatus=Stopped"/>
+<org.eventb.core.prPred name="p31" org.eventb.core.predicate="doorDestination=Opened_A∧doorPosition≠Opened_A⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p32" org.eventb.core.predicate="Position(180)=Opened_B"/>
+<org.eventb.core.prPred name="p53" org.eventb.core.predicate="⊤∧⊤⇔doorDirection=StandingStill"/>
+<org.eventb.core.prPred name="p47" org.eventb.core.predicate="¬Increasing=StandingStill"/>
+<org.eventb.core.prPred name="p55" org.eventb.core.predicate="⊤∧doorPosition=Opened_B⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p58" org.eventb.core.predicate="dom(Reverse) ∖ DoorDirection=(∅ ⦂ ℙ(DoorDirection))"/>
+<org.eventb.core.prPred name="p80" org.eventb.core.predicate="Closed=Opened_A⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="doorPosition=Opened_A∧doorDestination=Opened_A⇒doorAngle∈0 ‥ 90"/>
-<org.eventb.core.prPred name="p49" org.eventb.core.predicate="¬Opened_A=Closed"/>
+<org.eventb.core.prPred name="p51" org.eventb.core.predicate="¬Opened_A=Closed"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="Reverse(Decreasing)=Increasing"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="dom(Position)={0,90,180}"/>
 <org.eventb.core.prPred name="p7" org.eventb.core.predicate="partition(DoorStatus,{Stopped},{Moving})"/>
-<org.eventb.core.prPred name="p61" org.eventb.core.predicate="doorPosition=Opened_A⇒doorDirection=Increasing"/>
-<org.eventb.core.prPred name="p9" org.eventb.core.predicate="StandingStill∈dom(Reverse)"/>
-<org.eventb.core.prPred name="p10" org.eventb.core.predicate="Position∈{0,90,180} ⤖ DoorPosition"/>
-<org.eventb.core.prPred name="p78" org.eventb.core.predicate="Closed=Opened_B⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p67" org.eventb.core.predicate="doorStatus=Moving∨doorStatus=Stopped"/>
+<org.eventb.core.prPred name="p63" org.eventb.core.predicate="doorPosition=Opened_A⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="StandingStill∈dom(Reverse)"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="Position∈{0,90,180} ⤖ DoorPosition"/>
+<org.eventb.core.prPred name="p77" org.eventb.core.predicate="peopleInB⊆PEOPLE"/>
+<org.eventb.core.prPred name="p81" org.eventb.core.predicate="Closed=Opened_B⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p69" org.eventb.core.predicate="doorStatus=Moving∨doorStatus=Stopped"/>
 <org.eventb.core.prPred name="p17" org.eventb.core.predicate="Position(0)=Opened_A"/>
-<org.eventb.core.prPred name="p73" org.eventb.core.predicate="doorPosition∈DoorPosition"/>
+<org.eventb.core.prPred name="p76" org.eventb.core.predicate="doorPosition∈DoorPosition"/>
 <org.eventb.core.prPred name="p18" org.eventb.core.predicate="90∈dom(Position)"/>
 <org.eventb.core.prPred name="p19" org.eventb.core.predicate="doorPosition=Closed"/>
-<org.eventb.core.prPred name="p57" org.eventb.core.predicate="¬doorDirection=StandingStill⇔doorStatus=Moving"/>
+<org.eventb.core.prPred name="p59" org.eventb.core.predicate="¬doorDirection=StandingStill⇔doorStatus=Moving"/>
 <org.eventb.core.prPred name="p21" org.eventb.core.predicate="ran(Position)={Opened_A,Opened_B,Closed}"/>
 <org.eventb.core.prPred name="p22" org.eventb.core.predicate="doorAngle≤180"/>
-<org.eventb.core.prPred name="p64" org.eventb.core.predicate="¬⊤⇔doorStatus=Moving"/>
-<org.eventb.core.prPred name="p23" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Opened_A⇒doorDirection=Increasing"/>
-<org.eventb.core.prPred name="p25" org.eventb.core.predicate="Position(90)=Closed"/>
-<org.eventb.core.prPred name="p26" org.eventb.core.predicate="doorPosition=Opened_A⇒doorAngle∈0 ‥ 90"/>
-<org.eventb.core.prPred name="p42" org.eventb.core.predicate="¬Stopped=Moving"/>
-<org.eventb.core.prPred name="p27" org.eventb.core.predicate="doorDirection=StandingStill⇔doorStatus=Stopped"/>
-<org.eventb.core.prPred name="p54" org.eventb.core.predicate="DoorAngles=0 ‥ 180"/>
-<org.eventb.core.prPred name="p75" org.eventb.core.predicate="∀a⦂DoorDirection·⊤∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
-<org.eventb.core.prPred name="p28" org.eventb.core.predicate="doorDestination=Opened_B∧doorPosition≠Opened_B⇒doorDirection=Increasing"/>
-<org.eventb.core.prPred name="p69" org.eventb.core.predicate="Authed⊆PEOPLE">
-<org.eventb.core.prIdent name="Authed" org.eventb.core.type="ℙ(PEOPLE)"/>
-<org.eventb.core.prIdent name="PEOPLE" org.eventb.core.type="ℙ(PEOPLE)"/>
+<org.eventb.core.prPred name="p66" org.eventb.core.predicate="¬⊤⇔doorStatus=Moving"/>
+<org.eventb.core.prPred name="p24" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Opened_A⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p26" org.eventb.core.predicate="Position(90)=Closed"/>
+<org.eventb.core.prPred name="p27" org.eventb.core.predicate="doorPosition=Opened_A⇒doorAngle∈0 ‥ 90"/>
+<org.eventb.core.prPred name="p44" org.eventb.core.predicate="¬Stopped=Moving"/>
+<org.eventb.core.prPred name="p28" org.eventb.core.predicate="doorDirection=StandingStill⇔doorStatus=Stopped"/>
+<org.eventb.core.prPred name="p56" org.eventb.core.predicate="DoorAngles=0 ‥ 180"/>
+<org.eventb.core.prPred name="p78" org.eventb.core.predicate="∀a⦂DoorDirection·⊤∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
+<org.eventb.core.prPred name="p29" org.eventb.core.predicate="∀a⦂PEOPLE·a∈peopleInB⇒a∈Authed"/>
+<org.eventb.core.prPred name="p30" org.eventb.core.predicate="doorDestination=Opened_B∧doorPosition≠Opened_B⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p71" org.eventb.core.predicate="Authed⊆PEOPLE"/>
+<org.eventb.core.prPred name="p74" org.eventb.core.predicate="errorFlag∈BOOL">
+<org.eventb.core.prIdent name="errorFlag" org.eventb.core.type="BOOL"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p72" org.eventb.core.predicate="doorDestination∈DoorPosition"/>
-<org.eventb.core.prPred name="p62" org.eventb.core.predicate="doorPosition=Opened_B⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p65" org.eventb.core.predicate="doorStatus=Stopped"/>
-<org.eventb.core.prPred name="p66" org.eventb.core.predicate="¬doorStatus=Moving"/>
-<org.eventb.core.prPred name="p46" org.eventb.core.predicate="¬Decreasing=StandingStill"/>
-<org.eventb.core.prPred name="p52" org.eventb.core.predicate="⊤∧doorPosition=Opened_A⇒doorDirection=Increasing"/>
-<org.eventb.core.prPred name="p31" org.eventb.core.predicate="doorDirection≠StandingStill⇔doorStatus=Moving"/>
-<org.eventb.core.prPred name="p32" org.eventb.core.predicate="doorAngle≥0"/>
-<org.eventb.core.prPred name="p33" org.eventb.core.predicate="doorPosition=Opened_B∧doorDestination=Opened_B⇒doorAngle∈90 ‥ 180"/>
-<org.eventb.core.prPred name="p34" org.eventb.core.predicate="doorAngle=90"/>
-<org.eventb.core.prPred name="p35" org.eventb.core.predicate="Reverse(StandingStill)=StandingStill"/>
-<org.eventb.core.prPred name="p36" org.eventb.core.predicate="doorPosition=Opened_B⇒doorAngle∈90 ‥ 180"/>
-<org.eventb.core.prPred name="p37" org.eventb.core.predicate="partition(DoorDirection,{Increasing},{Decreasing},{StandingStill})"/>
-<org.eventb.core.prPred name="p43" org.eventb.core.predicate="DoorDirection={Increasing,Decreasing,StandingStill}"/>
-<org.eventb.core.prPred name="p59" org.eventb.core.predicate="doorDestination=Opened_A∧¬doorPosition=Opened_A⇒doorDirection=Decreasing"/>
-<org.eventb.core.prPred name="p38" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Closed⇔doorDirection=StandingStill"/>
-<org.eventb.core.prPred name="p44" org.eventb.core.predicate="¬Increasing=Decreasing"/>
-<org.eventb.core.prPred name="p48" org.eventb.core.predicate="¬Opened_A=Opened_B"/>
-<org.eventb.core.prPred name="p39" org.eventb.core.predicate="Position∈ℤ ⇸ DoorPosition"/>
-<org.eventb.core.prPred name="p40" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧a≠StandingStill⇒Reverse(a)≠StandingStill"/>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prPred name="p75" org.eventb.core.predicate="doorDestination∈DoorPosition"/>
+<org.eventb.core.prPred name="p64" org.eventb.core.predicate="doorPosition=Opened_B⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p67" org.eventb.core.predicate="doorStatus=Stopped"/>
+<org.eventb.core.prPred name="p68" org.eventb.core.predicate="¬doorStatus=Moving"/>
+<org.eventb.core.prPred name="p48" org.eventb.core.predicate="¬Decreasing=StandingStill"/>
+<org.eventb.core.prPred name="p54" org.eventb.core.predicate="⊤∧doorPosition=Opened_A⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p33" org.eventb.core.predicate="doorDirection≠StandingStill⇔doorStatus=Moving"/>
+<org.eventb.core.prPred name="p34" org.eventb.core.predicate="doorAngle≥0"/>
+<org.eventb.core.prPred name="p35" org.eventb.core.predicate="doorPosition=Opened_B∧doorDestination=Opened_B⇒doorAngle∈90 ‥ 180"/>
+<org.eventb.core.prPred name="p36" org.eventb.core.predicate="doorAngle=90"/>
+<org.eventb.core.prPred name="p37" org.eventb.core.predicate="Reverse(StandingStill)=StandingStill"/>
+<org.eventb.core.prPred name="p38" org.eventb.core.predicate="doorPosition=Opened_B⇒doorAngle∈90 ‥ 180"/>
+<org.eventb.core.prPred name="p39" org.eventb.core.predicate="partition(DoorDirection,{Increasing},{Decreasing},{StandingStill})"/>
+<org.eventb.core.prPred name="p45" org.eventb.core.predicate="DoorDirection={Increasing,Decreasing,StandingStill}"/>
+<org.eventb.core.prPred name="p61" org.eventb.core.predicate="doorDestination=Opened_A∧¬doorPosition=Opened_A⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p40" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Closed⇔doorDirection=StandingStill"/>
+<org.eventb.core.prPred name="p46" org.eventb.core.predicate="¬Increasing=Decreasing"/>
+<org.eventb.core.prPred name="p50" org.eventb.core.predicate="¬Opened_A=Opened_B"/>
+<org.eventb.core.prPred name="p41" org.eventb.core.predicate="Position∈ℤ ⇸ DoorPosition"/>
+<org.eventb.core.prPred name="p42" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧a≠StandingStill⇒Reverse(a)≠StandingStill"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="StartOpenA/grd7/GRD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="DoorDirection,DoorPosition">
 <org.eventb.core.lang name="L"/>
@@ -4525,29 +4536,30 @@
 <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p74"/>
 <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p75"/>
 <org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p76"/>
-<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p57" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p77"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p77"/>
+<org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p57" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p78"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p77" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p78"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p78" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p79"/>
 <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees a)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p79">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p80">
 <org.eventb.core.prIdent name="a" org.eventb.core.type="PEOPLE"/>
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p79" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p81" org.eventb.core.prHyps="p80">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p80" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p82" org.eventb.core.prHyps="p81">
 <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with doorPosition=Closed" org.eventb.core.prHyps="p19">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p63" org.eventb.core.prInfHyps="p82"/>
-<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p64" org.eventb.core.prInfHyps="p83"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p63" org.eventb.core.prInfHyps="p83"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p64" org.eventb.core.prInfHyps="p84"/>
 <org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p63,p64"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p82" org.eventb.core.prHyps="p51" org.eventb.core.prInfHyps="p84"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p83" org.eventb.core.prHyps="p52" org.eventb.core.prInfHyps="p85"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p83" org.eventb.core.prHyps="p51" org.eventb.core.prInfHyps="p85"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p84" org.eventb.core.prHyps="p52" org.eventb.core.prInfHyps="p86"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p84"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p85"/>
-<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p81" org.eventb.core.prHyps="p20,p3,p25,p12,p4,p13,p37,p10,p11,p17,p16,p41,p32,p9,p26,p18,p5,p21,p14,p22,p34,p27,p38,p1,p35,p29,p36,p19,p2,p23,p43,p44,p45,p46,p47,p48,p49,p50,p51,p52,p56,p60,p61,p62,p63,p64,p67,p68,p78,p80">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p85"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p86"/>
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p82" org.eventb.core.prHyps="p20,p3,p25,p12,p4,p13,p37,p10,p11,p17,p16,p41,p32,p9,p26,p18,p5,p21,p14,p22,p34,p27,p38,p1,p35,p29,p36,p19,p2,p23,p43,p44,p45,p46,p47,p48,p49,p50,p51,p52,p56,p60,p61,p62,p63,p64,p67,p68,p79,p81">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -4610,18 +4622,18 @@
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Opened_B⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p57" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
 <org.eventb.core.prPred name="p72" org.eventb.core.predicate="doorStatus∈DoorStatus"/>
-<org.eventb.core.prPred name="p84" org.eventb.core.predicate="⊥⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p85" org.eventb.core.predicate="⊥⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="partition(DoorPosition,{Opened_A},{Opened_B},{Closed})"/>
-<org.eventb.core.prPred name="p78" org.eventb.core.predicate="∀a⦂DoorDirection·¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
+<org.eventb.core.prPred name="p79" org.eventb.core.predicate="∀a⦂DoorDirection·¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
 <org.eventb.core.prPred name="p9" org.eventb.core.predicate="180∈dom(Position)"/>
 <org.eventb.core.prPred name="p12" org.eventb.core.predicate="Reverse∈DoorDirection ⇸ DoorDirection"/>
 <org.eventb.core.prPred name="p62" org.eventb.core.predicate="doorDirection=StandingStill"/>
 <org.eventb.core.prPred name="p13" org.eventb.core.predicate="Decreasing∈dom(Reverse)"/>
 <org.eventb.core.prPred name="p14" org.eventb.core.predicate="doorAngle∈DoorAngles"/>
-<org.eventb.core.prPred name="p81" org.eventb.core.predicate="a∈Authed">
+<org.eventb.core.prPred name="p82" org.eventb.core.predicate="a∈Authed">
 <org.eventb.core.prIdent name="a" org.eventb.core.type="PEOPLE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p85" org.eventb.core.predicate="⊥⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p86" org.eventb.core.predicate="⊥⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p15" org.eventb.core.predicate="DoorAngles={x⦂ℤ·x∈0 ‥ 180 ∣ x}"/>
 <org.eventb.core.prPred name="p16" org.eventb.core.predicate="0∈dom(Position)"/>
 <org.eventb.core.prPred name="p73" org.eventb.core.predicate="doorDirection∈DoorDirection"/>
@@ -4639,7 +4651,7 @@
 <org.eventb.core.prPred name="p47" org.eventb.core.predicate="¬Increasing=StandingStill"/>
 <org.eventb.core.prPred name="p55" org.eventb.core.predicate="⊤∧doorPosition=Opened_B⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p58" org.eventb.core.predicate="dom(Reverse) ∖ DoorDirection=(∅ ⦂ ℙ(DoorDirection))"/>
-<org.eventb.core.prPred name="p82" org.eventb.core.predicate="Closed=Opened_A⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p83" org.eventb.core.predicate="Closed=Opened_A⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="doorPosition=Opened_A∧doorDestination=Opened_A⇒doorAngle∈0 ‥ 90"/>
 <org.eventb.core.prPred name="p51" org.eventb.core.predicate="¬Opened_A=Closed"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="Reverse(Decreasing)=Increasing"/>
@@ -4648,18 +4660,18 @@
 <org.eventb.core.prPred name="p63" org.eventb.core.predicate="doorPosition=Opened_A⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="StandingStill∈dom(Reverse)"/>
 <org.eventb.core.prPred name="p11" org.eventb.core.predicate="Position∈{0,90,180} ⤖ DoorPosition"/>
-<org.eventb.core.prPred name="p76" org.eventb.core.predicate="peopleInB⊆PEOPLE"/>
-<org.eventb.core.prPred name="p83" org.eventb.core.predicate="Closed=Opened_B⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p77" org.eventb.core.predicate="peopleInB⊆PEOPLE"/>
+<org.eventb.core.prPred name="p84" org.eventb.core.predicate="Closed=Opened_B⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p69" org.eventb.core.predicate="doorStatus=Moving∨doorStatus=Stopped"/>
 <org.eventb.core.prPred name="p17" org.eventb.core.predicate="Position(0)=Opened_A"/>
-<org.eventb.core.prPred name="p75" org.eventb.core.predicate="doorPosition∈DoorPosition"/>
+<org.eventb.core.prPred name="p76" org.eventb.core.predicate="doorPosition∈DoorPosition"/>
 <org.eventb.core.prPred name="p18" org.eventb.core.predicate="90∈dom(Position)"/>
 <org.eventb.core.prPred name="p19" org.eventb.core.predicate="doorPosition=Closed"/>
 <org.eventb.core.prPred name="p59" org.eventb.core.predicate="¬doorDirection=StandingStill⇔doorStatus=Moving"/>
 <org.eventb.core.prPred name="p21" org.eventb.core.predicate="ran(Position)={Opened_A,Opened_B,Closed}"/>
 <org.eventb.core.prPred name="p22" org.eventb.core.predicate="doorAngle≤180"/>
 <org.eventb.core.prPred name="p66" org.eventb.core.predicate="¬⊤⇔doorStatus=Moving"/>
-<org.eventb.core.prPred name="p79" org.eventb.core.predicate="a∈peopleInB ∖ {p}⇒a∈Authed">
+<org.eventb.core.prPred name="p80" org.eventb.core.predicate="a∈peopleInB ∖ {p}⇒a∈Authed">
 <org.eventb.core.prIdent name="a" org.eventb.core.type="PEOPLE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p24" org.eventb.core.predicate="doorDestination=Closed∧doorPosition=Opened_A⇒doorDirection=Increasing"/>
@@ -4668,15 +4680,18 @@
 <org.eventb.core.prPred name="p44" org.eventb.core.predicate="¬Stopped=Moving"/>
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="doorDirection=StandingStill⇔doorStatus=Stopped"/>
 <org.eventb.core.prPred name="p56" org.eventb.core.predicate="DoorAngles=0 ‥ 180"/>
-<org.eventb.core.prPred name="p77" org.eventb.core.predicate="∀a⦂DoorDirection·⊤∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
+<org.eventb.core.prPred name="p78" org.eventb.core.predicate="∀a⦂DoorDirection·⊤∧¬a=StandingStill⇒¬Reverse(a)=StandingStill"/>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀a⦂PEOPLE·a∈peopleInB ∖ {p}⇒a∈Authed"/>
 <org.eventb.core.prPred name="p29" org.eventb.core.predicate="∀a⦂PEOPLE·a∈peopleInB⇒a∈Authed"/>
 <org.eventb.core.prPred name="p30" org.eventb.core.predicate="doorDestination=Opened_B∧doorPosition≠Opened_B⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p71" org.eventb.core.predicate="Authed⊆PEOPLE"/>
-<org.eventb.core.prPred name="p74" org.eventb.core.predicate="doorDestination∈DoorPosition"/>
+<org.eventb.core.prPred name="p74" org.eventb.core.predicate="errorFlag∈BOOL">
+<org.eventb.core.prIdent name="errorFlag" org.eventb.core.type="BOOL"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p75" org.eventb.core.predicate="doorDestination∈DoorPosition"/>
 <org.eventb.core.prPred name="p64" org.eventb.core.predicate="doorPosition=Opened_B⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p67" org.eventb.core.predicate="doorStatus=Stopped"/>
-<org.eventb.core.prPred name="p80" org.eventb.core.predicate="a∈peopleInB ∖ {p}">
+<org.eventb.core.prPred name="p81" org.eventb.core.predicate="a∈peopleInB ∖ {p}">
 <org.eventb.core.prIdent name="a" org.eventb.core.type="PEOPLE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p68" org.eventb.core.predicate="¬doorStatus=Moving"/>
@@ -4696,14 +4711,14 @@
 <org.eventb.core.prPred name="p50" org.eventb.core.predicate="¬Opened_A=Opened_B"/>
 <org.eventb.core.prPred name="p41" org.eventb.core.predicate="Position∈ℤ ⇸ DoorPosition"/>
 <org.eventb.core.prPred name="p42" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧a≠StandingStill⇒Reverse(a)≠StandingStill"/>
+<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+<org.eventb.core.prReas name="r7" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
 <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
-<org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
-<org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
-<org.eventb.core.prReas name="r7" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 </org.eventb.core.prProof>
 <org.eventb.core.prProof name="StartOpenB/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="a" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="DoorDirection,DoorPosition,DoorStatus,PEOPLE">
 <org.eventb.core.lang name="L"/>
@@ -4757,29 +4772,30 @@
 <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p49"/>
 <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p50"/>
 <org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p51"/>
-<org.eventb.core.prHypAction name="REWRITE6" org.eventb.core.prHidden="p30" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p52"/>
+<org.eventb.core.prHypAction name="HIDE6" org.eventb.core.prHyps="p52"/>
+<org.eventb.core.prHypAction name="REWRITE7" org.eventb.core.prHidden="p30" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p53"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p52" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p53"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p53" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p54"/>
 <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∀ goal (frees a)" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p54">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p55">
 <org.eventb.core.prIdent name="a" org.eventb.core.type="PEOPLE"/>
-<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p54" org.eventb.core.prHyps="">
-<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p56" org.eventb.core.prHyps="p55">
+<org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p55" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p57" org.eventb.core.prHyps="p56">
 <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with doorPosition=Closed" org.eventb.core.prHyps="p8">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p38" org.eventb.core.prInfHyps="p57"/>
-<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p39" org.eventb.core.prInfHyps="p58"/>
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p38" org.eventb.core.prInfHyps="p58"/>
+<org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p39" org.eventb.core.prInfHyps="p59"/>
 <org.eventb.core.prHypAction name="DESELECT2" org.eventb.core.prHyps="p38,p39"/>
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p57" org.eventb.core.prHyps="p20" org.eventb.core.prInfHyps="p59"/>
-<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p58" org.eventb.core.prHyps="p21" org.eventb.core.prInfHyps="p60"/>
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p58" org.eventb.core.prHyps="p20" org.eventb.core.prInfHyps="p60"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p59" org.eventb.core.prHyps="p21" org.eventb.core.prInfHyps="p61"/>
 <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
-<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p59"/>
-<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p60"/>
-<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p56" org.eventb.core.prHyps="p6,p2,p8,p1,p10,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p37,p42,p43,p55">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p60"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p61"/>
+<org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="PP" org.eventb.core.prGoal="p57" org.eventb.core.prHyps="p6,p2,p8,p1,p10,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p37,p42,p43,p56">
 <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R500"/>
 </org.eventb.core.prRule>
 </org.eventb.core.prAnte>
@@ -4840,16 +4856,16 @@
 <org.eventb.core.prIdent name="Reverse" org.eventb.core.type="ℙ(DoorDirection×DoorDirection)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p47" org.eventb.core.predicate="doorStatus∈DoorStatus"/>
-<org.eventb.core.prPred name="p59" org.eventb.core.predicate="⊥⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p60" org.eventb.core.predicate="⊥⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(DoorPosition,{Opened_A},{Opened_B},{Closed})"/>
-<org.eventb.core.prPred name="p53" org.eventb.core.predicate="∀a⦂DoorDirection·¬a=StandingStill⇒¬Reverse(a)=StandingStill">
+<org.eventb.core.prPred name="p54" org.eventb.core.predicate="∀a⦂DoorDirection·¬a=StandingStill⇒¬Reverse(a)=StandingStill">
 <org.eventb.core.prIdent name="Reverse" org.eventb.core.type="ℙ(DoorDirection×DoorDirection)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p37" org.eventb.core.predicate="doorDirection=StandingStill"/>
-<org.eventb.core.prPred name="p56" org.eventb.core.predicate="a∈Authed">
+<org.eventb.core.prPred name="p57" org.eventb.core.predicate="a∈Authed">
 <org.eventb.core.prIdent name="a" org.eventb.core.type="PEOPLE"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p60" org.eventb.core.predicate="⊥⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p61" org.eventb.core.predicate="⊥⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p27" org.eventb.core.predicate="DoorAngles={x⦂ℤ·x∈0 ‥ 180 ∣ x}">
 <org.eventb.core.prIdent name="DoorAngles" org.eventb.core.type="ℙ(ℤ)"/>
 </org.eventb.core.prPred>
@@ -4862,7 +4878,7 @@
 <org.eventb.core.prPred name="p40" org.eventb.core.predicate="⊤⇔doorStatus=Stopped"/>
 <org.eventb.core.prPred name="p35" org.eventb.core.predicate="doorDestination=Opened_A∧doorPosition≠Opened_A⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p22" org.eventb.core.predicate="⊤∧⊤⇔doorDirection=StandingStill"/>
-<org.eventb.core.prPred name="p55" org.eventb.core.predicate="a∈peopleInB∪{p}">
+<org.eventb.core.prPred name="p56" org.eventb.core.predicate="a∈peopleInB∪{p}">
 <org.eventb.core.prIdent name="a" org.eventb.core.type="PEOPLE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬Increasing=StandingStill"/>
@@ -4871,17 +4887,17 @@
 <org.eventb.core.prIdent name="Reverse" org.eventb.core.type="ℙ(DoorDirection×DoorDirection)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p10" org.eventb.core.predicate="p∈Authed"/>
-<org.eventb.core.prPred name="p57" org.eventb.core.predicate="Closed=Opened_A⇒doorDirection=Increasing"/>
-<org.eventb.core.prPred name="p54" org.eventb.core.predicate="a∈peopleInB∪{p}⇒a∈Authed">
+<org.eventb.core.prPred name="p58" org.eventb.core.predicate="Closed=Opened_A⇒doorDirection=Increasing"/>
+<org.eventb.core.prPred name="p55" org.eventb.core.predicate="a∈peopleInB∪{p}⇒a∈Authed">
 <org.eventb.core.prIdent name="a" org.eventb.core.type="PEOPLE"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬Opened_A=Closed"/>
 <org.eventb.core.prPred name="p4" org.eventb.core.predicate="partition(DoorStatus,{Stopped},{Moving})"/>
 <org.eventb.core.prPred name="p38" org.eventb.core.predicate="doorPosition=Opened_A⇒doorDirection=Increasing"/>
-<org.eventb.core.prPred name="p51" org.eventb.core.predicate="peopleInB⊆PEOPLE"/>
-<org.eventb.core.prPred name="p58" org.eventb.core.predicate="Closed=Opened_B⇒doorDirection=Decreasing"/>
+<org.eventb.core.prPred name="p52" org.eventb.core.predicate="peopleInB⊆PEOPLE"/>
+<org.eventb.core.prPred name="p59" org.eventb.core.predicate="Closed=Opened_B⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p44" org.eventb.core.predicate="doorStatus=Moving∨doorStatus=Stopped"/>
-<org.eventb.core.prPred name="p50" org.eventb.core.predicate="doorPosition∈DoorPosition"/>
+<org.eventb.core.prPred name="p51" org.eventb.core.predicate="doorPosition∈DoorPosition"/>
 <org.eventb.core.prPred name="p8" org.eventb.core.predicate="doorPosition=Closed"/>
 <org.eventb.core.prPred name="p32" org.eventb.core.predicate="¬doorDirection=StandingStill⇔doorStatus=Moving"/>
 <org.eventb.core.prPred name="p41" org.eventb.core.predicate="¬⊤⇔doorStatus=Moving"/>
@@ -4891,13 +4907,16 @@
 <org.eventb.core.prPred name="p28" org.eventb.core.predicate="DoorAngles=0 ‥ 180">
 <org.eventb.core.prIdent name="DoorAngles" org.eventb.core.type="ℙ(ℤ)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prPred name="p52" org.eventb.core.predicate="∀a⦂DoorDirection·⊤∧¬a=StandingStill⇒¬Reverse(a)=StandingStill">
+<org.eventb.core.prPred name="p53" org.eventb.core.predicate="∀a⦂DoorDirection·⊤∧¬a=StandingStill⇒¬Reverse(a)=StandingStill">
 <org.eventb.core.prIdent name="Reverse" org.eventb.core.type="ℙ(DoorDirection×DoorDirection)"/>
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀a⦂PEOPLE·a∈peopleInB⇒a∈Authed"/>
 <org.eventb.core.prPred name="p33" org.eventb.core.predicate="doorDestination=Opened_B∧doorPosition≠Opened_B⇒doorDirection=Increasing"/>
 <org.eventb.core.prPred name="p46" org.eventb.core.predicate="Authed⊆PEOPLE"/>
-<org.eventb.core.prPred name="p49" org.eventb.core.predicate="doorDestination∈DoorPosition"/>
+<org.eventb.core.prPred name="p49" org.eventb.core.predicate="errorFlag∈BOOL">
+<org.eventb.core.prIdent name="errorFlag" org.eventb.core.type="BOOL"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p50" org.eventb.core.predicate="doorDestination∈DoorPosition"/>
 <org.eventb.core.prPred name="p39" org.eventb.core.predicate="doorPosition=Opened_B⇒doorDirection=Decreasing"/>
 <org.eventb.core.prPred name="p42" org.eventb.core.predicate="doorStatus=Stopped"/>
 <org.eventb.core.prPred name="p43" org.eventb.core.predicate="¬doorStatus=Moving"/>
@@ -4914,13 +4933,13 @@
 <org.eventb.core.prPred name="p29" org.eventb.core.predicate="∀a⦂DoorDirection·a∈DoorDirection∧a≠StandingStill⇒Reverse(a)≠StandingStill">
 <org.eventb.core.prIdent name="Reverse" org.eventb.core.type="ℙ(DoorDirection×DoorDirection)"/>
 </org.eventb.core.prPred>
-<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
-<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
-<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
-<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
-<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
 <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.allI"/>
 <org.eventb.core.prReas name="r7" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalPP:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL2"/>
+<org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
 </org.eventb.core.prProof>
 </org.eventb.core.prFile>

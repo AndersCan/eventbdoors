@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
-<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="163" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="StartOpenA/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="163" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="StartOpenA/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="163" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="StartOpenA/act3/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="163" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="StartOpenB/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="163" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="StartOpenB/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="163" org.eventb.core.psManual="false"/>
-<org.eventb.core.psStatus name="StartOpenB/act3/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="163" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="6" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenA/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="6" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenA/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="6" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenA/act3/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="6" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenB/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="6" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenB/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="6" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="StartOpenB/act3/SIM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="6" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>

@@ -5,8 +5,9 @@
 <org.eventb.core.variable name="0" org.eventb.core.identifier="doorAngle"/>
 <org.eventb.core.event name="1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="internal1" org.eventb.core.assignment="doorAngle ≔ 90" org.eventb.core.label="act2"/>
-<org.eventb.core.action name="'" org.eventb.core.assignment="doorDestination ≔ Closed" org.eventb.core.label="act4"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="doorPosition ≔ Closed" org.eventb.core.label="act5"/>
+<org.eventb.core.action name="'" org.eventb.core.assignment="doorDestination ≔ Closed" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="doorPosition ≔ Closed" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="internal2" org.eventb.core.assignment="errorFlag ≔ FALSE" org.eventb.core.label="act5"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="StartMoving">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="StartMoving"/>
@@ -80,9 +81,51 @@
 <org.eventb.core.invariant name="@" org.eventb.core.label="inv4" org.eventb.core.predicate="doorPosition = Opened_B ⇒ doorAngle ∈ 90 ‥ 180"/>
 <org.eventb.core.invariant name="E" org.eventb.core.label="inv8" org.eventb.core.predicate="doorPosition = Opened_A ∧ doorDestination = Opened_A ⇒ doorAngle ∈ 0 ‥ 90" org.eventb.core.theorem="true"/>
 <org.eventb.core.invariant name="F" org.eventb.core.label="inv9" org.eventb.core.predicate="doorPosition = Opened_B ∧ doorDestination = Opened_B ⇒ doorAngle ∈ 90 ‥ 180" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="Q" org.eventb.core.label="inv10" org.eventb.core.predicate="errorFlag ∈ BOOL"/>
 <org.eventb.core.invariant name="G" org.eventb.core.label="gluing1" org.eventb.core.predicate="(doorDestination = Closed ∧ doorPosition = Closed) ⇔ doorDirection = StandingStill"/>
 <org.eventb.core.invariant name="H" org.eventb.core.label="gluing2" org.eventb.core.predicate="(doorDestination = Opened_B ∧ doorPosition ≠ Opened_B) ⇒ doorDirection = Increasing"/>
 <org.eventb.core.invariant name="I" org.eventb.core.label="gluing3" org.eventb.core.predicate="(doorDestination = Closed ∧ doorPosition = Opened_A) ⇒ doorDirection = Increasing"/>
 <org.eventb.core.invariant name="J" org.eventb.core.label="gluing4" org.eventb.core.predicate="(doorDestination = Opened_A ∧ doorPosition ≠ Opened_A) ⇒ doorDirection = Decreasing"/>
 <org.eventb.core.invariant name="K" org.eventb.core.label="gluing5" org.eventb.core.predicate="(doorDestination = Closed ∧ doorPosition = Opened_B) ⇒ doorDirection = Decreasing"/>
+<org.eventb.core.event name="L" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SetErrorFlag">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SetErrorFlag"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="M" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ClearErrorFlag">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ClearErrorFlag"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="N" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ErrorRetractBackToCloseFromA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorReverse"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="errorFlag = TRUE"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="(doorDestination = Opened_A ∧ doorAngle ≥ 45 ∧ doorAngle ≤ 90)"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="doorDestination ≔ Closed" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="doorPosition ≔ Opened_A" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="doorPosition ≠ Opened_A"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="S" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ErrorRetractBackToCloseFromB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorReverse"/>
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd1" org.eventb.core.predicate="errorFlag = TRUE"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd2" org.eventb.core.predicate="(doorDestination = Opened_B ∧ doorAngle ≤ 135 ∧ doorAngle ≥ 90)"/>
+<org.eventb.core.action name="grd3" org.eventb.core.assignment="doorDestination ≔ Closed" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="grd4" org.eventb.core.assignment="doorPosition ≔ Opened_B" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="grd5" org.eventb.core.label="grd3" org.eventb.core.predicate="doorPosition ≠ Opened_B"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="R" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ErrorRetractBackToOpenA">
+<org.eventb.core.guard name="grd1" org.eventb.core.label="grd1" org.eventb.core.predicate="errorFlag = TRUE"/>
+<org.eventb.core.guard name="grd2" org.eventb.core.label="grd2" org.eventb.core.predicate="doorDestination = Closed"/>
+<org.eventb.core.guard name="grd3" org.eventb.core.label="grd3" org.eventb.core.predicate="doorAngle ≤ 45"/>
+<org.eventb.core.action name="grd4" org.eventb.core.assignment="doorDestination ≔ Opened_A" org.eventb.core.label="act1"/>
+<org.eventb.core.refinesEvent name="grd5" org.eventb.core.target="ErrorReverse"/>
+<org.eventb.core.action name="grd6" org.eventb.core.assignment="doorPosition ≔ Closed" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="grd7" org.eventb.core.label="grd4" org.eventb.core.predicate="doorPosition = Opened_A"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="O" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ErrorRetractBackToOpenB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorReverse"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="errorFlag = TRUE"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="doorDestination = Closed"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="doorAngle ≥ 135"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="doorDestination ≔ Opened_B" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="doorPosition = Opened_B"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="doorPosition ≔ Closed" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="P" org.eventb.core.identifier="errorFlag"/>
 </org.eventb.core.machineFile>

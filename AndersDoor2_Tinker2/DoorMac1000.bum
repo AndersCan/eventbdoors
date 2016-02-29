@@ -52,4 +52,25 @@
 <org.eventb.core.variable name="evt2" org.eventb.core.identifier="peopleInB"/>
 <org.eventb.core.invariant name="evt3" org.eventb.core.label="inv1" org.eventb.core.predicate="peopleInB ⊆ PEOPLE"/>
 <org.eventb.core.invariant name="evt4" org.eventb.core.label="inv2" org.eventb.core.predicate="∀a·a ∈ peopleInB ⇒ a ∈ Authed"/>
+<org.eventb.core.variable name="evt5" org.eventb.core.identifier="errorFlag"/>
+<org.eventb.core.event name="evt6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SetErrorFlag">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="SetErrorFlag"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="errorFlag ≔ TRUE" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt7" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ClearErrorFlag">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ClearErrorFlag"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="errorFlag ≔ FALSE" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ErrorRetractBackToCloseFromA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorRetractBackToCloseFromA"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ErrorRetractBackToCloseFromB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorRetractBackToCloseFromB"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ErrorRetractBackToOpenA">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorRetractBackToOpenA"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="evt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ErrorRetractBackToOpenB">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ErrorRetractBackToOpenB"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>
